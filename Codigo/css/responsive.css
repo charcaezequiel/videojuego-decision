@@ -1,0 +1,180 @@
+/* =========================================================
+   RESPONSIVE · celulares, tablets y computadoras
+   El escenario se escala a la ventana (js/core/stage.js):
+   - Horizontal (.landscape): 1280x720, el diseño original. Estas
+     reglas NO lo modifican.
+   - Vertical (.portrait): 720 de ancho y 1280 a 1560 de alto
+     (var(--sh)). Acá se reacomoda cada pantalla para esa forma,
+     con los mismos componentes, colores, fuentes e imágenes.
+   - Celular acostado (.compact): el escenario queda chico y se
+     agrandan los textos más pequeños para que se puedan leer.
+   ========================================================= */
+
+/* ---------- Comunes (vertical) ---------- */
+.portrait .title{ top:150px; font-size:84px; padding:0 30px; }
+.portrait .title.sm{ top:156px; font-size:66px; }
+.portrait .btn-back{ left:30px; top:30px; }
+.portrait .btn-back.bl{ top:auto; bottom:36px; }
+.portrait .btn-next{ right:30px; bottom:36px; }
+.portrait .toast{ bottom:170px; max-width:640px; text-align:center; font-size:34px; line-height:1.1; }
+
+/* ---------- Portada ---------- */
+.portrait .splash-logo{ width:560px; height:560px; top:calc(50% - 420px); }
+.portrait .splash-btn{ bottom:calc(50% - 400px); font-size:66px; }
+
+/* ---------- Registro ---------- */
+.portrait .field{ left:50px; width:620px; }
+.portrait #f-correo{ top:calc(50% - 210px); }
+.portrait #f-usuario{ top:calc(50% + 30px); }
+.portrait #btn-registro{ left:calc(50% - 62px); right:auto; top:calc(50% + 250px); bottom:auto; width:124px; }
+
+/* ---------- Menú ---------- */
+.portrait .menu-perfil{ left:36px; top:44px; width:170px; }
+.portrait .menu-config{ right:40px; top:44px; width:130px; }
+.portrait .menu-title{ top:calc(50% - 350px); font-size:124px; }
+.portrait .menu-user{ top:calc(50% - 205px); font-size:34px; padding:0 30px; }
+.portrait .menu-play{ left:calc(50% - 140px); top:calc(50% - 130px); width:280px; }
+.portrait .menu-ranking{ left:60px; top:calc(50% + 100px); width:270px; }
+.portrait .menu-manual{ left:auto; right:64px; top:calc(50% + 92px); width:250px; }
+.portrait .menu-cuenta{ bottom:64px; font-size:32px; }
+
+/* ---------- Configuración (una sola columna) ---------- */
+.portrait .cfg-vol-l{ left:70px; top:300px; }
+.portrait input.cfg-vol{ left:80px; top:370px; width:560px; }
+.portrait .cfg-bri-l{ left:70px; top:450px; }
+.portrait input.cfg-bri{ left:80px; top:520px; width:560px; }
+.portrait .cfg-mus-l{ left:70px; top:600px; }
+.portrait input.cfg-mus{ left:80px; top:670px; width:560px; }
+.portrait .cfg-idi-l{ left:70px; top:770px; }
+.portrait .cfg-idi{ left:80px; top:830px; }
+.portrait .cfg-gra-l{ left:400px; top:770px; }
+.portrait .cfg-gra{ left:400px; top:830px; }
+.portrait .cfg-soporte{ right:30px; bottom:36px; }
+
+/* ---------- Soporte ---------- */
+.portrait .sup-block{ left:50px; width:620px; }
+.portrait .sup-1{ top:300px; }
+.portrait .sup-2{ top:calc(50% + 30px); }
+.portrait .sup-btn{ bottom:80px; }
+.portrait .modal{ width:640px; }
+
+/* ---------- Ranking (cada fila en dos renglones) ---------- */
+.portrait .rank-list{ left:30px; right:30px; top:280px; gap:24px; }
+.portrait .rank-row{
+  display:grid; height:auto; column-gap:14px; row-gap:6px;
+  grid-template-columns:48px 88px 1fr auto; grid-template-rows:64px 40px;
+  grid-template-areas:"pos av bar bar" "pos av pts stars";
+}
+.portrait .rank-pos{ grid-area:pos; align-self:center; }
+.portrait .rank-avatar{ grid-area:av; align-self:center; }
+.portrait .rank-bar{ grid-area:bar; }
+.portrait .rank-pts{ grid-area:pts; width:auto; text-align:left; padding-left:14px; }
+.portrait .rank-stars{ grid-area:stars; width:auto; text-align:right; font-size:34px; }
+
+/* ---------- Manual ---------- */
+.portrait .man-shot{ left:100px; top:246px; }
+.portrait .man-keys{ left:50px; width:620px; top:566px; grid-template-columns:auto auto 1fr; grid-template-rows:auto; }
+.portrait .man-keys .body-text{ grid-column:3; grid-row:1; font-size:24px; }
+.portrait .man-scroll{ left:40px; width:auto; right:78px; top:730px; bottom:40px; }
+.portrait .man-track{ right:34px; top:730px; bottom:40px; }
+.portrait .man-scroll h2{ font-size:40px; }
+.portrait .man-scroll p{ font-size:25px; }
+
+/* ---------- ¡Vestí a tu personaje! ---------- */
+.portrait .dress-title{ left:30px; right:30px; top:150px; font-size:62px; text-align:center; }
+.portrait .dress-card{ left:36px; top:240px; }
+.portrait .dress-cap{ left:440px; top:240px; width:244px; height:384px; padding:0 24px; font-size:28px; }
+.portrait .dress-panel{ left:30px; width:660px; top:660px; height:calc(var(--sh) - 700px); }
+
+/* ---------- Selección de nivel ---------- */
+.portrait .lvl-title{ left:0; }
+.portrait .lvl-list{ left:24px; width:610px; top:250px; bottom:350px; gap:22px; }
+.portrait .lvl-row{ height:88px; }
+.portrait .lvl-row .dot{ width:88px; height:88px; }
+.portrait .lvl-row .tag{ width:224px; font-size:50px; }
+.portrait .lvl-row .info{ margin-left:18px; }
+.portrait .lvl-row .state{ font-size:24px; }
+.portrait .lvl-track{ left:auto; right:30px; top:260px; bottom:360px; height:auto; }
+.portrait .lvl-next{ right:auto; left:30px; bottom:40px; font-size:32px; padding:12px 24px 10px; }
+.portrait .tuto{ right:30px; bottom:40px; width:340px; }
+.portrait .tuto.big{ right:auto; bottom:auto; width:680px; }
+
+/* ---------- Título y descripción del nivel ---------- */
+.portrait .banner{ left:40px; width:640px; top:calc(50% - 220px); height:440px; padding:0 34px; }
+.portrait .banner h1{ font-size:86px; }
+.portrait .desc-panel{ left:30px; right:30px; top:120px; bottom:170px; padding:40px 44px; }
+
+/* ---------- Información del caso ---------- */
+.portrait .folders{ top:280px; gap:16px; }
+.portrait .folder{ width:216px; }
+.portrait .folder svg{ width:196px; }
+.portrait .folder .nm{ font-size:32px; }
+.portrait .folder .chk{ font-size:24px; }
+.portrait .caso-hint{ left:50px; right:50px; top:570px; }
+.portrait .caso-falta{ left:50px; right:160px; bottom:66px; font-size:28px; }
+.portrait .doc-head{ left:30px; right:30px; top:30px; flex-wrap:wrap; gap:14px 20px; }
+.portrait .doc-head .sub{ font-size:30px; }
+.portrait .doc-frame{ left:30px; right:66px; top:210px; bottom:150px; padding:0; }
+.portrait .doc-body{ padding:24px 26px 90px; }
+.portrait .doc-overlay::after{ top:auto; bottom:44px; right:30px; width:56px; height:56px; }
+.portrait .doc-track{ right:26px; top:210px; bottom:150px; }
+.portrait .doc-overlay .btn-back{ left:30px; top:auto; bottom:30px; }
+
+/* ---------- Tribunal (juicio y preguntas): la sala arriba, los textos abajo ---------- */
+.portrait .court{ background:#3a1a07; }
+.portrait .court .court-room{ bottom:auto; height:min(calc(var(--sh) - 500px), 860px); }
+.portrait .court .desk{ top:auto; bottom:250px; }
+.portrait .court .c-left{ left:4px; }
+.portrait .court .c-right{ right:-22px; }
+.portrait .speech{ left:30px; right:30px; top:auto; bottom:160px; min-height:200px; font-size:40px; }
+.portrait .juicio-next{ bottom:36px; }
+
+/* Preguntas: enunciado y 4 opciones apilados */
+.portrait .q-panel{ position:absolute; left:30px; right:30px; bottom:40px; z-index:5; display:flex; flex-direction:column; gap:16px; }
+.portrait .q-text{ position:static; min-height:124px; max-height:170px; font-size:36px; }
+.portrait .q-text.feedback{ font-size:28px; }
+.portrait .q-text.feedback b{ font-size:34px; }
+.portrait .q-opts{ position:static; grid-template-columns:1fr; grid-template-rows:none; grid-auto-flow:row; grid-auto-rows:minmax(84px, auto); gap:12px; }
+.portrait .q-opt{ font-size:31px; padding:10px 26px 6px; }
+.portrait .q-hud{ right:30px; }
+.portrait.quiz-stage .toast{ top:250px; bottom:auto; }
+
+/* ---------- Desafío final de palabras ---------- */
+.portrait .ch-title{ top:150px; font-size:70px; }
+.portrait .ch-clue{ left:30px; right:30px; top:244px; flex-wrap:wrap; gap:12px 18px; padding:12px 22px; }
+.portrait .ch-clue .txt{ font-size:27px; min-width:360px; }
+.portrait .grid{ top:calc(50% - 250px); }
+.portrait .kb{ bottom:40px; padding:12px; gap:8px; }
+.portrait .key{ min-width:60px; height:76px; font-size:36px; }
+.portrait .key.wide{ min-width:104px; font-size:26px; }
+
+/* ---------- Resultado ---------- */
+.portrait .res-stars{ top:270px; }
+.portrait .res-score{ top:400px; font-size:72px; }
+.portrait .res-stats{ left:40px; right:40px; top:500px; }
+.portrait .res-stats span{ font-size:26px; }
+.portrait .res-note{ left:40px; right:40px; top:700px; font-size:26px; }
+.portrait .res-btns{ bottom:120px; flex-direction:column; align-items:center; gap:16px; }
+.portrait .res-btns .btn{ font-size:40px; min-width:420px; text-align:center; }
+.portrait .res-countdown{ bottom:50px; font-size:26px; }
+
+/* ---------- Pantalla final ---------- */
+.portrait .fin-av{ left:calc(50% - 130px); top:250px; width:260px; height:330px; }
+.portrait .fin-av svg{ width:auto; height:300px; }
+.portrait .fin-box{ left:40px; right:40px; top:620px; }
+.portrait .fin-stars{ grid-template-columns:repeat(3, auto); }
+.portrait .fin-box p{ font-size:26px; }
+.portrait .fin-btns{ left:40px; right:40px; bottom:40px; justify-content:center; }
+
+/* ---------- Celular acostado: textos chicos un poco más grandes ---------- */
+.compact .menu-user{ font-size:34px; }
+.compact .lvl-row .state{ font-size:24px; }
+.compact .caso-falta{ font-size:28px; }
+.compact .res-countdown{ font-size:26px; }
+.compact .res-stats span{ font-size:26px; }
+.compact .man-scroll p{ font-size:25px; }
+.compact .q-timer small{ font-size:18px; }
+.compact .ch-clue .txt{ font-size:27px; }
+.compact .dbox .lbl{ font-size:17px; }
+.compact .man-shot .ms-cap{ font-size:18px; }
+.compact .tuto-title, .compact .tuto-time{ font-size:26px; }

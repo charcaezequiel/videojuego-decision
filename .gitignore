@@ -1,0 +1,16 @@
+# Dependencias: se instalan con `npm install` desde Codigo/
+node_modules/
+
+# Generados por las herramientas (capturas, montajes, frames temporales del video)
+Codigo/tools/out/
+Codigo/assets/_raw/
+__pycache__/
+*.pyc
+
+# Respaldo suelto del proyecto
+Codigo/decision-final (2).zip
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+desktop.ini

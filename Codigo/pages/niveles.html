@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DF · Defendiendo la Justicia</title>
+<link rel="icon" href="../assets/img/logo.png">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/screens.css">
+<link rel="stylesheet" href="../css/game.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<div class="viewport">
+<main class="stage">
+<a class="img-btn btn-back" data-nav="back" data-i18n-aria="volver"><img src="../assets/icons/flecha.png" alt="←"></a>
+<h1 class="title sm lvl-title" data-i18n="seleccionNivel">SELECCIÓN DE NIVEL</h1>
+<div class="lvl-list no-native-scroll" id="lvl-list"></div>
+<div class="sb-track lvl-track" id="lvl-track"></div>
+<a class="btn lvl-next hidden" id="lvl-next" data-i18n="sigNivel">SIGUIENTE NIVEL</a>
+<!-- Mini video tutorial (abajo a la derecha). Si el archivo no está, el reproductor no se muestra. -->
+<div class="tuto-backdrop hidden" id="tuto-backdrop"></div>
+<section class="tuto hidden" id="tuto" aria-labelledby="tuto-title">
+  <div class="tuto-head">
+    <span class="tuto-title" id="tuto-title" data-i18n="tutorial">TUTORIAL</span>
+    <button type="button" class="tuto-btn tuto-size" id="tuto-size" data-i18n-aria="tutoAmpliar"></button>
+  </div>
+  <video class="tuto-video" id="tuto-video" src="../assets/video/tutorial.webm" poster="../assets/video/tutorial-poster.jpg" preload="metadata" playsinline muted disablepictureinpicture></video>
+  <div class="tuto-bar">
+    <button type="button" class="tuto-btn tuto-play" id="tuto-play" data-i18n-aria="reproducir"></button>
+    <div class="tuto-prog" id="tuto-prog" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0"><i id="tuto-fill"></i></div>
+    <span class="tuto-time" id="tuto-time">0:00</span>
+  </div>
+</section>
+</main>
+</div>
+<script src="../js/data/niveles.js"></script>
+<script src="../js/data/vestuario.js"></script>
+<script src="../js/core/store.js"></script>
+<script src="../js/core/progress.js"></script>
+<script src="../js/core/i18n.js"></script>
+<script src="../js/core/audio.js"></script>
+<script src="../js/core/music.js"></script>
+<script src="../js/core/stage.js"></script>
+<script src="../js/core/sprites.js"></script>
+<script src="../js/core/scrollbar.js"></script>
+<script src="../js/core/run.js"></script>
+<script src="../js/core/boot.js"></script>
+<script src="../js/pages/niveles.js"></script>
+</body>
+</html>

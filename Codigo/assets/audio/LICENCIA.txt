@@ -1,0 +1,44 @@
+DF · Decisión Final — música de fondo "musica-quiz"
+========================================================
+
+Obra              : "Decisión Final (Tema del Tribunal)" — música de fondo original
+                    del quiz del juego educativo web argentino "DF · Decisión Final".
+Autor             : Grupo LPC · DF Decisión Final
+Año de composición: 2026
+Ficha técnica     : Re menor · 120 BPM · compás 4/4 · 32 compases · 64,000 s · loop perfecto.
+Voces             : bajo (cuadrada 50%), lead (cuadrada 25% con vibrato), armonía
+                    (triángulo), contramelodía (triángulo) y percusión NES
+                    (bombo, caja y hi-hat sintetizados con ruido filtrado).
+Formato           : WAV PCM 16-bit, 44100 Hz, estéreo — assets/audio/musica-quiz.wav
+Generación        : sintetización procedural 100% con la stdlib de Python
+                    (herramienta: tools/build_music.py). Sin samples, sin librerías
+                    de audio externas y sin descargas de red: cada muestra se calcula
+                    en código, así que la pista es regenerable y auditable.
+
+LICENCIA
+--------
+Dominio público / CC0 1.0 Universal.
+
+El Grupo LPC · DF Decisión Final renuncia a todos los derechos de autor y derechos
+connexos sobre esta composición y sobre la grabación (sound recording), en la máxima
+medida permitida por la ley. Podés copiarla, modificarla, fusionarla, distribuirla y
+usarla en un producto comercial sin pedir permiso y sin atribución obligatoria.
+
+Se agradece (pero no se exige) el crédito:
+    "Música: Grupo LPC · DF Decisión Final — CC0".
+
+Texto completo de CC0: https://creativecommons.org/publicdomain/zero/1.0/legalcode.es
+
+NOTA PARA EL EQUIPO
+-------------------
+* js/core/music.js e index.html buscan assets/audio/musica-quiz.ogg y
+  assets/audio/musica-quiz.mp3. En esta máquina NO hay ffmpeg, así que la conversión
+  desde el WAV no se puede hacer acá. El navegador reproduce el WAV directamente:
+  agregá <source src="assets/audio/musica-quiz.wav" type="audio/wav"> como tercer
+  source (después de .ogg y .mp3) para que el <audio> lo use de inmediato.
+* Si alguien consigue .ogg o .mp3, que usen el MISMO nombre base (musica-quiz) en esta
+  carpeta: el reproductor los va a preferir por tamaño. Cualquier conversión debe
+  conservar los 64,000 s exactos — la pista está compuesta como loop de 32 compases a
+  120 BPM y recortar o editar en el medio rompe la costura.
+* La pista viene normalizada a un pico de 0,72 y sin clipping; el juego la atenúa a
+  0,5. Está pensada para sonar de fondo y no tapar los efectos de sonido.

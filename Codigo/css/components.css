@@ -1,0 +1,206 @@
+/* =========================================================
+   COMPONENTES reutilizables
+   ========================================================= */
+
+/* ---------- Títulos ---------- */
+.title{
+  position:absolute; left:0; right:0; top:46px;
+  text-align:center;
+  font-family:var(--font-title);
+  font-weight:400;
+  font-size:100px; line-height:1;
+  color:var(--cream);
+  letter-spacing:1px;
+  pointer-events:none;      /* el título ocupa todo el ancho: no debe tapar la flecha ← ni otros botones */
+}
+.title.sm{ font-size:72px; top:40px; }
+.title.xs{ font-size:56px; top:26px; }
+
+.label{
+  font-family:var(--font-text);
+  font-size:34px; line-height:1;
+  color:var(--cream);
+}
+.text{
+  font-family:var(--font-text);
+  font-size:27px; line-height:1.28;
+  color:var(--cream);
+}
+
+/* ---------- Botones-imagen (los PNG del diseño) ---------- */
+.img-btn{
+  position:absolute;
+  display:block;
+  border:0; background:none; padding:0; cursor:pointer;
+  transition:transform .12s ease, filter .12s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.img-btn img{ display:block; width:100%; height:auto; pointer-events:none; -webkit-user-drag:none; transition:transform .12s ease; }
+/* El hover y la presión mueven solo el dibujo, nunca el área tocable:
+   si el botón encoge, el dedo que está cerca del borde queda afuera y el toque se pierde. */
+.img-btn:hover img{ transform:scale(1.06); }
+.img-btn:hover{ filter:brightness(1.12); }
+.img-btn:active img{ transform:scale(.95); }
+.img-btn.disabled{ opacity:.35; pointer-events:none; filter:grayscale(.6); }
+
+/* Área de interacción = el icono visible.
+   Los PNG tienen márgenes transparentes: el botón en sí no recibe el
+   puntero y un ::before con la forma del dibujo es el área real
+   (clic, toque y hover solo sobre el icono). Cada icono indica su zona con
+   --hit-l / --hit-t / --hit-w / --hit-h (en % de la imagen) y --hit-r:
+   50% para los redondos, 0% para las placas rectangulares del menú.
+   Los valores se miden sobre el arte: node tools/check_hit_areas.js */
+.img-btn{ pointer-events:none; }
+.img-btn::before{
+  content:''; position:absolute; z-index:1; pointer-events:auto; border-radius:var(--hit-r, 50%);
+  left:var(--hit-l, 0%); top:var(--hit-t, 0%); width:var(--hit-w, 100%); height:var(--hit-h, 100%);
+}
+.img-btn.disabled::before{ pointer-events:none; }
+.img-btn:focus-visible{ outline:none; }
+.img-btn:focus-visible::before{ outline:3px dashed var(--cream); outline-offset:5px; }
+.btn-back, .btn-next{ --hit-l:5.8%; --hit-t:5.0%; --hit-w:88.8%; --hit-h:90.4%; --hit-r:50%; }
+.menu-play{ --hit-l:0.0%; --hit-t:0.0%; --hit-w:100.0%; --hit-h:100.0%; --hit-r:0%; }
+.menu-manual{ --hit-l:0.0%; --hit-t:0.0%; --hit-w:100.0%; --hit-h:100.0%; --hit-r:0%; }
+.menu-perfil{ --hit-l:4.5%; --hit-t:4.9%; --hit-w:91.3%; --hit-h:90.5%; --hit-r:50%; }
+.menu-config{ --hit-l:20.0%; --hit-t:19.6%; --hit-w:60.4%; --hit-h:61.3%; --hit-r:50%; }
+.menu-ranking{ --hit-l:0.0%; --hit-t:0.0%; --hit-w:100.0%; --hit-h:100.0%; --hit-r:0%; }
+
+/* Botones de posición fija reutilizados en muchas pantallas.
+   z-index: siempre por encima del contenido de la pantalla (títulos, paneles, tribunal). */
+.btn-back{ left:56px; top:28px; width:104px; z-index:10; }
+.btn-next{ right:56px; bottom:30px; width:104px; z-index:10; }
+
+/* Flecha cuando el progreso la habilita */
+.pulse{ animation:pulse 1.4s ease-in-out infinite; }
+@keyframes pulse{ 50%{ transform:scale(1.08); } }
+
+/* ---------- Botón de texto (crema con letras marrones) ---------- */
+.btn{
+  position:absolute;
+  font-family:var(--font-title);
+  font-size:44px; letter-spacing:1.5px; line-height:1;
+  padding:14px 44px 12px;
+  background:var(--cream-field);
+  color:var(--brown);
+  border:0; border-radius:14px;
+  box-shadow:0 5px 0 #b9a58a;
+  cursor:pointer;
+  text-decoration:none;
+  transition:transform .1s ease, box-shadow .1s ease, filter .12s;
+}
+.btn:hover{ filter:brightness(1.05); transform:translateY(-2px); }
+.btn:active{ transform:translateY(4px); box-shadow:0 1px 0 #b9a58a; }
+.btn.dark{ background:var(--brown); color:var(--cream); box-shadow:0 5px 0 #1d0b02; }
+.btn:focus-visible{ outline:3px dashed var(--cream); outline-offset:5px; }
+
+/* ---------- Campos (Registro) ---------- */
+.field{ position:absolute; left:227px; width:917px; }
+.field .label{ position:absolute; left:20px; top:-42px; }
+.field input{
+  width:100%; height:98px;
+  background:var(--cream-field);
+  border:0; border-radius:16px;
+  box-shadow:0 4px 0 #a99a88;
+  padding:0 34px;
+  font-family:var(--font-text);
+  font-size:40px; color:var(--brown);
+  outline:none;
+  user-select:text;
+}
+.field input::placeholder{ color:#b8a58d; }
+.field input:focus{ box-shadow:0 4px 0 #a99a88, 0 0 0 4px rgba(251,235,211,.55); }
+.field input.error{ box-shadow:0 4px 0 #a99a88, 0 0 0 4px #e0584f; }
+.field .msg{
+  position:absolute; left:20px; top:106px;
+  font-size:24px; color:#ffc9b8; min-height:26px;
+}
+
+/* ---------- Sliders y selects (Configuración) ---------- */
+input[type=range]{
+  -webkit-appearance:none; appearance:none;
+  width:100%; height:30px; background:transparent; cursor:pointer;
+}
+input[type=range]::-webkit-slider-runnable-track{ height:9px; background:var(--ink); border-radius:5px; }
+input[type=range]::-moz-range-track{ height:9px; background:var(--ink); border-radius:5px; }
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none; width:30px; height:30px; margin-top:-10px;
+  border-radius:50%; background:var(--ink); border:0;
+}
+input[type=range]::-moz-range-thumb{ width:30px; height:30px; border-radius:50%; background:var(--ink); border:0; }
+input[type=range]:focus-visible{ outline:3px dashed var(--cream); outline-offset:4px; }
+
+select{
+  appearance:none; -webkit-appearance:none;
+  background:#d8d8d8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%231e0f08' stroke-width='2'/%3E%3C/svg%3E") right 12px center no-repeat;
+  color:var(--ink);
+  border:0; border-radius:2px;
+  font-family:var(--font-text); font-size:34px;
+  padding:4px 40px 4px 10px; height:50px; width:216px; cursor:pointer;
+}
+select:focus-visible{ outline:3px dashed var(--cream); outline-offset:3px; }
+
+/* ---------- Panel marrón con texto crema ---------- */
+.panel-dark{
+  position:absolute;
+  background:var(--brown);
+  border-radius:8px;
+  color:var(--cream);
+  box-shadow:0 8px 0 rgba(0,0,0,.25);
+}
+
+/* ---------- Modal ---------- */
+.modal-backdrop{
+  position:absolute; inset:0; z-index:500;
+  background:rgba(25,8,16,.7);
+  display:flex; align-items:center; justify-content:center;
+}
+.modal{
+  width:760px; max-height:600px;
+  background:var(--brown); border-radius:14px;
+  padding:34px 40px;
+  box-shadow:0 0 0 4px var(--cream) inset, 0 20px 40px rgba(0,0,0,.5);
+  position:relative;
+}
+.modal h2{
+  font-family:var(--font-title); font-weight:400; font-size:56px; line-height:1; margin-bottom:14px;
+}
+
+/* ---------- Toast ---------- */
+.toast{
+  position:absolute; left:50%; bottom:34px; transform:translate(-50%,30px);
+  background:var(--cream); color:var(--brown);
+  font-family:var(--font-title); font-size:32px; letter-spacing:1px;
+  padding:10px 30px 8px; border-radius:12px;
+  opacity:0; transition:.25s; z-index:800; pointer-events:none;
+  box-shadow:0 4px 0 #b9a58a;
+}
+.toast.show{ opacity:1; transform:translate(-50%,0); }
+
+/* ---------- Animación de error ---------- */
+.shake{ animation:shake .35s; }
+@keyframes shake{
+  20%,60%{ transform:translateX(-8px); }
+  40%,80%{ transform:translateX(8px); }
+}
+
+/* flecha de volver = la flecha del diseño espejada */
+.btn-back img{ transform:scaleX(-1); }
+
+/* ---------- Texto de cuerpo (Quicksand) ---------- */
+.body-text{ font-family:var(--font-body); font-weight:500; font-size:26px; line-height:1.35; color:var(--cream); }
+
+/* ---------- Flecha sin acción disponible: no se muestra (ni su "sombra") ---------- */
+.img-btn.nav-off{ visibility:hidden !important; animation:none; }
+
+/* ---------- Barra de desplazamiento del prototipo (riel crema + indicador marrón) ---------- */
+.sb-track{ position:absolute; width:22px; background:var(--cream-field); border-radius:11px; padding:4px; cursor:pointer; box-shadow:0 3px 0 rgba(0,0,0,.25); }
+.sb-thumb{ width:14px; background:var(--brown); border-radius:7px; cursor:grab; touch-action:none; }
+.sb-track.sb-off .sb-thumb{ opacity:.25; }
+.no-native-scroll{ scrollbar-width:none; }
+.no-native-scroll::-webkit-scrollbar{ display:none; }
+
+/* Flecha "volver" abajo a la izquierda (pantallas con etiqueta arriba, como el prototipo) */
+.btn-back.bl{ top:auto; bottom:30px; }
+/* En el tribunal el aviso se muestra arriba para no tapar las opciones */
+.quiz-stage .toast{ bottom:auto; top:84px; transform:translate(-50%,-20px); }
+.quiz-stage .toast.show{ transform:translate(-50%,0); }

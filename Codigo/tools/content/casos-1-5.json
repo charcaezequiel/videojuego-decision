@@ -1,0 +1,762 @@
+[
+  {
+    "n": 1,
+    "titulo": "El reclamo que nadie respondió",
+    "subtitulo": "Ochenta y tres firmas esperando una respuesta oficial",
+    "resumen": "Vecinos de Villa Solana presentaron por escrito un reclamo contra una obra que tapa la salida de emergencia del centro de salud del barrio. El municipio selló la nota, le puso número de protocolo y nunca respondió. La Junta Vecinal, con más de 120 días de silencio, lleva el caso a la justicia. Se juzga si el derecho de petición obliga al Estado a dar una respuesta y qué pasa cuando no la da.",
+    "caso": {
+      "denuncia": "Denuncia presentada por la Junta Vecinal de Villa Solana ante la Municipalidad de San Justo, con número de protocolo 44.712. La presidente Marta Benítez y 83 vecinos firmantes denuncian que, desde marzo, la obra del edificio Torres del Paraná ocupa con contenedores, una grúa y una cartelera metálica la salida de emergencia del centro de salud del barrio y del complejo de 40 viviendas, sobre la calle Rivadavia. El hecho ocurre en el cruce de Rivadavia y el pasaje Los Álamos, el mismo pasaje que la ordenanza municipal 2.114 obliga a mantener libre para evacuación. Los vecinos reclaman la clausura preventiva de la obra, el retiro inmediato de los materiales y una respuesta escrita, tal como garantiza el derecho de petición del artículo 43 de la Constitución Nacional. A la fecha, el municipio no contestó ni convocó la audiencia pública pedida. La denuncia pasó luego a la Defensoría del Pueblo, cuando el silencio ya superaba los 120 días.",
+      "testimonios": [
+        {
+          "autor": "Marta Benítez, presidente de la Junta Vecinal",
+          "texto": "Soy la presidente de la junta vecinal y firmé la denuncia el 12 de abril. Presentamos la nota en el municipio con dos copias: una quedó archivada con el sello y el número de protocolo. Desde ese día fuimos tres veces a preguntar y siempre nos dijeron lo mismo: que el expediente estaba en otra área. El pasaje es la única salida rápida del centro de salud, y los días de lluvia el agua baja por la obra y nos inunda la sala de espera. Nosotros no pedimos caprichos: pedimos que nos contesten por escrito, aunque sea para decirnos que no. Nadie nos explicó nunca por qué la obra pudo instalar contenedores encima de una salida de emergencia."
+        },
+        {
+          "autor": "Carlos Ferreyra, kiosquero de la esquina",
+          "texto": "Yo tengo el kiosco justo en la esquina de Rivadavia y veo pasar todo. El 12 de abril Marta y dos vecinos más volvieron del municipio con el papel y me pidieron una fotocopia; en la copia se leía clarito el número de protocolo 44.712 y el sello de mesa de entradas con la fecha. Lo que no vi nunca es que nadie del municipio viniera a medir la calle o a revisar la obra, ni siquiera después del temporal de mayo. También veo que los albañiles de la obra entran y salen por la grúa todos los días, así que la obra sigue funcionando como si el reclamo no existiera."
+        },
+        {
+          "autor": "Héctor Ledesma, encargado de la obra",
+          "texto": "Yo administro la obra y me parece injusto que nos traten como delincuentes. Esa salida de emergencia del pasaje casi nadie la usa: los vecinos del complejo entran y salen por la puerta grande de Rivadavia, que es más cómoda y tiene portero. La nota del reclamo nunca nos la mostraron ni nos citaron a ninguna audiencia, así que desconozco ese número de protocolo que tanto repiten. Los contenedores están cuatro meses y después se van: el calendario de obra no se puede parar por un papelito sin firma. Lo que sí firmé yo es la habilitación municipal de los contenedores, con plano incluido. Si querían frenar la obra, debieron hablar primero con la empresa."
+        }
+      ],
+      "pruebas": [
+        {
+          "titulo": "Copia de la nota vecinal con sello y protocolo 44.712",
+          "texto": "Es la copia de la nota que la Junta Vecinal presentó el 12 de abril, con el sello de mesa de entradas de la Municipalidad de San Justo y el número de protocolo 44.712. Adentro figuran las 83 firmas, la descripción del obstáculo en el pasaje y el pedido expreso de respuesta escrita y de audiencia pública. Demuestra dos cosas clave: que el reclamo existe, es formal y el municipio lo recibió, y que desde esa fecha pasaron más de 120 días sin ninguna contestación."
+        },
+        {
+          "titulo": "Dictamen de la perito arquitecta Silvia Ríos",
+          "texto": "Firmado por la arquitecta Silvia Ríos, designada por la justicia. Mide el pasaje y comprueba que los contenedores y la grúa dejan un paso libre de solo 0,60 metros, cuando la norma exige al menos 1,20 para una salida de emergencia. También certifica que el pasaje es el único escape del centro de salud y que en el plano habilitado de la obra, presentado por Ledesma, esa zona figura como espacio libre de evacuación. El dictamen contradice a la empresa: no es un problema de comodidad."
+        },
+        {
+          "titulo": "Video de la cámara del kiosco, con fecha y hora",
+          "texto": "Grabación de la cámara de seguridad del kiosco de la esquina, aportada por Carlos Ferreyra. Se ve cómo, durante la evacuación del temporal de mayo, las ambulancias y los vecinos del complejo usaron el pasaje como salida, y cómo la grúa y los contenedores obligaron a sacar una camilla por otra cuadra, perdiendo varios minutos. El archivo desmiente que nadie use esa salida, tal como sostuvo el encargado de obra en su testimonio."
+        }
+      ],
+      "devolucion": "El derecho que estaba en juego es el de petición: el artículo 43 de la Constitución Nacional dice que todos los habitantes podemos presentar peticiones ante las autoridades y que ellas deben darnos una respuesta en un plazo razonable. No alcanza con recibir el papel y archivarlo: el sello con número de protocolo prueba que el reclamo existe, y 120 días de silencio es justo lo que la Constitución no permite. Cuando el pedido es de un grupo, la audiencia pública sirve para que el municipio escuche a vecinos y empresa en una reunión abierta antes de decidir. Y si la respuesta nunca llega, el camino es la Defensoría del Pueblo o un amparo judicial."
+    },
+    "palabras": ["PETICION", "BARRIO", "AUDIENCIA"],
+    "pista": "El derecho que invoca la nota, la gente organizada del barrio y la reunión que nunca convocaron.",
+    "preguntas": [
+      {
+        "q": "¿Qué derecho ejercieron los vecinos y qué incumplió el municipio al no contestar nunca?",
+        "opts": [
+          "El derecho de petición del art. 43 de la Constitución: toda petición debe recibir respuesta en un plazo razonable.",
+          "La libertad de prensa, porque los vecinos difundieron el reclamo por los medios del barrio.",
+          "El derecho de huelga, porque bloquear una obra es la única forma legal de reclamar en Argentina.",
+          "El hábeas data, porque pidieron que se borre el expediente municipal con sus nombres."
+        ],
+        "key": "A",
+        "oficial": true
+      },
+      {
+        "q": "Según el dictamen de la perito Ríos, ¿cuál es el problema central del pasaje Los Álamos?",
+        "opts": [
+          "Que la obra invadió una vereda comercial sin pagar el permiso municipal de ocupación.",
+          "Que el pasaje nunca fue salida de emergencia y los vecinos lo usan solo de atajo.",
+          "Que los contenedores y la grúa dejan 0,60 m de paso, cuando la norma exige 1,20 m para una salida de emergencia.",
+          "Que el temporal de mayo destruyó el pavimento del pasaje y hay que reponerlo."
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué demuestra el sello de mesa de entradas con el número de protocolo 44.712?",
+        "opts": [
+          "Que los vecinos obtuvieron automáticamente la clausura de la obra.",
+          "Que el municipio recibió formalmente el reclamo: hay un expediente abierto y desde ahí corre el plazo de respuesta.",
+          "Que la Junta Vecinal quedó habilitada como empresa constructora.",
+          "Que la audiencia pública ya se hizo y fue aprobada ese mismo día."
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "¿Para qué sirve la audiencia pública que los vecinos pidieron en la nota?",
+        "opts": [
+          "Para votar en las elecciones municipales del año siguiente.",
+          "Para que la empresa constructora presente sus facturas ante el municipio.",
+          "Para elegir al jefe de obra por mayoría entre todos los vecinos del barrio.",
+          "Para que el municipio trate el tema en una reunión abierta y escuche a vecinos y empresa antes de decidir."
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "Ledesma dice que esa salida de emergencia casi nadie la usa. ¿Qué elemento del caso lo contradice?",
+        "opts": [
+          "El dictamen de la perito Ríos, porque midió la cantidad de peatones por día.",
+          "La ordenanza 2.114, porque prohíbe estacionar en el pasaje Los Álamos.",
+          "El video del kiosco, porque muestra ambulancias y vecinos usando el pasaje para evacuar en el temporal de mayo.",
+          "El testimonio de Marta Benítez, porque ella trasladó a un vecino herido esa noche."
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué institución puede controlar la conducta del municipio y recibir el reclamo de los vecinos?",
+        "opts": [
+          "La Defensoría del Pueblo, que vigila a la administración pública y recomienda respuestas.",
+          "La AFIP, porque un reclamo vecinal también es un tema de impuestos.",
+          "La empresa constructora, porque es la dueña de los contenedores.",
+          "El juzgado de paz de otra provincia, aunque el caso sea de San Justo."
+        ],
+        "key": "A",
+        "oficial": false
+      },
+      {
+        "q": "¿Por qué el silencio del municipio afecta a todo el barrio y no solo a los que firmaron?",
+        "opts": [
+          "Porque el municipio cobra una tasa por cada firma presentada.",
+          "Porque los 83 firmantes son empleados municipales.",
+          "Porque la Constitución protege solo a quienes tienen casa propia.",
+          "Porque la salida bloqueada es un bien de uso común: pone en riesgo al centro de salud y a 40 familias."
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué significa que la respuesta deba llegar en un plazo razonable?",
+        "opts": [
+          "Que el municipio puede contestar cuando termine la obra, dentro de cuatro años.",
+          "Que no vale nunca responder, y el plazo se mide según el tema y el riesgo involucrado.",
+          "Que la respuesta tiene que llegar en exactamente 24 horas hábiles.",
+          "Que solo hay plazo razonable si el reclamo lo firma un abogado."
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "Del testimonio del kiosquero Ferreyra, ¿qué dato es clave para el caso?",
+        "opts": [
+          "Que él también firmó la denuncia como dueño del kiosco.",
+          "Que los albañiles de la obra le compraban mercadería todos los días.",
+          "Que fotocopió la nota con el sello y el protocolo, y que jamás vio al municipio revisar la obra.",
+          "Que la cámara del kiosco se rompió durante el temporal de mayo."
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "Si el municipio sigue sin contestar, ¿cuál es el camino más adecuado para los vecinos?",
+        "opts": [
+          "Promover un amparo por falta de respuesta y pedir una medida urgente al juzgado.",
+          "Ocupar el pasaje con autos hasta que la empresa se retire del barrio.",
+          "Esperar a que termine la obra y recién ahí presentar otra nota.",
+          "Borrar el protocolo 44.712 para que el plazo vuelva a cero."
+        ],
+        "key": "A",
+        "oficial": false
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "titulo": "El celular que murió en 3 semanas",
+    "subtitulo": "Se rompió enseguida y la tienda culpa a la fábrica",
+    "resumen": "Sofía Duarte, de 16 años, compró un smartphone con factura y garantía en el local MegaStore de Morón. A las tres semanas dejó de encender y la tienda se negó a responder alegando que la garantía la da solo el fabricante. La familia denunció ante la Dirección de Defensa del Consumidor. En el juicio se discute si el local puede desentenderse o si toda la cadena comercial responde junta.",
+    "caso": {
+      "denuncia": "Denuncia presentada por Sergio Duarte, padre de Sofía Duarte (16 años), ante la Dirección de Defensa del Consumidor de la Municipalidad de Morón, expediente DDC 3.118. El 2 de marzo Sofía compró un smartphone marca Nova X20 en el local MegaStore, sucursal Morón: pagó $189.000 con la tarjeta de débito de su padre, con recibo y factura a nombre de ella, y recibió un certificado de garantía de 6 meses. El 24 de marzo el teléfono dejó de encender; el técnico del servicio oficial constató una falla de la batería, sin golpes ni líquido. Sergio volvió al local el 27 de marzo y la sucursal respondió por escrito que no repararía, reemplazaría ni devolvería el dinero, porque la garantía la da el fabricante. El reclamo pide la reparación inmediata del aparato o la devolución de la plata. Además, MegaStore no exhibe en un lugar visible el cartel del sistema de solución de controversias, un requisito obligatorio para los comercios.",
+      "testimonios": [
+        {
+          "autor": "Sergio Duarte, padre de la compradora",
+          "texto": "Soy empleado bancario y compré yo el teléfono con la tarjeta del trabajo, aunque la factura la pedí a nombre de mi hija porque es para ella. El mismo día saqué un duplicado del recibo en el banco. Fuimos al local dos veces: la primera nos atendió la gerente con amabilidad y nos dijo que habláramos con la fábrica por teléfono; la segunda me contestó que, sin orden de la fábrica, ellos no tocaban el celular. Sofía usa el teléfono para el colegio: entra a la virtual y habla con sus compañeros. Nosotros no queremos un teléfono gratis, queremos que nos reparen el que compramos o nos devuelvan los 189.000 pesos."
+        },
+        {
+          "autor": "Patricia Sosa, gerente de la sucursal MegaStore",
+          "texto": "Trabajo hace ocho años en MegaStore y seguimos siempre el mismo procedimiento: cuando un aparato falla, el cliente tiene que comunicarse con el servicio técnico del fabricante. El certificado que entregamos dice que la garantía de 6 meses la administra Nova Argentina, y en el local no tenemos herramientas ni técnicos habilitados para abrir un celular. Además, la chica dijo que cargaba el teléfono con un cargador barato de un puesto de la feria, y eso quema baterías: la falla puede ser mal uso, no defecto. Aun así nunca le dijimos que no: le pasamos el teléfono de la fábrica y llenamos un formulario."
+        },
+        {
+          "autor": "Malena Ríos, compañera de escuela de Sofía",
+          "texto": "Fui yo la que acompañé a Sofía a comprar el celular y después al reclamo. En el local compramos dos teléfonos iguales, el de ella y el de mi primo; mi primo usa el mismo cargador del puesto de la feria y el suyo sigue funcionando perfecto, así que lo del cargador no cierra. Recuerdo un detalle que nadie anotó: cuando fueron a buscar la factura, en el local les dijeron que la garantía era solo si la fábrica aprobaba el envío, algo que no estaba escrito en ningún papel. En el pasillo sí vi el cartel del sistema de solución de controversias, pegado chico y abajo."
+        }
+      ],
+      "pruebas": [
+        {
+          "titulo": "Factura, recibo de la tarjeta y certificado de garantía",
+          "texto": "Factura B número 0016-00044821 del 2 de marzo, a nombre de Sofía Duarte, más el recibo de la tarjeta de débito de su padre con la misma fecha y el certificado de garantía de 6 meses que entregó MegaStore. Demuestran que la compra se hizo en el local, por $189.000, con documentación a nombre de la compradora: no es una compra entre particulares ni un teléfono de contrabando, es una compra formal con comprobante."
+        },
+        {
+          "titulo": "Dictamen del perito técnico en electrónica Diego Fontana",
+          "texto": "Informe del ingeniero electrónico designado como perito de la causa. Abrió el celular con instrumental y fotografió la batería: detecta una celda inflada por defecto de fabricación, sin marcas de golpes, humedad ni uso de cargadores de terceros. También aclara que MegaStore no tiene servicio técnico habilitado ni herramientas para reparar equipos Nova: el reclamo del cliente nunca puede resolverse con solo llamar a la fábrica."
+        },
+        {
+          "titulo": "Nota de descargo del local y capturas del chat de WhatsApp",
+          "texto": "La nota con la que MegaStore respondió al reclamo, donde dice textualmente que la garantía la da el fabricante y se niega a recibir el equipo, más las capturas del chat en que la gerenta pide que llamen a la fábrica. Es la prueba material de la negativa: quedó por escrito que el local se negó a reparar, reemplazar o devolver el dinero sin ofrecer una alternativa concreta."
+        }
+      ],
+      "devolucion": "El local sí tiene que responder. El artículo 42 de la Constitución Nacional garantiza la protección de los derechos de las personas como consumidores y usuarios, y manda que la ley asegure condiciones de trato equitativo y digno. La Ley 24.240 de Defensa del Consumidor organiza esa garantía: cuando el producto sale con un defecto de fabricación, toda la cadena comercial responde en forma solidaria, es decir juntas la marca, la importadora y la tienda, y el comprador puede reclamarle a cualquiera de ellas. El certificado no autoriza al comercio a borrarse: dentro de la garantía legal de 6 meses el vendedor debe reparar, reemplazar o devolver el dinero, y además debe informar un servicio técnico con dirección en el país. Por eso la respuesta correcta es que MegaStore no puede desentenderse."
+    },
+    "palabras": ["GARANTIA", "RECIBO", "CONSUMIDOR"],
+    "pista": "Papeles del caso: el certificado que el local negaba, el comprobante de la compra y la condición del cliente.",
+    "preguntas": [
+      {
+        "q": "¿Puede MegaStore decirle a la familia que el único responsable es el fabricante?",
+        "opts": [
+          "Sí: la garantía la administra siempre la fábrica, y el local solo vende la caja.",
+          "No: el art. 42 de la Constitución y la Ley 24.240 obligan a toda la cadena comercial a responder de forma solidaria.",
+          "Sí, pero solo si el comprador es menor de edad como Sofía.",
+          "No: quien responde es la Dirección de Defensa del Consumidor, que paga con plata del municipio."
+        ],
+        "key": "B",
+        "oficial": true
+      },
+      {
+        "q": "¿Qué derecho constitucional protege especialmente a Sofía en esta compra?",
+        "opts": [
+          "El derecho de petición del art. 43.",
+          "El derecho a la privacidad del art. 19.",
+          "La protección de los derechos de consumidores y usuarios del art. 42.",
+          "La libertad de comercio sin reglas del art. 14."
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "La pericia de Fontana deja afuera la teoría del cargador de la feria. ¿Por qué?",
+        "opts": [
+          "Porque detectó un defecto de fabricación en la celda de la batería, sin golpes, humedad ni cargadores extra.",
+          "Porque el cargador de la feria era original y costaba más que el del local.",
+          "Porque Sofía cambió de cargador recién después de enviar el teléfono a la fábrica.",
+          "Porque el perito probó que la falla la produjo el servicio técnico del local."
+        ],
+        "key": "A",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué contraste obliga a marcar el dato clave del testimonio de Malena Ríos?",
+        "opts": [
+          "Que ella compró un celular igual y el suyo nunca tuvo ningún problema.",
+          "Que ella también usaba un cargador barato del puesto de la feria.",
+          "Que ella firmó la denuncia de la Dirección como abogada de la familia.",
+          "Que en el local dijeron que la garantía dependía de aprobar un envío, algo que no estaba escrito en el certificado."
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "MegaStore tampoco cumple otro requisito visible que menciona la denuncia. ¿Cuál?",
+        "opts": [
+          "Entregar una funda y un vidrio templado con cada celular.",
+          "Publicar los precios de todos los productos en la vidriera.",
+          "Tener un local más grande que el del fabricante.",
+          "Exhibir en forma visible el cartel del sistema de solución de controversias."
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "Sergio conserva el recibo de la tarjeta y la factura a nombre de Sofía. ¿Para qué sirven?",
+        "opts": [
+          "Para probar la compra formal en el local, con fecha, precio y titular.",
+          "Para pedir un préstamo personal en el banco con el celular.",
+          "Para demostrar que el teléfono se compró usado entre particulares.",
+          "Para reclamarle al banco la devolución automática de la plata."
+        ],
+        "key": "A",
+        "oficial": false
+      },
+      {
+        "q": "Sosa dice que el local no tocó el teléfono nunca. ¿Qué se desprende del dictamen?",
+        "opts": [
+          "Que el local tiene razón y no puede abrir aparatos ajenos.",
+          "Que MegaStore no tiene servicio técnico habilitado, así que su respuesta deja al cliente sin ninguna solución real.",
+          "Que el perito autorizó a la fábrica a abrir el celular sin permiso.",
+          "Que la apertura del equipo es ilegal mientras dure la denuncia."
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "Sofía tiene 16 años. ¿Eso cambia algo en su reclamo como consumidora?",
+        "opts": [
+          "Sí: los menores de 18 no tienen derechos como consumidores.",
+          "Sí: solo la fábrica puede responder cuando el cliente es menor.",
+          "No: el art. 42 protege a toda persona consumidora, y su padre actuó como su representante.",
+          "No: porque en realidad la compradora legal fue la marca Nova X20."
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué significa que la cadena comercial responda de forma solidaria?",
+        "opts": [
+          "Que la fábrica dona el arreglo y el local cobra igual el precio.",
+          "Que el comprador debe juntar firmas de otros clientes para reclamar.",
+          "Que la Dirección de Consumo paga el arreglo con impuestos municipales.",
+          "Que marca, importadora y vendedor responden juntas y Sofía puede reclamarle a cualquiera de ellas."
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "Si la familia elige el sistema de solución de controversias en lugar del juicio, ¿qué gana?",
+        "opts": [
+          "Un trámite gratuito y más rápido, previsto por la propia Ley de Defensa del Consumidor.",
+          "La certeza de cobrar siempre una indemnización millonaria.",
+          "Que el local queda clausurado al día siguiente de la denuncia.",
+          "Que renuncia a cualquier reclamo judicial futuro."
+        ],
+        "key": "B",
+        "oficial": false
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "titulo": "La renuncia que no fue voluntaria",
+    "subtitulo": "Avisó su embarazo y la dejaron sin trabajo ni papeles",
+    "resumen": "Verónica Cardozo trabajaba registrada hace cuatro años como cajera en el supermercado Don Tomás. Avisó por escrito que estaba embarazada y pidió la licencia por maternidad; días después le dieron el despido sin causa, sin preaviso y la obligaron a firmar una renuncia voluntaria. Con la ayuda del sindicato presentó una demanda laboral. El juicio debe determinar qué ocurrió primero, si la firma fue libre y qué protección rige cuando el despido castiga la maternidad.",
+    "caso": {
+      "denuncia": "Demanda laboral presentada por Verónica Cardozo, con el patrocinio del Sindicato de Empleados de Comercio, ante el Juzgado Nacional del Trabajo N.º 7 de La Matanza. Verónica ingresó registrada el 1.º de febrero de 2020 como cajera en el supermercado Don Tomás y cuatro años después, el 10 de septiembre, comunicó por escrito su embarazo y pidió la licencia por maternidad. El 17 de septiembre la supervisora Gloria Santillán la citó a una reunión, le dijo que el puesto ya no estaba disponible y le exigió firmar una renuncia voluntaria ese mismo día, sin pagarle indemnización, preaviso ni aguinaldo proporcional. Firmó con la promesa de que, si no lo hacía, no cobraría nada. Reclama la nulidad del acto discriminatorio, la reincorporación con los sueldos caídos o, en su defecto, las indemnizaciones por despido injustificado completas.",
+      "testimonios": [
+        {
+          "autor": "Verónica Cardozo, cajera despedida",
+          "texto": "Tengo 29 años, soy cajera hace cuatro y siempre trabajé registrada, con recibo de sueldo. El 10 de septiembre entregué el certificado médico por mesa de entradas y pedí la licencia por maternidad, que arrancaba en noviembre. Una semana después Gloria me llamó a la oficina: me dijo que el puesto ya no estaba, que había perdido rendimiento y que firmara una renuncia voluntaria si no quería pelearme con la empresa. Adentro lloré, pero firmé. Nadie me explicaba qué estaba firmando. Lo que más me dolió no es el trabajo: es que me hicieron creer que la culpa era mía por avisar que iba a tener una bebé."
+        },
+        {
+          "autor": "Nelson Aguirre, cajero compañero de turno",
+          "texto": "Trabajo en la línea de cajas hace seis años. El 17 de septiembre me hicieron firmar la renuncia de Verónica como testigo, sin dejarme leer la hoja completa; el papel estaba listo y con una fecha que no era la del día, me acuerdo porque el bolígrafo del documento tenía la tinta seca. Verónica salió llorando de la reunión y esa misma semana le borraron los turnos de la app de horarios del personal. Antes de firmar, su rendimiento era el mismo de siempre: le tocaba la caja 4, la más cargada del super."
+        },
+        {
+          "autor": "Gloria Santillán, supervisora de Don Tomás",
+          "texto": "La renuncia de Verónica fue absolutamente voluntaria: la empresa jamás la presionó. Ella firmó porque quería mudarse a la casa de su hermana y dejar de trabajar en caja. Acá el rendimiento se mide con datos objetivos: su caja tenía tiempos de atención los más lentos de la línea y tres quejas de clientes, que yo agregué al legajo esta semana después de la reunión con ella. La maternidad no tuvo nada que ver, la empresa contrata a quien necesita, el puesto estaba vacante."
+        }
+      ],
+      "pruebas": [
+        {
+          "titulo": "Telegrama de desvinculación y la supuesta renuncia firmada",
+          "texto": "La carta documento que la empresa envió el 17 de septiembre y el formulario de renuncia voluntaria que Verónica firmó esa misma tarde. Ambos papeles conviven en el expediente, cosa que la ley laboral no permite en la práctica: o hubo una dimisión elegida libremente o hubo un despido que deja deudas. El formulario dice que renuncia sin reserva de reclamo y tiene una firma al puño y letra que, según la firma testigo del caso, se hizo con la hoja casi cerrada."
+        },
+        {
+          "titulo": "Certificado médico, nota de maternidad recibida y testimonios gremiales",
+          "texto": "El escrito con el que Verónica pidió licencia por maternidad el 10 de septiembre, con sello de mesa de entradas del supermercado y el certificado del centro de salud. Más las declaraciones firmadas por cuatro compañeras de la línea de cajas ante el sindicato, que coinciden en que nadie vio a Verónica buscar otro trabajo ni hablar de la mudanza que alega la empresa."
+        },
+        {
+          "titulo": "Informe del sistema de horarios y pericia contable",
+          "texto": "La pericia contable de la causa descargó el registro digital de la app de horarios: muestra que el 18 de septiembre los turnos de Verónica bajaron de 30 horas semanales a cero y que su usuario quedó bloqueado al día siguiente de la reunión. La contadora también comparó las planillas: sus tiempos de atención estaban dentro del promedio de la línea, y las supuestas quejas aparecían recién en un legajo armado tres semanas después."
+        }
+      ],
+      "devolucion": "La clave es la cronología. Primero está la nota de maternidad del 10 de septiembre, recibida y sellada por la empresa; siete días después viene la reunión, el pedido de renuncia y el bloqueo de turnos. La Ley de Contrato de Trabajo, reglamentada por la Ley 23.590, protege a la mujer embarazada: se presume discriminatorio todo despido motivado por el embarazo o el pedido de licencia por maternidad. Para romper esa presunción, la empresa debe probar causas objetivas y anteriores al aviso; la pericia contable muestra que las quejas aparecieron recién después de la nota. La renuncia forzada no es libre: cuando se firma bajo presión es nula, y el caso se trata como un despido injustificado con indemnización completa, más el plus por daño. El art. 14 bis de la Constitución protege el trabajo y la previsión social."
+    },
+    "palabras": ["MATERNIDAD", "DESPIDO", "RENUNCIA"],
+    "pista": "Los tres momentos del conflicto, por orden: el aviso, la firma forzada y la pérdida del empleo.",
+    "preguntas": [
+      {
+        "q": "Verónica firmó una renuncia voluntaria. ¿Qué pregunta es la clave del juicio?",
+        "opts": [
+          "Si la firma de Verónica es legible o no en el formulario.",
+          "Si el puesto estaba vacante en el momento de la firma de la renuncia.",
+          "Si la renuncia fue libre y sin presión o se firmó para no perder todo, después de avisar el embarazo.",
+          "Si Verónica leyó la hoja completa antes de firmar."
+        ],
+        "key": "C",
+        "oficial": true
+      },
+      {
+        "q": "¿Qué protección especial invoca la denuncia al pedir la nulidad del acto?",
+        "opts": [
+          "La protección contra el despido por maternidad de la LCT y la Ley 23.590: se presume discriminatorio.",
+          "El derecho a la huelga del art. 14 bis.",
+          "El derecho de petición del art. 43 de la Constitución.",
+          "La libertad de comercio del art. 14 sobre todo empleo."
+        ],
+        "key": "A",
+        "oficial": false
+      },
+      {
+        "q": "El informe de la app de horarios muestra un cambio el 18 de septiembre. ¿Cuál?",
+        "opts": [
+          "Que Verónica pasó de caja 4 a la línea de reposición.",
+          "Que sus turnos bajaron de 30 horas semanales a cero y su usuario quedó bloqueado.",
+          "Que la empresa sumó personal nuevo en la línea de cajas.",
+          "Que Verónica pidió cambio de horario por su cuenta."
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "¿Por qué el legajo con las tres quejas de clientes tiene poco valor según el perito?",
+        "opts": [
+          "Porque Verónica reconoció las quejas pero pidió disculpas.",
+          "Porque las quejas las escribió otra cajera.",
+          "Porque el juzgado no acepta documentos digitales.",
+          "Porque aparece armado tres semanas después de la nota de maternidad."
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "Si la renuncia se declara nula por haber sido forzada, ¿qué efecto tiene?",
+        "opts": [
+          "El conflicto se trata como despido injustificado, con las indemnizaciones completas.",
+          "Verónica pierde igual la indemnización por haber firmado.",
+          "La empresa queda obligada a recontratarla ese mismo día sin reclamo.",
+          "Nadie responde porque la renuncia es un acuerdo privado."
+        ],
+        "key": "A",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué detalle del testimonio de Nelson Aguirre pone en duda la versión de la empresa?",
+        "opts": [
+          "Que Aguirre firmó como testigo una hoja cuya fecha no era la del día.",
+          "Que la tinta del bolígrafo de Verónica estaba seca antes de firmar.",
+          "Que Aguirre trabaja hace seis años en el supermercado.",
+          "Que la caja 4 era siempre la más cargada de la línea."
+        ],
+        "key": "A",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué contraste aporta el testimonio de las cuatro compañeras de caja?",
+        "opts": [
+          "Que ninguna conocía el embarazo de Verónica antes de la renuncia.",
+          "Que Verónica nunca buscó otro trabajo ni habló de mudarse a la casa de su hermana.",
+          "Que las cuatro acompañaron a Verónica a la sede del juzgado.",
+          "Que ninguna firmó la renuncia como testigo del formulario."
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué documento demuestra que la comunicación del embarazo existió y fue recibida?",
+        "opts": [
+          "La app de horarios del personal del supermercado.",
+          "El recibo de sueldo del mes de febrero de 2020.",
+          "La nota con sello de mesa de entradas y el certificado médico.",
+          "La captura del chat de la app de horarios del personal."
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "Para romper la presunción de que el despido fue discriminatorio, la empresa debería...",
+        "opts": [
+          "Probar que la renuncia de Verónica fue firmada en el juzgado.",
+          "Mostrar que la empresa tiene un manual de conducta interno.",
+          "Demostrar causas objetivas de desempeño que fueran anteriores a la comunicación del embarazo.",
+          "Invocar el art. 14 bis de la Constitución a favor de la empresa."
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "¿Por qué conviene a los trabajadores que exista una indemnización por antigüedad?",
+        "opts": [
+          "Porque hace que despedir sea gratis para la empresa.",
+          "Porque reemplaza el pago de los aportes jubilatorios.",
+          "Porque castiga a quien abandona el trabajo antes de tiempo.",
+          "Porque pone un costo al despido arbitrario y desincentiva que lo hagan sin causa."
+        ],
+        "key": "D",
+        "oficial": false
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "titulo": "Seis aulas bajo el agua",
+    "subtitulo": "Cuatro meses sin reubicar a los 180 estudiantes",
+    "resumen": "Una inundación destruyó seis aulas de la Escuela de Educación Técnica N.º 7 de Ensenada y dejó sin clases presenciales completas a 180 estudiantes durante cuatro meses. La Dirección Regional de Escuelas prometió módulos prefabricados que nunca llegaron mientras los alumnos se dividían en turnos de tres horas. Un grupo de familias, con la defensora oficial, presentó un amparo educativo. Se discute si el Estado garantiza realmente la educación secundaria obligatoria.",
+    "caso": {
+      "denuncia": "Amparo colectivo presentado por doce familias de la Escuela de Educación Técnica N.º 7 Florencio Molina Campos, de Ensenada, con la intervención de la Defensoría Oficial de Turno, contra la Dirección General de Cultura y Educación de la provincia de Buenos Aires. La noche del 14 de marzo un temporal inundó el ala sur y destruyó seis aulas donde cursan 180 estudiantes de los tres primeros años. Desde el 18 de marzo la escuela funciona con clases de tres horas y media en una biblioteca prestada, un salón de actos y dos boxes de taller. La Regional prometió módulos prefabricados por nota el 20 de marzo, pero no llegaron y las reparaciones están sin empezar. Se pide la reubicación inmediata en condiciones dignas, la reparación de las aulas y la garantía del derecho a la educación, que la Constitución reconoce en el art. 14 y el art. 75 inc. 19.",
+      "testimonios": [
+        {
+          "autor": "Norma Espíndola, vicedirectora del turno tarde",
+          "texto": "Hace 22 años que enseño y nunca vi algo así. El agua entró por la persiana del ala sur y pudrimos seis aulas completas: mobiliario, carpetas, el gabinete de informática. Desalojamos a los pibes sin daño en los cuerpos, pero sin un plan. Hoy damos clase de tres horas y media en un salón de actos de 90 lugares con 180 inscriptos, así que un día entra un curso y al otro no. La Regional nos prometió los módulos por escrito el 20 de marzo. Nosotras pedimos una respuesta: no un plan a cinco años, una solución este mes."
+        },
+        {
+          "autor": "Kevin Ortega, alumno de 3.º año electromecánica",
+          "texto": "Tengo 17 años y curso el último cuatrimestre. Desde el 18 de marzo no tengo laboratorio ni taller en serio: los dos boxes que nos dejaron alcanzan para seis pibes, así que a mí y a tres compañeros no nos toca. Mi banco de trabajo se pudrió con el agua y compré la mitad de las herramientas para rendir. Dos amigas del turno tarde dejaron de venir después de la segunda semana. No me importan las excusas: quiero el aula de vuelta."
+        },
+        {
+          "autor": "Gustavo Piñeyro, funcionario de la Dirección Regional",
+          "texto": "La Regional actuó apenas pasó el temporal. El 16 de marzo un equipo de infraestructura recorrió la escuela, relevó el daño y declaró el ala sur no transitable. El presupuesto para módulos prefabricados fue pedido y aprobado; la compra se demora porque la Provincia está en período electoral y la ley de ética pública impide firmar obras nuevas. Mientras tanto, las clases siguen: es cierto que son de tres horas y media, pero la escuela no cerró. Y por ahora la Regional prioriza la reparación integral de las aulas."
+        }
+      ],
+      "pruebas": [
+        {
+          "titulo": "Registro fotográfico e informe de Defensa Civil",
+          "texto": "Fotos con marca de fecha del acta de relevamiento y el informe de Defensa Civil que registró 35 centímetros de agua dentro de las seis aulas del ala sur, con mobiliario eléctrico perdido. Demuestran que el cierre no es una decisión pedagógica ni una reforma: es una consecuencia concreta del temporal que dejó el edificio inutilizable."
+        },
+        {
+          "titulo": "Informe de la perito ingeniera Claudia Benítez",
+          "texto": "La ingeniera civil designada por el juzgado revisó el edificio y concluyó que el ala sur puede recuperarse con una obra de unos 60 días, que el riesgo estructural puede repararse y que la instalación eléctrica puede volver a funcionar. La pericia también aclara que meter 180 estudiantes dentro de la biblioteca y el salón de actos viola las condiciones mínimas de seguridad que la propia escuela exige."
+        },
+        {
+          "titulo": "Planillas de asistencia y notas de los tres primeros años",
+          "texto": "La secretaría entregó al juzgado las planillas comparadas: en marzo la asistencia promedio era del 92 por ciento y en junio cayó al 64, con 18 estudiantes que dejaron de aparecer del todo. Las notas de los primeros años bajaron de un promedio de 8 a 5,6. Las planillas muestran que, aunque el edificio no cerró, muchos estudiantes perdieron acceso real a la escuela."
+        }
+      ],
+      "devolucion": "La respuesta correcta se apoya en los artículos 14 y 75 inc. 19 de la Constitución Nacional: aprender y enseñar es un derecho y un deber, y el Estado debe garantizar la educación en todos los niveles, incluida la secundaria. La Convención DESC (PIDES), en su art. 13 y en el 13.4, exige que la enseñanza secundaria sea generalizada e impartida gratuitamente. La educación obligatoria es un servicio público que el Estado debe garantizar en condiciones dignas: si pierde aulas, el Estado debe reubicar a los estudiantes de inmediato, no cuatro meses después con módulos prometidos. El amparo educativo colectivo es la vía judicial concreta."
+    },
+    "palabras": ["EDUCACION", "ESCUELA", "ESTADO"],
+    "pista": "Lo que el Estado debe garantizar, el edificio dañado y el que tiene la obligación de responder.",
+    "preguntas": [
+      {
+        "q": "¿Qué obligación tiene el Estado cuando una escuela pierde aulas por una inundación?",
+        "opts": [
+          "Esperar el fin del período electoral y recién después reubicar.",
+          "Declarar la emergencia y no responder.",
+          "Garantizar de manera inmediata la continuidad de la enseñanza en condiciones dignas y seguras.",
+          "Cerrar el nivel secundario hasta reparar el edificio."
+        ],
+        "key": "C",
+        "oficial": true
+      },
+      {
+        "q": "¿Qué artículo de la Constitución obliga al Estado a garantizar la educación secundaria?",
+        "opts": [
+          "El art. 14, que solo garantiza la libertad de tránsito y de comercio.",
+          "El art. 75 inc. 19, que obliga al Estado a proveer la educación en todos los niveles.",
+          "El art. 43, porque garantiza la libertad de reunión.",
+          "El art. 17, sobre la protección de la propiedad de los edificios escolares."
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "Según el art. 13.4 del PIDES, la enseñanza secundaria debe ser...",
+        "opts": [
+          "Opcional y pagada por cada familia.",
+          "Solo para quienes rinden un examen de admisión.",
+          "Generalizada e impartida gratuitamente.",
+          "Impartida de forma privada y arancelada."
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué dato del testimonio de Kevin Ortega revela una consecuencia concreta?",
+        "opts": [
+          "Que dos amigas del turno tarde dejaron de ir a la escuela.",
+          "Que Kevin se compró herramientas para rendir el cuatrimestre.",
+          "Que los dos boxes de taller alcanzan para pocos alumnos.",
+          "Que la biblioteca prestada tiene capacidad para 90 personas."
+        ],
+        "key": "A",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué demuestra la comparación de planillas de asistencia y notas?",
+        "opts": [
+          "Que el 18 de marzo la Regional visitó la escuela.",
+          "Que la escuela perdió los muebles eléctricos.",
+          "Que el edificio está en obra desde marzo.",
+          "Que la asistencia cayó del 92% al 64% y el promedio de notas bajó de 8 a 5,6."
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "La perito Benítez concluye sobre el ala sur que...",
+        "opts": [
+          "Debe demolerse por riesgo estructural irreversible.",
+          "Puede recuperarse con una obra de unos 60 días: reubicar a los 180 es posible.",
+          "La biblioteca y el salón de actos cumplen las condiciones mínimas de seguridad.",
+          "Hay que esperar la compra de los módulos prefabricados."
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué función cumplió la Defensoría Oficial en la presentación?",
+        "opts": [
+          "Patrocinó a las familias, que no podían costear un abogado.",
+          "El Defensor ofició de docente suplente del turno tarde.",
+          "Autorizó la reparación del ala sur.",
+          "Sancionó a la Regional por la demora de módulos."
+        ],
+        "key": "A",
+        "oficial": false
+      },
+      {
+        "q": "¿Por qué el argumento de Piñeyro sobre la ley de ética pública no resuelve el problema?",
+        "opts": [
+          "Porque la ley solo se aplica a las obras dentro de una escuela.",
+          "Porque la Regional no pidió el presupuesto para módulos.",
+          "Porque la emergencia escolar no autoriza dejar sin clases a 180 estudiantes.",
+          "Porque no se puede firmar la compra de módulos."
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "Los módulos prefabricados del acta del 20 de marzo...",
+        "opts": [
+          "Llegaron a la escuela en el mes de abril.",
+          "Fueron prometidos por nota y nunca llegaron.",
+          "Nunca fueron prometidos por escrito.",
+          "Quedan fuera del objeto del amparo."
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué vía eligieron las familias para reclamar y por qué?",
+        "opts": [
+          "Una denuncia penal contra Kevin por dejar de ir a la escuela.",
+          "Una huelga docente de tres horas frente a la Regional.",
+          "Un recurso de queja al Defensor de la Regional.",
+          "Un amparo colectivo: un proceso judicial rápido para proteger un derecho de mucha gente."
+        ],
+        "key": "D",
+        "oficial": false
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "titulo": "El sensor que le negaron",
+    "subtitulo": "La obra social dijo que su tratamiento no estaba en lista",
+    "resumen": "Tomás Acosta tiene 16 años y diabetes tipo 1; su endocrinóloga indicó un sensor de glucosa y su mamá, Rosana, pidió la cobertura. Prevenir Salud ART rechazó el pedido con el argumento de que el dispositivo no está en el nomenclador. La familia pidió un amparo de salud con medida cautelar y el juez convocó una audiencia. Se discute qué protege la cobertura obligatoria y quién manda cuando la salud de un chico está en juego.",
+    "caso": {
+      "denuncia": "Acción de amparo por derecho a la salud presentada por Rosana Acosta, madre y representante de Tomás Acosta, de 16 años, contra Prevenir Salud ART, con pedido de medida cautelar innovativa. Tomás tiene diabetes tipo 1 insulinodependiente desde los 8 años; la endocrinóloga infantil Marta Giménez indicó un sensor de glucosa para monitoreo continuo, porque los pinchazos en los dedos causaron ocho episodios de hipoglucemia grave en un año. Prevenir Salud rechazó la cobertura con la nota del 6 de mayo, donde afirma que el dispositivo no está contemplado en el nomenclador de la superintendencia ni en el Plan Médico Obligatorio, y ofrece como alternativa más tiras reactivas e insulina. La familia reclama la entrega del sensor, la provisión de insumos y el control periódico, con el fundamento del art. 42 de la Constitución Nacional, de la Ley 26.529 de derechos del paciente y de la Convención sobre los Derechos del Niño.",
+      "testimonios": [
+        {
+          "autor": "Rosana Acosta, madre de Tomás",
+          "texto": "Yo trabajo en una panadería y mi hijo estudia. La nota de rechazo la recibimos el 8 de mayo en el sobre de la obra social: decía que el sensor no estaba en el nomenclador. Fuimos dos veces a la sucursal de Lanús y en las dos nos dijeron lo mismo. La médica de cabecera nos puso en lista un formulario de excepción y a los dos meses nos lo rechazaron. Tomás dejó de ir a la educación física en el colegio por miedo a una baja de azúcar. No pedimos un lujo, pedimos que mi hijo pueda estudiar, dormir y vivir sin miedo."
+        },
+        {
+          "autor": "Dr. Ignacio Perrone, médico clínico del centro de salud",
+          "texto": "Soy el clínico que controla la derivación de Tomás desde hace dos años. La indicación del sensor la firmó la endocrinóloga infantil Marta Giménez, que sigue el caso; yo acompaño la derivación y firmé la receta, no soy el especialista que decide qué tecnología se usa. En la historia clínica constan los episodios de hipoglucemia sin control nocturno. Cuando una obra social niega una indicación médica, la ley de derechos del paciente manda a dar una respuesta fundada: una carta que dice no está en el nomenclador no explica nada clínico."
+        },
+        {
+          "autor": "Marcela Duarte, administradora de Prevenir Salud ART",
+          "texto": "Prevenir Salud cubre todo lo que exige el Plan Médico Obligatorio, y en el caso de la diabetes eso significa glucemia capilar con tiras reactivas, insulina y controles. El sensor continuo de glucosa no figura en el nomenclador de la superintendencia y es una tecnología que puede ser reemplazada por las alternativas cubiertas. Si cada socio pidiera un dispositivo que no está en la lista, la obra quebraría y el sistema entero de salud se caería. No negamos la salud de Tomás; negamos una tecnología fuera de lista."
+        }
+      ],
+      "pruebas": [
+        {
+          "titulo": "Receta médica y historia clínica pediátrica",
+          "texto": "La receta firmada el 30 de abril por la endocrinóloga infantil, con el diagnóstico codificado, la indicación del sensor y la dosis habitual de insulina, más la hoja de la historia clínica que registra ocho hipoglucemias graves en doce meses. Es la prueba central: muestra que la indicación no es un capricho, sino la respuesta a un problema médico concreto y documentado."
+        },
+        {
+          "titulo": "Nota de rechazo de la obra social",
+          "texto": "El documento de Prevenir Salud del 6 de mayo, firmado y fechado por la administradora Duarte, que rechaza la cobertura porque el sensor no está contemplado en el nomenclador ni en el PMO y ofrece tiras reactivas como alternativa. Es la prueba material de la negativa: deja por escrito que la decisión se tomó sin ningún informe médico ni intento de evaluación clínica del caso."
+        },
+        {
+          "titulo": "Dictamen de la perito médica endocrinóloga Laura Benítez",
+          "texto": "El informe de la especialista designada por el juzgado concluye que el sensor continuo reduce los episodios de hipoglucemia no percibida y que las sociedades científicas argentinas lo recomiendan en diabetes tipo 1 en menores. La pericia deja sin efecto el argumento de la administradora: la tecnología está avalada médicamente, no es experimental y las alternativas no cubren el riesgo nocturno."
+        }
+      ],
+      "devolucion": "Cuando está en juego la salud de un niño o una niña, la balanza se inclina por el interés superior: el art. 3 de la Convención sobre los Derechos del Niño, con jerarquía constitucional por el art. 75 inc. 22. El art. 42 de la Constitución y el sistema de obras sociales de las Leyes 23.660 y 23.661 obligan a cubrir todo tratamiento, tecnología o medicamento que un médico indique, aunque no esté en el nomenclador; el listado de coberturas es un piso, no un techo. La Ley 26.529 agrega algo concreto: si la obra social niega una prestación, debe dar una respuesta fundada, no una carta genérica. Y como el riesgo es grave, el juez puede dictar una medida cautelar para que el sensor llegue antes de la sentencia."
+    },
+    "palabras": ["SENSOR", "DIABETES", "AMPARO"],
+    "pista": "El dispositivo, la enfermedad de Tomás y la acción judicial que usa la familia.",
+    "preguntas": [
+      {
+        "q": "¿Puede la obra social negarse a cubrir el sensor solo porque no está en el nomenclador?",
+        "opts": [
+          "Sí: el nomenclador limita la obligación de todas las obras sociales.",
+          "No: el sistema de obras sociales (Leyes 23.660 y 23.661) y el art. 42 CN obligan a cubrir lo indicado médicamente; el nomenclador es un piso, no un techo.",
+          "Sí, pero solo si Tomás tiene menos de 14 años.",
+          "No: porque Prevenir Salud no está obligada a cubrir nada del PMO."
+        ],
+        "key": "B",
+        "oficial": true
+      },
+      {
+        "q": "¿Por qué la medida cautelar encaja bien con la urgencia del caso?",
+        "opts": [
+          "Porque obliga a la obra social a pagar una multa antes de la audiencia.",
+          "Porque la cautelar cierra definitivamente el juicio el mismo día.",
+          "Porque la familia tiene que probar el daño primero.",
+          "Porque el juez ordena una solución provisoría mientras dura el juicio."
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué principio de la Convención sobre los Derechos del Niño ordena priorizar el pedido de Tomás?",
+        "opts": [
+          "El derecho de petición.",
+          "La libertad de comercio.",
+          "El interés superior del niño (art. 3).",
+          "El principio de no discriminación por edad."
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "Según el testimonio del clínico, ¿qué incumplió la respuesta de la obra social?",
+        "opts": [
+          "Debió responder con un informe médico fundado, como exige la Ley 26.529.",
+          "Debió responder después de la audiencia.",
+          "Debió entregarle tiras reactivas sin notificación.",
+          "No tenía que responder nada: el silencio es válido."
+        ],
+        "key": "A",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué dato agrega el dictamen de la endocrinóloga forense al caso?",
+        "opts": [
+          "Que las tiras reactivas son igualmente eficaces para Tomás.",
+          "Que el sensor solo sirve en mayores de 18 años.",
+          "Que el nomenclador debe actualizarse en enero.",
+          "Que el sensor está recomendado por sociedades científicas para la diabetes tipo 1 en menores."
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "El testimonio de Rosana aporta una consecuencia del rechazo que va más allá de lo físico. ¿Cuál?",
+        "opts": [
+          "Que Rosana perdió su empleo en la panadería.",
+          "Que la familia no pudo pagar el formulario de excepción.",
+          "Que Tomás dejó de ir a educación física por miedo a una baja de azúcar.",
+          "Que la obra social cerró la sucursal de Lanús."
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué rol juega la endocrinóloga Marta Giménez y por qué importa?",
+        "opts": [
+          "Atiende la sucursal de la obra social en Lanús.",
+          "Es la especialista que indica el sensor con fundamento médico escrito.",
+          "Firma la receta y evalúa si el dispositivo funciona.",
+          "Fue la médica de cabecera que acompañó el formulario de excepción."
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "El argumento del riesgo económico de Duarte se cae porque...",
+        "opts": [
+          "La obra social tiene fondos ilimitados y siempre puede pagar todo.",
+          "El PMO prohíbe rechazar cualquier dispositivo médico.",
+          "No se puede negar un tratamiento probado a un solo chico para cuidar el sistema.",
+          "El juez puede convertir el juicio en un amparo."
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué institución controla que la ART no repita un rechazo sin fundamento?",
+        "opts": [
+          "La AFIP, porque la ART es un contribuyente.",
+          "La Superintendencia de Servicios de Salud.",
+          "La Defensoría de la Primaria de la Salud.",
+          "El juzgado de paz del partido de Lanús."
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué significa que la educación física, el colegio y el sueño de Tomás estén en juego?",
+        "opts": [
+          "Que la salud es un derecho que habilita el goce de otros derechos.",
+          "Que la obra social debe devolver las cuotas de los meses sin sensor.",
+          "Que el colegio de Tomás debe financiar el sensor.",
+          "Que el rechazo de la ART es un hecho consumado."
+        ],
+        "key": "A",
+        "oficial": false
+      }
+    ]
+  }
+]

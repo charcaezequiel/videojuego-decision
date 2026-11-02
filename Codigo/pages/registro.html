@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DF · Defendiendo la Justicia</title>
+<link rel="icon" href="../assets/img/logo.png">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/screens.css">     
+<link rel="stylesheet" href="../css/game.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<div class="viewport">
+<main class="stage">
+<h1 class="title" data-i18n="registro">REGISTRO</h1>
+<form id="form-registro" novalidate>
+  <div class="field" id="f-correo">
+    <label class="label" for="correo" data-i18n="correo">Correo electrónico:</label>
+    <input id="correo" type="email" autocomplete="email" data-i18n-ph="phCorreo" placeholder="tuemail@correo.com">
+    <div class="msg" id="msg-correo"></div>
+  </div>
+  <div class="field" id="f-usuario">
+    <label class="label" for="usuario" data-i18n="usuario">Tu usuario:</label>
+    <input id="usuario" type="text" maxlength="16" autocomplete="nickname" data-i18n-ph="phUsuario" placeholder="Ej: abogado_pixel">
+    <div class="msg" id="msg-usuario"></div>
+  </div>
+  <button type="submit" class="img-btn btn-next" id="btn-registro" data-i18n-aria="continuar"><img src="../assets/icons/flecha-registro.png" alt="→"></button>
+</form>
+</main>
+</div>
+<script src="../js/data/niveles.js"></script>
+<script src="../js/data/vestuario.js"></script>
+<script src="../js/core/store.js"></script>
+<script src="../js/core/progress.js"></script>
+<script src="../js/core/i18n.js"></script>
+<script src="../js/core/audio.js"></script>
+<script src="../js/core/music.js"></script>
+<script src="../js/core/stage.js"></script>
+<script src="../js/core/sprites.js"></script>
+<script src="../js/core/scrollbar.js"></script>
+<script src="../js/core/run.js"></script>
+<script src="../js/core/boot.js"></script>
+<script src="../js/pages/registro.js"></script>
+</body>
+</html>

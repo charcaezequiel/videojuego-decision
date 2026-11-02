@@ -1,0 +1,762 @@
+[
+  {
+    "n": 6,
+    "titulo": "El grupo del curso",
+    "subtitulo": "Un meme puede lastimar: ¿hasta dónde llega tu libertad?",
+    "resumen": "En 5° 2.° de una secundaria de Morón, un alumno llena el grupo de WhatsApp del curso con memes y apodos contra una compañera. Ella falta desde hace semanas y su familia denuncia el acoso. Él se defiende: son chistes y es su libertad de expresión. En el juicio se discute hasta dónde llega esa libertad cuando lastima la honra de otra persona y qué tiene que hacer la escuela.",
+    "caso": {
+      "denuncia": "DENUNCIA — Presenta Adriana Cardozo, DNI 27.456.113, madre de Luna Cardozo, de 16 años y alumna de 5° 2.° de la Escuela de Educación Secundaria N.º 21 de Morón. Denuncia a Tomás Aguirre, de 16 años, compañero del mismo curso. Relata que desde el 3 de marzo, durante ocho semanas, Tomás creó y difundió en el grupo de WhatsApp '5°2 sin docentes', integrado por 34 estudiantes, memes, stickers y fotografías editadas de su hija acompañadas de un apodo humillante que se repitió todos los días. Los mensajes se reenviaron a otros cursos y varios alumnos empezaron a usar el apodo en el patio. Desde el 22 de abril Luna no asiste a clases y la familia presentó certificados médicos por crisis de angustia. La denuncia pide que la escuela active el protocolo de convivencia de la Ley 26.892, que se identifique al responsable, que se retire el material que circula y que se garantice que Luna pueda volver a estudiar sin que nadie la señale ante el curso.",
+      "testimonios": [
+        {
+          "autor": "Camila Duarte, compañera de 5° 2.°",
+          "texto": "Yo estoy en el grupo desde el primer día. Tomás subió el primer meme el 3 de marzo y después vinieron los otros, casi siempre de noche. Al principio varios se rieron con emojis, pero cuando Luna dejó de contestar él siguió igual. En el patio la imitaban y le decían el apodo en voz alta. Ninguno le pidió permiso a Luna para usar sus fotos. El 20 de abril me mandó un audio diciendo que no volvía más a la escuela si esas cosas seguían. Le pedí dos veces que lo borrara y me contestó que era un chiste entre amigos."
+        },
+        {
+          "autor": "Nadia Herrera, preceptora de la escuela",
+          "texto": "Como preceptora llevo el registro de asistencia. Luna tiene inasistencias registradas desde el 22 de abril y el 28 su mamá trajo un certificado del hospital de Morón. El 5 de mayo citamos a las dos familias y labramos un acta: ese día me mostraron capturas del celular, pero yo no puedo decir quién subió cada mensaje porque eso lo revisa la perito del juzgado. Lo que sí puedo afirmar es que el grupo tiene 34 integrantes y que los memes circularon también en dos chats de 4.° año, porque me los mostraron alumnos de ese curso."
+        },
+        {
+          "autor": "Tomás Aguirre, alumno denunciado",
+          "texto": "Yo no acoso a nadie. Todo arrancó con un sticker que ya estaba en el grupo y yo lo adapté, es mi forma de joder, acá todos nos tratamos así. Luna y yo nos conocemos hace años y no le tengo bronca. Nunca hablé de su familia ni de su cuerpo: los apodos los inventaron otros y yo los repetí. Si ella no viene a la escuela es por lo que le pasa a ella por dentro, no por mí. Y la libertad de expresión es una garantía de la Constitución, eso lo dijo el profe de Formación Ética. Si me sancionan por un chiste, me están censurando."
+        }
+      ],
+      "pruebas": [
+        {
+          "titulo": "Capturas del grupo '5°2 sin docentes'",
+          "texto": "La denuncia trae 47 capturas del chat entre el 3 de marzo y el 19 de abril. Se ven doce memes y fotos editadas de Luna con el mismo apodo escrito, más dos audios transcriptos donde la imitan. Cada captura muestra fecha, hora y nombre del remitente, así que permite seguir quién subió cada mensaje y con qué frecuencia. Lo que demuestran es que la difusión fue diaria durante ocho semanas y que el material salió del grupo original hacia otros cursos."
+        },
+        {
+          "titulo": "Informe de la perito informática Lucía Barrios",
+          "texto": "La perito designada por el juzgado revisó el teléfono y los metadatos: en 31 de las 47 capturas el primer remitente coincide con el usuario de Tomás, y diez memes se reenviaron a otros dos chats en menos de una hora. Su informe no opina sobre la intención de nadie: dice qué imagen, quién y cuándo. Sirve porque la defensa dijo que los apodos los inventaron otros, y porque deja claro que ninguna captura fue editada ni inventada por la denuncia."
+        },
+        {
+          "titulo": "Acta de la mesa escolar y certificados médicos",
+          "texto": "El acta del 5 de mayo registra la reunión con las dos familias, la apertura del protocolo de la Ley 26.892 y el pedido de que se retire el material. Dice que Luna lleva más de dos semanas sin asistir y que la escuela todavía no revisó ningún celular ni separó a los alumnos. Los certificados del hospital de Morón, fechados el 28 de abril, unen el hecho con su consecuencia. Es la prueba de que el daño pasó en la escuela, que es la responsable de actuar."
+        }
+      ],
+      "devolucion": "La respuesta correcta es la A. El art. 14 de la Constitución garantiza publicar las ideas, y el art. 32 permite una ley que reglamente ese ejercicio por el orden público y la moral. La Convención Americana, en su art. 13.2, lo dice todavía más claro: quien habla asume responsabilidades ulteriores por lo que publica. Por eso la libertad de expresión no cubre la humillación sistemática de una compañera: ahí entran la honra, la dignidad y la prohibición de discriminar del art. 16, y la Ley 26.892 obliga a la escuela a investigar y reparar en vez de mirar para otro lado."
+    },
+    "palabras": ["ACOSO", "LIBERTAD", "HONRA"],
+    "pista": "Lo que padecía Luna, lo que Tomás invocaba y el buen nombre que sus mensajes dañaban.",
+    "preguntas": [
+      {
+        "q": "Tomás insiste en que 'es un chiste' y que ejerce su libertad de expresión. Según la Constitución argentina, ¿cuál afirmación es correcta?",
+        "opts": [
+          "La libertad de expresión está garantizada, pero quien daña la honra de otra persona responde por lo que publicó",
+          "La libertad de expresión es absoluta: en Argentina nadie puede ponerle ningún límite",
+          "La libertad de expresión solo protege a los mayores de 18 años, por eso Tomás no tiene derechos",
+          "La libertad de expresión exige que la escuela apruebe cada chiste antes de publicarlo"
+        ],
+        "key": "A",
+        "oficial": true
+      },
+      {
+        "q": "Según el informe de la perito Barrios, ¿qué se pudo comprobar con los metadatos?",
+        "opts": [
+          "Que Luna había autorizado el uso de sus fotos",
+          "Que los memes los había creado un profesor",
+          "Que en 31 capturas Tomás aparece como primer remitente y que 10 memes se reenviaron a otros chats",
+          "Que el grupo de WhatsApp tenía 34 docentes"
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "El acta del 5 de mayo menciona la Ley 26.892 de convivencia escolar. ¿Qué le exige esa ley a la escuela?",
+        "opts": [
+          "Que expulse al alumno denunciado antes de escucharlo",
+          "Que no se meta, porque los chats de los pibes son privados",
+          "Que obligue a Luna a volver a clase sin pedir carpeta médica",
+          "Que prevenga, detecte y actúe frente al acoso dentro de la comunidad educativa"
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué valor tiene el detalle que aporta Camila sobre el permiso para usar las fotos?",
+        "opts": [
+          "Ninguno, porque Camila también es alumna del curso",
+          "Muestra que nadie le pidió permiso a Luna y que hubo advertencias previas, aunque Tomás hable de un chiste entre amigos",
+          "Comprueba que Luna faltaba a clases antes del 3 de marzo",
+          "Demuestra que la escuela censuró a todo el curso"
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué diferencia hay entre una sanción de la escuela y una denuncia penal, según el expediente?",
+        "opts": [
+          "La sanción la aplica la escuela por violar las reglas de convivencia; la denuncia puede terminar en una causa penal si el hecho es delito",
+          "Son exactamente lo mismo: cambia solamente la firma",
+          "La escuela puede llamar a la policía y revisar los teléfonos sin labrar acta",
+          "El Código Penal no se ocupa nunca de lo que se publica en internet"
+        ],
+        "key": "A",
+        "oficial": false
+      },
+      {
+        "q": "La defensa pide anular las capturas porque se sacaron sin permiso. ¿Por qué siguen siendo prueba válida?",
+        "opts": [
+          "Porque WhatsApp las guarda solo para los mayores de 18",
+          "Porque la denuncia las volvió oficiales",
+          "Porque la perito verificó el teléfono original, los metadatos y la fecha de cada mensaje",
+          "Porque Luna reconoció las fotos en la audiencia"
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "¿Quiénes integraban el grupo donde circularon los memes, según la denuncia y la preceptora?",
+        "opts": [
+          "34 docentes de la Escuela N.º 21",
+          "34 estudiantes de 5° 2.°",
+          "47 alumnos de todos los cursos",
+          "Solamente Tomás y Luna"
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "Luna avisa que no vuelve si los mensajes siguen. ¿Qué medida respeta mejor su derecho a estudiar?",
+        "opts": [
+          "Hacerle un examen oral frente a todo el curso",
+          "Cambiarla de escuela para que el problema desaparezca",
+          "Suspender a los 34 integrantes del grupo",
+          "Activar el protocolo, retirar el material y resguardar su privacidad en el retorno"
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "En el juicio, ¿qué tiene que probar la familia que denuncia?",
+        "opts": [
+          "Los hechos: que los mensajes existieron, quién los difundió y el daño que causaron",
+          "Los pensamientos de Tomás, con una prueba de su intención",
+          "Que la escuela es dueña del teléfono de Luna",
+          "Que los 34 alumnos del curso declaren en contra"
+        ],
+        "key": "A",
+        "oficial": false
+      },
+      {
+        "q": "Tomás dice: 'si me sancionan por un chiste, me censuran'. ¿Qué se puede leer en el expediente contra eso?",
+        "opts": [
+          "Que la escuela efectivamente revisó los teléfonos de todo el curso",
+          "Que no hubo censura previa: Tomás publicó y ahora le toca responder, y tiene derecho a defenderse",
+          "Que Luna censuró al resto del curso",
+          "Que la perito prohibió publicar memes en toda la escuela"
+        ],
+        "key": "B",
+        "oficial": false
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "titulo": "El arroyo que ya no da agua",
+    "subtitulo": "Una curtiembre, un caño y 214 vecinos que no pueden tomar",
+    "resumen": "En Colonia Caroya, Córdoba, la curtiembre Volcanes S.A. descarga los líquidos del curtido en el arroyo Los Tres Sauces, a 800 metros de la toma que abastece al pueblo. La Asamblea Ambiental del Sauce se presenta con 214 firmas y pide una medida rápida. La empresa responde que tiene permiso y que sostiene 120 puestos de trabajo. El juicio discute qué pasa cuando la producción de un pueblo choca con el derecho de todos a un ambiente sano.",
+    "caso": {
+      "denuncia": "DENUNCIA — Presentan la Asamblea Ambiental del Sauce, representada por Rosa Quiroga, vecina de Colonia Caroya, departamento Río Segundo, Córdoba, junto con 214 firmas de familias que reciben agua por red. Hecho: desde el 12 de agosto, la curtiembre Volcanes S.A., instalada en la margen este del arroyo Los Tres Sauces, descarga los líquidos del curtido de cueros por un caño que desemboca a unos 800 metros de la toma que abastece al pueblo. Los denunciantes describen espuma, olor a químico y mortandad de peces, y adjuntan fotos y videos del caño tomadas de día y de noche. Señalan que en el centro de salud se multiplicaron las consultas de piel y que el caudal del arroyo, en agosto, era bajo pero normal. Reclaman que se ordene cesar la descarga, que se analice el agua de la toma y de doce viviendas, que la empresa sane la barranca y que se repare el daño ambiental colectivo, y piden una tutela rápida porque el daño crece cada semana.",
+      "testimonios": [
+        {
+          "autor": "Rosa Quiroga, Asamblea Ambiental del Sauce",
+          "texto": "Vivo a cuatro cuadras del arroyo desde 1987 y me crié bañándome ahí. Desde mediados de agosto el agua sale con olor a podrido en las canillas del pueblo. Medimos con un kit de la escuela agrotécnica y anotamos los días en un cuaderno: el 14, el 19 y el 26 de agosto el agua estaba marrón oscuro. También filmamos el caño bajando de noche. No le tenemos bronca a la fábrica: en el pueblo trabajan varios vecinos. Acá se discute otra cosa, si pueden ganar plata haciendo que nosotros no podamos tomar agua."
+        },
+        {
+          "autor": "Miguel Ángel Sosa, tanquero de la curtiembre",
+          "texto": "Yo manejo los tanques de la planta y hago lo que me mandan. El permiso municipal que tiene la empresa es para los residuos sólidos, no para tirar el líquido al caño: eso me lo dijo el encargado cuando pedí por escrito que revisaran el sistema de tratamiento, el 3 de septiembre. Desde ese día me hicieron trabajar solo de día, porque el caño se llenaba de barro y se tapaba. También me pidieron que no hablara con nadie. Yo no sé de química ni de leyes; sé que el líquido se va derecho al arroyo y que lo veo todos los días."
+        },
+        {
+          "autor": "Jorge Funes, gerente de Volcanes S.A.",
+          "texto": "Nosotros generamos 120 puestos de trabajo y somos los que traemos divisas al pueblo; por una denuncia de puntería no se cierra una fábrica. Tenemos habilitación municipal desde 2003 y un sistema de tratamiento que se colapsó por una bomba quemada, un problema de mantenimiento que ya se resolvió. Los peces murieron por el bajo caudal de agosto, como pasa todos los años. Los vecinos exageran con el olor. Y si esta asamblea gana, se frenan las inversiones: el progreso de un pueblo siempre tiene algún costo, nadie puede pedir que la producción se quede quieta."
+        }
+      ],
+      "pruebas": [
+        {
+          "titulo": "Fotos y videos del caño descargador",
+          "texto": "La denuncia trae 23 fotos y 6 videos con geolocalización del caño de la margen este, tomados el 14, 19 y 26 de agosto y el 2 de septiembre. En tres se ve el líquido oscuro entrando al arroyo y espuma acumulada aguas abajo. Están fechados y dos vecinos firman que presenciaron la toma. Demuestran que la descarga existió y que fue reiterada, incluso de noche, y no un solo episodio por una bomba quemada, como sostiene la empresa."
+        },
+        {
+          "titulo": "Informe del perito químico Fernando Peralta",
+          "texto": "El perito del juzgado tomó muestras en el caño de descarga, en la toma de agua del pueblo y en doce canillas de viviendas. En la descarga detectó cromo por encima del límite permitido y un pH muy alto, corrosivo. Aguas abajo el cromo baja en el agua, pero aparece acumulado en el sedimento. Concluyó que la contaminación es compatible con el curtido de cueros. Es una prueba técnica: dice qué sustancia, dónde y cuánto, y por eso pesa más que las opiniones de la asamblea y del gerente."
+        },
+        {
+          "titulo": "Habilitación municipal y nota interna del 3 de septiembre",
+          "texto": "El expediente incluye la habilitación de Volcanes S.A. del año 2003 y copia de la nota que el tanquero Sosa presentó por escrito pidiendo que se revisara el tratamiento. La habilitación es comercial y contempla el retiro de residuos sólidos; no autoriza a disponer efluentes líquidos en un curso de agua. Desarma la defensa del yo tengo permiso: el permiso existe, pero para otra cosa, y la nota muestra que la falla era conocida dentro de la fábrica."
+        }
+      ],
+      "devolucion": "La respuesta correcta es la B. El art. 41 de la Constitución reconoce a todos los habitantes el derecho a un ambiente sano, equilibrado y apto para el desarrollo humano, y les impone el deber de conservarlo: el Estado debe ordenar el territorio, prevenir y recomponer el daño ambiental. Como son derechos de incidencia colectiva, el art. 43 exige un procedimiento rápido y eficaz, sin costo de tasa y sin exigir domicilio. La Ley 25.675 agrega el principio preventivo y la legitimación de asociaciones y del Defensor del Pueblo. El empleo es legítimo, pero no alcanza para autorizar una descarga. Y ojo: la empresa tiene que probar que su actividad no causa daño."
+    },
+    "palabras": ["AMBIENTE", "ARROYO", "DEMANDA"],
+    "pista": "Lo que se quiere cuidar, el lugar dañado y el reclamo judicial que presentan los vecinos.",
+    "preguntas": [
+      {
+        "q": "Volcanes S.A. dice que tiene permiso municipal y que da 120 puestos de trabajo. ¿Qué responde el art. 41 de la Constitución?",
+        "opts": [
+          "Que la empresa puede contaminar mientras conserve la habilitación y pague una multa después",
+          "Que todos los habitantes tienen derecho a un ambiente sano y que el Estado debe prevenir y recomponer el daño",
+          "Que el ambiente se protege recién cuando ya no queda nada de agua para tomar",
+          "Que solo el municipio, y no los vecinos, puede hablar de lo que pasa en el arroyo"
+        ],
+        "key": "B",
+        "oficial": true
+      },
+      {
+        "q": "Según la habilitación municipal del expediente, ¿qué autorización tenía realmente la empresa?",
+        "opts": [
+          "Habilitación comercial y retiro de residuos sólidos, pero no permiso para volcar líquidos al arroyo",
+          "Autorización ilimitada para disponer efluentes en cualquier curso de agua",
+          "Un permiso provincial para curtir cueros sin tratar los líquidos",
+          "Ninguna habilitación, porque la fábrica estaba clandestina"
+        ],
+        "key": "A",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué detalle del testimonio de Rosa Quiroga se apoya después en una prueba del expediente?",
+        "opts": [
+          "Que aprendió a nadar en el arroyo en 1987",
+          "Que la fábrica es la única empleadora del pueblo",
+          "Que el agua estaba marrón oscuro el 14, el 19 y el 26 de agosto, igual que las fotos fechadas",
+          "Que el centro de salud no registró ninguna consulta"
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué dato clave aporta el testimonio del tanquero Sosa?",
+        "opts": [
+          "Que la empresa nunca tuvo habilitación municipal",
+          "Que los vecinos abrieron el caño para filmar",
+          "Que el permiso era para residuos sólidos y que el líquido igual se iba derecho al arroyo",
+          "Que el arroyo se seca todos los meses de agosto"
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "¿Dónde encontró el perito Peralta la mayor concentración de cromo?",
+        "opts": [
+          "En las doce canillas de las viviendas",
+          "En la toma de agua del pueblo",
+          "En la muestra tomada aguas arriba del caño",
+          "En la boca de descarga, donde el pH además era muy alto"
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "Los vecinos piden una 'tutela rápida'. ¿Qué significa eso en este caso?",
+        "opts": [
+          "Que se cierre la empresa el mismo día y sin escucharla",
+          "Que el juez resuelva en pocos días para frenar un daño que sigue creciendo",
+          "Que se espere un año de estudios antes de decidir",
+          "Que primero vote la asamblea y después decida el municipio"
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "¿Cuántos vecinos firmaron la denuncia y cuántas viviendas se hicieron analizar?",
+        "opts": [
+          "23 firmas y 6 viviendas",
+          "120 firmas y 800 viviendas",
+          "214 firmas y solamente la toma de agua",
+          "214 firmas y 12 viviendas"
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "Funes dice que 'el progreso siempre tiene algún costo'. ¿Qué le responde el principio preventivo de la Ley 25.675?",
+        "opts": [
+          "Que se debe actuar antes de que el daño ocurra, aunque todavía no se conozca su magnitud exacta",
+          "Que la contaminación es el precio justo de los 120 puestos de trabajo",
+          "Que hay que esperar a que el daño sea irreversible para recién actuar",
+          "Que la prevención la debe pagar quien presenta la denuncia"
+        ],
+        "key": "A",
+        "oficial": false
+      },
+      {
+        "q": "¿Cuál de las tres versiones del caso es la más parcial y por qué?",
+        "opts": [
+          "La de Sosa, porque admite que no sabe de leyes",
+          "La de Rosa Quiroga, porque vive a cuatro cuadras del arroyo",
+          "La de Funes, porque habla de una bomba quemada y omite que la descarga era reiterada desde el 12 de agosto",
+          "Ninguna, los tres testimonios describen exactamente lo mismo"
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué solución es la más coherente con el derecho al ambiente sano sin desconocer el trabajo?",
+        "opts": [
+          "Cerrar la fábrica esa misma semana, sin audiencia",
+          "Frenar la descarga, obligar a sanear la barranca y seguir produciendo con tratamiento de efluentes",
+          "Trasladar la toma de agua a un pozo y no informar a nadie",
+          "Dejar que el arroyo se recupere solo cuando llueva"
+        ],
+        "key": "B",
+        "oficial": false
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "titulo": "La puerta del boliche",
+    "subtitulo": "Le dijeron que no pasaba y el local habló de admisión",
+    "resumen": "Morena tiene 17 años y esa noche sale con sus amigas después del viaje de egresados. En la puerta del boliche el encargado de seguridad la detiene a ella y a ninguna otra persona de la fila. El local se ampara en su derecho de admisión y habla de falta de decoro. En el juicio se discute si esa facultad sirve para excluir a alguien por su aspecto o por su orientación sexual.",
+    "caso": {
+      "denuncia": "DENUNCIA — Morena Escobar, de 17 años, con el patrocinio de la defensora pública Tamara Ruiz, denuncia al boliche 'Downtown', habilitación municipal 447/2023, de barrio Empalme Graneros, en Rosario. Hecho: el 12 de abril, a las 23:40, en el acceso del local, el encargado de seguridad Gabriel Paz le impidió entrar y, según relata la denuncia, le dijo delante de sus amigas que 'así no entra', por su manera de vestirse y por ir de la mano con otra chica. De las seis amigas que estaban en la fila, tres pasaron sin ninguna observación, y ninguna otra persona fue detenida dos veces. La joven pidió el libro de reclamaciones y el local se lo negó. La denuncia pide que se declare el acto discriminatorio conforme a la Ley 23.592, que se ordene una disculpa pública y una reparación, y que el municipio revise la habilitación del local. Se aclara que la familia no quiere exposición: pide que no se publiquen sus datos ni se la señale en las audiencias, y que la prueba se resuma en el expediente.",
+      "testimonios": [
+        {
+          "autor": "Brenda Ojeda, amiga de Morena",
+          "texto": "Era la primera salida juntas después del viaje de egresados. Estábamos en la fila y el de la remera negra le dijo 'así no' a Morena, mirándola de arriba abajo, y le tocó el pelo como acomodándoselo, algo que a nadie más le hizo. A tres de mis amigas las dejaron pasar sin preguntarles nada. Morena no contestó porque se puso mal y yo me metí en el medio. Después el encargado dijo que ella había tomado, pero dentro nunca entró y ni le sirvieron una cerveza. No le temblaba la voz de tomar: le temblaba de bronca."
+        },
+        {
+          "autor": "Lucía Benítez, vecina y repartidora de la proveeduría",
+          "texto": "Descargo cajones al costado del local hace dos años y veo la fila todos los viernes. Lo que digo lo vi: esa noche el de seguridad fue dos veces a hablar con esa chica y a nadie más de la fila se arrimó. En la puerta hay un cartelito escrito a mano que dice 'prohibida la entrada a menores de 16'. Morena tenía 17, así que esa regla no le caía encima y el cartel no explica lo que le pasó. Yo no conozco a ninguna de las chicas ni estoy de un lado ni del otro: cuido mi trabajo, pero cuento lo que vi."
+        },
+        {
+          "autor": "Gabriel Paz, encargado de seguridad del local",
+          "texto": "Cuido la puerta porque adentro hay 600 pibes y cualquiera se puede caer. Esa chica venía escandalizando en la fila, se le notaba que había tomado y se nos venía encima la barra. Le pedí que se retirara, nada más, y le expliqué que la puerta la decide el local. Yo no la insulté ni me metí en su vida privada: si hubiera dicho lo que ella ahora cuenta, alguno me habría filmado y no apareció ningún video con audio. El derecho de admisión existe para proteger a la gente de adentro; si dejo pasar a cualquiera que anda escandalizando, el problema lo tengo después yo."
+        }
+      ],
+      "pruebas": [
+        {
+          "titulo": "Copia de la habilitación municipal y foto del cartel de la puerta",
+          "texto": "La habilitación 447/2023 autoriza la sala de baile hasta las 5 y exige publicar las condiciones de admisión. La única regla escrita visible en la puerta era el cartel de puño y letra con la prohibición para menores de 16. El motivo que usó el encargado contra Morena, la falta de decoro, no estaba escrito ni publicado en ningún lugar. Esto demuestra que la exclusión no se apoyó en una regla general conocida por todos, sino en una decisión personal tomada esa noche."
+        },
+        {
+          "titulo": "Informe de la perito audiovisual Andrea Costa",
+          "texto": "La perito analizó cuadro por cuadro el video de la cámara de acceso, de 23:38 a 23:47. Concluyó que la joven no empujó a nadie, no perdió el equilibrio y no presenta signos compatibles con una ebriedad, y que el encargado se acercó dos veces a la misma persona y ninguna a las otras. Su informe aclara que el audio no es inteligible: puede describir cómo se movieron, pero no qué se dijeron. Es una prueba técnica y no toma partido por ninguna de las partes."
+        },
+        {
+          "titulo": "Video de la puerta, publicación borrada y acta notarial",
+          "texto": "El local entregó el video de su propia cámara, y la denuncia adjunta la captura de una publicación de la cuenta del boliche del 12 de abril que decía 'acá cuidamos el decoro', guardada por una amiga antes de que el local la borrara. La escribana labró un acta porque le negaron el libro de reclamaciones en la puerta. El material sirve para dos cosas: muestra un trato distinto hacia Morena y registra que el local se negó a recibir la queja por escrito."
+        }
+      ],
+      "devolucion": "La respuesta correcta es la D. La Constitución argentina dice en el art. 16 que la igualdad es la base del impuesto y de los servicios públicos: el Estado no puede privilegiar ni excluir por raza, opiniones o condición social. La Declaración Universal (arts. 1 y 2) y la Convención Americana (arts. 1, 3 y 24) lo repiten. La Ley 23.592 es la clave práctica: todo acto que arbitrariamente restrinja un derecho por esas causas es discriminatorio y nulo, y es quien excluye el que tiene que probar que no discriminó. El derecho de admisión es válido solo con reglas generales, publicadas y parejas. Consecuencia: el local responde, paga una reparación y el municipio puede revisar la habilitación."
+    },
+    "palabras": ["IGUALDAD", "ADMISION", "INADI"],
+    "pista": "Un principio constitucional, la palabra que usó el boliche y el organismo que recibe la queja.",
+    "preguntas": [
+      {
+        "q": "El boliche insiste en su derecho de admisión. ¿Cuál es la respuesta correcta según el derecho argentino?",
+        "opts": [
+          "El derecho de admisión es absoluto: un local privado elige a quién deja pasar",
+          "El derecho de admisión solo se puede usar contra quienes son mayores de 18 años",
+          "El derecho de admisión desaparece si la persona sale con amigas",
+          "El derecho de admisión existe, pero solo con reglas generales, publicadas y aplicadas por igual a todos"
+        ],
+        "key": "D",
+        "oficial": true
+      },
+      {
+        "q": "¿Qué decía la única regla escrita que estaba publicada en la puerta del local?",
+        "opts": [
+          "Que se prohíbe entrar con ropa deportiva",
+          "Que está prohibida la entrada a menores de 16",
+          "Que no se deja pasar a parejas",
+          "Que hay que presentar DNI y entrada anticipada"
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "Según la Ley 23.592, ¿a quién le toca probar en un caso de discriminación?",
+        "opts": [
+          "A quien se atribuye la discriminación: debe explicar por qué su acto no fue discriminatorio",
+          "Siempre a la víctima, que tiene que filmar todo desde el primer minuto",
+          "Al juez, que debe investigar con la policía antes de escuchar a las partes",
+          "Al INADI, que tiene que denunciar primero o no hay caso"
+        ],
+        "key": "A",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué concluyó la perito audiovisual sobre lo que se ve en la fila?",
+        "opts": [
+          "Que la joven estaba alcoholizada y por eso la sacaron",
+          "Que el encargado empujó a una amiga de Morena",
+          "Que el encargado se acercó dos veces a Morena y ninguna vez a otra persona de la fila",
+          "Que el video no muestra ninguna intervención del personal"
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "¿Por qué el acta sobre el libro de reclamaciones es importante para el caso?",
+        "opts": [
+          "Porque el local reconoció en el acta que había discriminado",
+          "Porque deja constancia de que el local se negó a entregar el libro y a recibir la queja por escrito",
+          "Porque la escribana escuchó los insultos del portero",
+          "Porque convierte la denuncia en una causa penal automáticamente"
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "El video no tiene audio y el local borró su publicación. ¿Qué se puede afirmar con esas dos pruebas?",
+        "opts": [
+          "Que como no hay audio no existe ninguna prueba contra el local",
+          "Que la publicación borrada la había subido una amiga",
+          "Que Morena pidió la explicación de la regla y se la negaron",
+          "Que no se prueban las palabras, pero sí el trato distinto en la fila y que el local retiró el mensaje"
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué artículo de la Constitución, citado en el caso, pone el foco en la igualdad?",
+        "opts": [
+          "El art. 14, que garantiza trabajar y navegar",
+          "El art. 17, que garantiza la propiedad del local",
+          "El art. 43, que abre la vía para los derechos colectivos",
+          "El art. 16, que dice que la igualdad es la base del impuesto y de los servicios públicos"
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué puede hacer el INADI en un caso como este?",
+        "opts": [
+          "Recibir la denuncia, asesorar, acompañar el reclamo y pedir sanciones, sin cerrar la vía judicial",
+          "Dictar la sentencia contra el boliche",
+          "Clausurar la escuela de Morena hasta que pase el tiempo",
+          "Reemplazar a la policía en la puerta del local"
+        ],
+        "key": "A",
+        "oficial": false
+      },
+      {
+        "q": "¿Cuál de los testimonios presenta una versión parcial del hecho y por qué?",
+        "opts": [
+          "El de Lucía Benítez, porque trabaja para la proveeduría del local",
+          "El de Brenda Ojeda, porque es amiga y por eso no puede opinar",
+          "El de Paz, porque habla de una ebriedad que la perito no encontró y omite que negaron el libro de quejas",
+          "El de la defensora Ruiz, porque es empleada del municipio"
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué consecuencia práctica puede tener el fallo si el juez declara el acto discriminatorio?",
+        "opts": [
+          "Que Morena tenga que pedir disculpas públicas al local",
+          "Que el local sea declarado responsable, pague una reparación y el municipio revise su habilitación",
+          "Que se prohíba a todos los menores de 18 entrar a un boliche",
+          "Que la causa se cierre porque no hubo daño económico"
+        ],
+        "key": "B",
+        "oficial": false
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "titulo": "48 horas para irse",
+    "subtitulo": "Subió el alquiler 45 % y quiere desalojar sin juez",
+    "resumen": "Los Duarte alquilan una casa de dos dormitorios en Lanús Oeste desde hace catorce meses, con contrato por 30 meses. Un viernes a la noche el propietario les avisa por WhatsApp que el alquiler sube un 45 % y que tienen 48 horas para desocupar. Él es el dueño de la casa. ¿Eso le alcanza para sacar a una familia con dos chicos sin pasar por la Justicia?",
+    "caso": {
+      "denuncia": "PRESENTACIÓN — Damián Duarte y Vanesa Roldán, con sus dos hijos de 11 y 7 años, alquilan desde el 1° de marzo de 2025 una casa en Lanús Oeste y se presentan contra el propietario, Héctor Balbi. Contrato: firmado el 1° de marzo de 2025 por 30 meses, vence el 31 de agosto de 2027; alquiler inicial de $98.000, con actualización anual por el índice del Banco Central y sin cláusula de suba anticipada. Ellos pagan por transferencia el día 5 de cada mes. Hecho: el 14 de mayo, a las 22:12, Balbi escribió por WhatsApp que desde junio el alquiler sería de $142.100, una suba del 45 %, y que 'en 48 horas desocupen la casa'. No hubo carta documento, ni mediación, ni causa judicial. El hijo menor tiene certificado de discapacidad y la presentación invoca el interés superior del niño del art. 3 de la Convención sobre los Derechos del Niño. Reclaman que se respete el contrato vigente, que se declare ineficaz la suba unilateral y que ningún desalojo se ejecute sin proceso judicial con derecho a defensa.",
+      "testimonios": [
+        {
+          "autor": "Vanesa Roldán, inquilina",
+          "texto": "El 14 de mayo a la noche Balbi escribió en el chat de la finca: sube el alquiler o en 48 horas afuera. Yo le contesté que teníamos contrato hasta agosto de 2027 y me dijo que ese papel lo firmó el Código Civil viejo. Nosotros pagamos por transferencia el día 5: están los 14 comprobantes y no le debemos nada. El 16 a la mañana se presentó con un cerrajero y dijo que iba a sacar la cerradura para mostrarle la casa a un comprador. Mi hijo de 7 años tiene certificado de discapacidad y hace dos años que está en la escuela a cuatro cuadras. No somos okupas: somos una familia con un papel firmado."
+        },
+        {
+          "autor": "Marisol Giménez, vecina de enfrente",
+          "texto": "Vivo enfrente desde 2005 y veo esa casa todos los días. Los Duarte son cuatro, los pibes salen a la vereda todas las tardes y nunca escuché un problema de alquiler entre ellos y el dueño. El 14 de mayo tendía la ropa y vi el auto de Balbi y a un hombre con un juego de llaves en la puerta de la casa unos diez minutos; le pregunté qué hacía y me contestó que era el dueño. El cartel de se vende lo puso en la medianera el 20 de mayo, tres días después de anunciar el desalojo. Yo no sé de leyes, pero esa noche mandé a mis pibes para adentro porque estaban mirando."
+        },
+        {
+          "autor": "Héctor Balbi, propietario",
+          "texto": "La casa es mía y soy libre de decidir con quién contrato y por cuánto. El precio lo puse al valor de la cuadra: la inflación se comió mi plata y yo también tengo derecho a vivir de mi propiedad. Les mandé un mensaje claro y con tiempo, 48 horas es corto pero avisé. Que vayan a la Justicia si quieren, pero el gasto del juicio lo pagan ellos. Y si no se van solos, llamo a la comisaría y saco las cosas con la policía, que para eso soy el dueño. A la madre la entiendo, pero los pibes no tienen derecho a quedarse a vivir gratis en la casa de otro."
+        }
+      ],
+      "pruebas": [
+        {
+          "titulo": "Contrato de locación y 14 comprobantes de pago",
+          "texto": "El contrato del 1° de marzo de 2025 está firmado por las dos partes: 30 meses de plazo, el mínimo que fija la ley de alquileres vigente, alquiler inicial de $98.000 y actualización anual por el índice del Banco Central, sin ninguna cláusula de suba anticipada. Los 14 comprobantes de transferencia, fechados el día 5 de cada mes, están en orden y sin deuda. Demuestran dos cosas: que la familia no está en mora y que la suba del 45 % no está prevista en el papel."
+        },
+        {
+          "titulo": "Capturas del chat de WhatsApp del 14 de mayo",
+          "texto": "La presentación adjunta las capturas del mensaje de Balbi de las 22:12: 'el alquiler es 142.100 y en 48 horas desocupen', y su respuesta a Vanesa: 'ese contrato lo firmó otro Código Civil'. No aparece ninguna carta documento ni citación a mediación. El material prueba la intimación y su plazo, y muestra que la amenaza llegó un viernes a la noche por mensaje, sin ninguno de los pasos del proceso judicial que la ley exige para desalojar."
+        },
+        {
+          "titulo": "Dictamen del perito contador Carlos Medina",
+          "texto": "El perito del juzgado revisó los comprobantes, el índice de actualización y el contrato. Calculó que la suba exigida fue del 45 %, mientras que la única actualización que correspondía por contrato era del 18,2 %. Certificó que la familia no tiene deuda y que la vivienda tiene dos dormitorios y ocupa un terreno de 9 por 20 metros. Su dictamen deja de lado las opiniones de cada uno y pone números sobre la mesa para que el juez decida."
+        }
+      ],
+      "devolucion": "La respuesta correcta es la C. Nadie puede ser privado de su casa sin un proceso judicial: el art. 18 de la Constitución garantiza el debido proceso y la defensa en juicio, por eso hacen falta demanda, notificación, plazo y sentencia de un juez, no un mensaje de WhatsApp. El art. 14 bis agrega que el Estado debe promover soluciones y la distribución razonable de la vivienda, y el art. 17 protege la propiedad, pero con reglas: el dueño puede cobrar, vender o pedir la casa por vía judicial, nunca desalojar por la fuerza. Con el contrato vigente, la suba unilateral del 45 % no tiene efecto. Y cambiar la cerradura o cortar la luz es un hecho ilícito."
+    },
+    "palabras": ["ALQUILER", "VIVIENDA", "DESALOJO"],
+    "pista": "Lo que se paga cada mes, lo que garantiza el art. 14 bis y lo que él quería hacer sin juez.",
+    "preguntas": [
+      {
+        "q": "¿Puede Balbi sacar a la familia en 48 horas solo porque la casa es suya?",
+        "opts": [
+          "Sí, la propiedad privada es absoluta y no admite ningún límite",
+          "Sí, porque los inquilinos están en mora y no pagan",
+          "No: hace falta un proceso judicial con notificación y derecho a defensa, y la propiedad tiene reglas",
+          "No, porque en Argentina quien alquila pasa a ser dueño de la casa"
+        ],
+        "key": "C",
+        "oficial": true
+      },
+      {
+        "q": "¿Qué suba correspondía por contrato y qué exigió Balbi, según el perito Medina?",
+        "opts": [
+          "Correspondía la actualización anual del 18,2 % y él exigió un 45 %",
+          "Correspondía un 45 % y él pidió solo un 18,2 %",
+          "Correspondía volver a los $98.000 y él pidió $18.200",
+          "No correspondía ninguna suba nunca: el precio queda congelado"
+        ],
+        "key": "A",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué significa que el art. 18 garantice el debido proceso en este conflicto?",
+        "opts": [
+          "Que el dueño puede cortar la luz si no le pagan",
+          "Que el municipio puede entrar a la casa con la policía",
+          "Que la familia tiene que buscar otra vivienda mientras se juzga",
+          "Que nadie pierde su casa sin leyes previas, sin juez y sin chance de defenderse"
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué detalle clave aporta el testimonio de la vecina Marisol Giménez?",
+        "opts": [
+          "Que los Duarte debían varios meses de alquiler",
+          "Que un hombre estuvo diez minutos en la puerta con un juego de llaves y que el cartel de se vende apareció el 20 de mayo",
+          "Que los Duarte ya se habían mudado el 16 de mayo",
+          "Que el contrato se firmó en una escribanía"
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "Balbi dice que el contrato 'lo firmó otro Código Civil'. ¿Qué se lee en el expediente sobre esa frase?",
+        "opts": [
+          "Que el Código Civil fue reemplazado y el contrato quedó sin efecto",
+          "Que el contrato sigue vigente hasta el 31 de agosto de 2027 y está firmado por las dos partes",
+          "Que los Duarte nunca firmaron el contrato",
+          "Que un contrato de palabra vale más que uno escrito"
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué acredita el dictamen del perito contador?",
+        "opts": [
+          "Que Balbi necesitaba vender la casa para pagar sus deudas",
+          "Que la familia podía pagar el alquiler nuevo sin problemas",
+          "Que la familia no tiene deuda y que la suba exigida superaba lo pactado",
+          "Que la casa necesitaba reparar el techo"
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "El hijo menor tiene 7 años, certificado de discapacidad y el mensaje le da 48 horas a la familia para irse. ¿Qué le pide eso al juez?",
+        "opts": [
+          "Que tenga en cuenta el interés superior del niño y la necesidad de un alojamiento adecuado",
+          "Que anule el contrato porque hay un certificado de discapacidad",
+          "Que obligue a la escuela a pagar la mitad del alquiler",
+          "Que la causa se resuelva sin escuchar a la familia"
+        ],
+        "key": "A",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué monto, qué fecha y qué hora tiene la intimación que llegó por WhatsApp?",
+        "opts": [
+          "$98.000, el 1° de marzo de 2025",
+          "$18.200, el día 5 de cada mes",
+          "$142.100 desde mayo, avisado por carta documento",
+          "$142.100 desde junio, intimado el 14 de mayo a las 22:12"
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué camino le sirve a los Duarte para defender su derecho?",
+        "opts": [
+          "Dejar la casa esa misma noche y reclamar después en las redes",
+          "Presentarse ante la Justicia, mostrar contrato y comprobantes, y rechazar la suba unilateral",
+          "Dejar de pagar el alquiler para que el dueño se canse",
+          "Firmar un nuevo contrato de 48 horas"
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué quiere decir que la propiedad privada tiene una función social, según el art. 17?",
+        "opts": [
+          "Que el Estado se queda con todas las casas alquiladas del país",
+          "Que solo pueden ser dueños quienes alquilan a familiares",
+          "Que el dueño puede usar y vender su casa, pero su uso no puede chocar con los derechos de las personas ni con el bien común",
+          "Que una casa alquilada deja de ser propiedad privada"
+        ],
+        "key": "C",
+        "oficial": false
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "titulo": "El impuesto por decreto",
+    "subtitulo": "Un decreto quiso crear un impuesto sin el Congreso",
+    "resumen": "El 6 de mayo de 2026 se publica el DNU 784/2026, que crea una Tasa de Seguridad Digital del 3 % sobre las compras por internet y empieza a cobrarse el 1.° de junio. No hubo debate parlamentario ni evaluación de impacto. La demanda la firman cinco diputados y un grupo de estudiantes de Tartagal, Salta, que pagan el dato móvil para poder estudiar. En el juicio se discute si una sola firma puede crear un tributo.",
+    "caso": {
+      "denuncia": "ACCIÓN DECLARATIVA DE INCONSTITUCIONALIDAD — Presentan la diputada nacional Carla Nieva, junto con cuatro diputados de otros dos bloques, y el Centro de Estudiantes de la Escuela de Educación Media N.º 3 de Tartagal, Salta, con 1.830 firmas de familias. Hecho: el 6 de mayo de 2026 se publicó en el Boletín Oficial el Decreto de Necesidad y Urgencia 784/2026, que creó la Tasa de Seguridad Digital: un 3 % sobre toda compra o servicio pago por internet, con aplicación desde el 1.° de junio. No hubo proyecto de ley, ni dictamen de comisión, ni evaluación de impacto, y los considerandos invocan una razón de extrema urgencia en cuatro renglones. Los estudiantes explican que en Tartagal el plan de datos de una casa sale $22.400, que en junio la factura llegó con $4.500 de más y que la biblioteca pública con wifi se cerró en abril por falta de presupuesto. Reclaman que se declare la nulidad del DNU, que se deje de cobrar y que lo ya pagado se devuelva, y que la materia la trate el Congreso.",
+      "testimonios": [
+        {
+          "autor": "Carla Nieva, diputada nacional",
+          "texto": "Presenté la acción porque el decreto ya se estaba cobrando cuando nadie lo había votado. Pedí el expediente administrativo de la tasa y me contestaron que no había evaluación de impacto: la palabra emergencia aparece una sola vez en los considerandos. Éramos cinco diputados firmantes y la Cámara tiene diez días para tratarlo por la ley de DNU. No digo que el Estado no pueda regular las plataformas digitales: digo que los impuestos los decide el Congreso, con datos y audiencias, y eso no se saltea con una firma. Si esto vale, mañana un decreto te saca un derecho y no hay nadie a quien reclamarle."
+        },
+        {
+          "autor": "Ramiro Zapata, docente de la Media 3 y padre de dos alumnos",
+          "texto": "Trabajo en la escuela y soy padre, así que pago las dos cosas. Para nosotros el 3 % no es teoría: el plan de datos de mi casa sale $22.400 y en junio pagué $26.900, con el recargo discriminado en la factura. La biblioteca con wifi se cortó en abril por falta de presupuesto, así que los pibes estudian con el teléfono. Lo que me parece importante es la cronología: el decreto se publicó un viernes a la noche y el miércoles siguiente ya estaban los recargos en las facturas. Yo no lo pude leer antes en ningún otro lado y nadie me lo explicó, ni en la escuela ni en el Concejo."
+        },
+        {
+          "autor": "Iván Guzmán, secretario de Coordinación Legal del Poder Ejecutivo",
+          "texto": "El DNU existe para que el Estado pueda responder cuando no da tiempo a esperar. En el verano se dispararon las estafas en las compras por internet y los diputados estaban de receso, así que había imposibilidad de tratarlo. Además esto no es un impuesto nuevo: es una tasa, y el Ejecutivo puede crear tasas sin pedirle permiso al Congreso. Yo mandé la comunicación a la Comisión Bicameral al día siguiente de publicarlo, y la firmaron en dos días. Si la Cámara lo quiere derrumbar, que vote en los diez días de la ley 26.122; lo que no podemos es dejar a los compradores solos cuatro meses."
+        }
+      ],
+      "pruebas": [
+        {
+          "titulo": "Ejemplar del Boletín Oficial del 6 de mayo de 2026",
+          "texto": "El documento trae dos fojas: el articulado crea la Tasa de Seguridad Digital del 3 % sobre compras y servicios pagos por internet, y el apartado de considerandos invoca una razón de extrema urgencia en cuatro renglones. La cronología anexa muestra la publicación un viernes a las 21:40 y el primer recargo facturado el miércoles siguiente. Lo que demuestra es que la medida entró en vigor antes de cualquier debate y que el texto no explica qué urgencia concreta justifica saltarse al Congreso."
+        },
+        {
+          "titulo": "Dictamen de la perito en derecho público Ana Belén Cruz",
+          "texto": "La perito del juzgado revisó el art. 99 inc. 3 de la Constitución, la ley 26.122 y el decreto. Dice que el Congreso está en sesiones ordinarias del 1.° de marzo al 30 de noviembre, que el 6 de mayo no había receso y que el DNU está prohibido en materia penal, tributaria, electoral y de partidos políticos. Agrega que una tasa es un tributo y que hace falta una ley para crearlo. No dice si la tasa es buena o mala: dice quién tenía que dictarla."
+        },
+        {
+          "titulo": "Facturas de datos de 32 hogares de Tartagal y tabla de recargos",
+          "texto": "La presentación adjunta 32 facturas de hogares de Tartagal con el recargo del 3 % discriminado, y una tabla del Centro de Estudiantes con la cuenta de una familia de cinco, con tres pibes en la secundaria: $4.500 por mes, más de lo que cuesta un cuaderno para cada alumno. El material convierte el debate en algo concreto: muestra que la medida ya se estaba cobrando y quiénes la pagaban antes de que alguien la votara."
+        }
+      ],
+      "devolucion": "La respuesta correcta es la A. En la República argentina los impuestos los decide el Congreso: el art. 75 inc. 1 faculta a la Nación a imponer contribuciones y el inc. 2 exige que todo tributo nazca de una ley. El art. 99 inc. 3 permite decretos de necesidad y urgencia, pero solo como excepción, cuando es imposible tratar el proyecto en las sesiones, y prohíbe de manera expresa los DNU en materia penal, tributaria, electoral o de partidos políticos. Como una tasa es un tributo, el DNU 784/2026 invade un poder que no es del Presidente. La ley 26.122 obliga a la Comisión Bicameral y a las dos Cámaras a controlarlo."
+    },
+    "palabras": ["DECRETO", "CONGRESO", "IMPUESTO"],
+    "pista": "La firma que quiso alcanzar sola, el lugar donde se debatió y lo que se crea con el decreto.",
+    "preguntas": [
+      {
+        "q": "Guzmán dice que una tasa no es un impuesto nuevo. Según el art. 99 inc. 3, ¿qué responde el caso?",
+        "opts": [
+          "Que los DNU están prohibidos en materia penal, tributaria, electoral y de partidos políticos, y una tasa es un tributo",
+          "Que un decreto puede crear cualquier tributo si se comunica a la Comisión Bicameral",
+          "Que el Presidente puede cobrar tasas solo en provincias como Salta",
+          "Que un impuesto por decreto se puede dictar si la medida es popular"
+        ],
+        "key": "A",
+        "oficial": true
+      },
+      {
+        "q": "¿Sobre qué aplicaba el recargo del decreto 784/2026?",
+        "opts": [
+          "Solo sobre productos importados de más de $50.000",
+          "Solo sobre el plan de datos de las escuelas rurales",
+          "Sobre los retiros de efectivo en cajeros automáticos",
+          "Sobre toda compra o servicio pago por internet, con un 3 %"
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué suma extra pagó en junio la familia del docente Ramiro Zapata?",
+        "opts": [
+          "$22.400 de más, el valor de un plan nuevo",
+          "$4.500 de más, con el recargo discriminado en la factura",
+          "$784 de más, el número del decreto",
+          "$26.900 de más"
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué dice el dictamen de la perito Cruz sobre la imposibilidad de tratarlo que invoca el decreto?",
+        "opts": [
+          "Que el Congreso estaba efectivamente en receso el 6 de mayo",
+          "Que la imposibilidad solo existe cuando hay una guerra declarada",
+          "Que las sesiones ordinarias van del 1.° de marzo al 30 de noviembre, así que el 6 de mayo el Congreso estaba funcionando",
+          "Que la imposibilidad la decide el Presidente sin ningún control"
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué control debe hacer la Comisión Bicameral según la ley 26.122 que cita el expediente?",
+        "opts": [
+          "Debe redactar el decreto antes de que se publique",
+          "No tiene ninguna función: solo archiva la copia firmada",
+          "Debe dictaminar si el DNU se ajusta a la ley y mandarlo a las dos Cámaras, que tienen diez días para tratarlo",
+          "Debe aprobarlo en secreto para que no se entere la gente"
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "¿Cuántos diputados firmaron la presentación y cuántas familias se sumaron?",
+        "opts": [
+          "Uno, solamente la diputada Nieva",
+          "Cinco diputados y 1.830 firmas de familias",
+          "32 diputados y 12 familias",
+          "120 diputados y 214 firmas"
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué prueba del caso desarma el argumento de que no había tiempo para esperar?",
+        "opts": [
+          "El dictamen de la perito Cruz, que opina sobre el contenido económico",
+          "Las 1.830 firmas de las familias de Tartagal",
+          "La tabla que calcula el recargo en $4.500 por mes",
+          "La cronología: decreto publicado un viernes a las 21:40 y recargo facturado el miércoles siguiente, sin debate previo"
+        ],
+        "key": "D",
+        "oficial": false
+      },
+      {
+        "q": "¿Qué poder del Estado debía haber dictado esa tasa y por qué?",
+        "opts": [
+          "El poder judicial, porque controla la constitucionalidad de los decretos",
+          "El poder ejecutivo, porque administra el organismo que cobra los tributos",
+          "El poder legislativo, porque dicta las leyes y tiene la potestad tributaria del art. 75",
+          "El poder de los municipios, porque el recargo llega a las ciudades"
+        ],
+        "key": "C",
+        "oficial": false
+      },
+      {
+        "q": "¿Cuál testimonio es una versión parcial y qué dato de las pruebas lo desordena?",
+        "opts": [
+          "El de Zapata, porque es docente y padre de dos alumnos",
+          "El de Guzmán, porque habla de receso cuando el Boletín Oficial y el dictamen muestran sesiones en curso",
+          "El de Nieva, porque pidió el expediente administrativo",
+          "Ninguno: los tres relatos son totalmente objetivos"
+        ],
+        "key": "B",
+        "oficial": false
+      },
+      {
+        "q": "Si el Congreso rechaza el DNU, ¿qué debería pasar con el recargo ya cobrado, según el pedido de la demanda?",
+        "opts": [
+          "Que sigue vigente porque ya salió en el Boletín Oficial",
+          "Que lo decide otra vez el Presidente por un nuevo decreto",
+          "Que la Corte Suprema vote un impuesto para devolverlo",
+          "Que se deje de cobrar y que lo ya pagado se devuelva o se reacomode según disponga el Congreso"
+        ],
+        "key": "D",
+        "oficial": false
+      }
+    ]
+  }
+]

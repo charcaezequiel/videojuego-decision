@@ -1,0 +1,94 @@
+/* =========================================================
+   BASE · fuentes, variables y escenario (stage) 1280x720
+   ========================================================= */
+@font-face{
+  font-family:'Bebas Neue';
+  src:url('../assets/fonts/bebas-neue-latin-400-normal.woff2') format('woff2');
+  font-display:swap;
+}
+@font-face{
+  font-family:'Instrument Serif';
+  src:url('../assets/fonts/instrument-serif-latin-400-normal.woff2') format('woff2');
+  font-style:normal; font-display:swap;
+}
+@font-face{
+  font-family:'Instrument Serif';
+  src:url('../assets/fonts/instrument-serif-latin-400-italic.woff2') format('woff2');
+  font-style:italic; font-display:swap;
+}
+
+/* Texto de cuerpo redondeado (descripciones, carpetas, manual), como en el prototipo */
+@font-face{
+  font-family:'Quicksand';
+  src:url('../assets/fonts/quicksand-latin-500-normal.woff2') format('woff2');
+  font-weight:500; font-display:swap;
+}
+@font-face{
+  font-family:'Quicksand';
+  src:url('../assets/fonts/quicksand-latin-700-normal.woff2') format('woff2');
+  font-weight:700; font-display:swap;
+}
+
+:root{
+  --wine:#5f2d47;
+  --wine-dark:#4a1f37;
+  --cream:#fbebd3;
+  --cream-field:#fbeeda;
+  --brown:#3a1a07;
+  --brown-soft:#5a2c12;
+  --ink:#1e0f08;
+  --gold:#e0b070;
+  --green:#4f8a56;
+  --yellow:#c9a24a;
+  --red:#b23b3b;
+  --gray:#8a7a80;
+
+  --font-title:'Bebas Neue', 'Oswald', Impact, sans-serif;
+  --font-text:'Instrument Serif', 'Libre Caslon Text', Georgia, serif;
+  --font-body:'Quicksand', 'Nunito', 'Segoe UI', sans-serif;
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html,body{ height:100%; }
+body{
+  background:#1c0a13;
+  overflow:hidden;
+  font-family:var(--font-text);
+  color:var(--cream);
+  -webkit-font-smoothing:antialiased;
+  user-select:none;
+  touch-action:manipulation;          /* sin zoom por doble toque en celulares */
+  -webkit-text-size-adjust:100%;
+}
+
+/* Contenedor que ocupa toda la ventana y centra el stage.
+   Tiene el mismo fondo que el escenario (a la misma escala, stage.js),
+   así en pantallas de otra proporción no quedan franjas vacías. */
+.viewport{
+  position:fixed; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+  background:var(--wine) url('../assets/img/fondo.png') center/1306.2px auto repeat;
+}
+
+/* El stage mide 1280x720 (horizontal) o 720 x 1280-1560 (vertical) y se escala con JS (stage.js).
+   1306.2px de fondo = el mismo encuadre que "cover" en 1280x720. */
+.stage{
+  position:relative;
+  flex:none;
+  width:1280px; height:720px;
+  background:var(--wine) url('../assets/img/fondo.png') center/1306.2px auto repeat;
+  overflow:hidden;
+  transform-origin:center center;
+}
+
+/* Capa de brillo (Configuración → Brillo): cubre el escenario y el fondo exterior */
+.stage-shade{
+  position:absolute; inset:0; z-index:9999; pointer-events:none;
+  background:#000; opacity:0;
+}
+
+/* Utilidades de posicionamiento absoluto dentro del stage */
+.abs{ position:absolute; }
+.center-x{ left:50%; transform:translateX(-50%); }
+.hidden{ display:none !important; }
