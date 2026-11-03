@@ -140,6 +140,12 @@ DF.store = (function(){
   function summary(acc){
     const levels = (acc.progress && acc.progress.levels) || {};
     const played = Object.keys(levels).map(k => levels[k]).filter(r => r && r.played);
+    let best = null;
+    Object.keys(levels).forEach(k => {
+      const r = levels[k];
+      if(!r || !r.played) return;
+      if(!best || (r.score || 0) > best.score) best = { n:+k, score:r.score || 0, stars:r.stars || 0 };
+    });
     return {
       email: acc.email,
       user: acc.user,
@@ -147,7 +153,8 @@ DF.store = (function(){
       score: played.reduce((sum, r) => sum + (r.score || 0), 0),
       stars: played.reduce((sum, r) => sum + (r.stars || 0), 0),
       won: played.filter(r => r.passed).length,
-      played: played.length
+      played: played.length,
+      best: best
     };
   }
   function totalOf(acc){ return summary(acc).score; }
@@ -165,6 +172,18 @@ DF.store = (function(){
     return acc ? acc.run || null : null;
   }
   function updateRun(data){ saveRun(data); }
+
+  /* ---- borrar el progreso de la cuenta abierta ----
+     Niveles, puntos, prendas y partida en curso. La cuenta sigue existiendo
+     (correo y usuario) y los ajustes del dispositivo no se tocan. */
+  function resetProgress(){
+    if(!state.email) return false;
+    state.progress = { levels: {} };
+    state.avatar = blankAccount(state.email, state.user).avatar;
+    persist();
+    saveRun(null);
+    return true;
+  }
 
   /* ---- ajustes ---- */
   function setSetting(key, value){
@@ -217,7 +236,7 @@ DF.store = (function(){
 
   return {
     state, update, persist, login, logout, isLoggedIn, accounts, summary,
-    setSetting, saveSettings, saveRun, getRun, updateRun,
+    setSetting, saveSettings, saveRun, getRun, updateRun, resetProgress,
     normalEmail, DEFAULT_SETTINGS, KEY: { V2, V1, SETTINGS_KEY, SESSION_KEY, acctKey }
   };
 })();

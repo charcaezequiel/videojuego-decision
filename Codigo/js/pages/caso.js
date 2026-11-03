@@ -110,8 +110,12 @@ DF.boot(() => {
   function close(){
     stopSpeak();
     overlay.classList.add('hidden');
+    /* el foco vuelve a la carpeta que abrió el documento: si no, al ocultarse el
+       overlay se cae al BODY y hay que hacer Tab desde el principio de la pantalla */
+    const disparadora = abierta && folders.querySelector('.folder[data-doc="' + abierta + '"]');
     if(abierta) marcarLeida(abierta);
     abierta = null;
+    if(disparadora) disparadora.focus({ preventScroll:true });
   }
 
   folders.innerHTML = DF.run.FOLDERS().map(k =>

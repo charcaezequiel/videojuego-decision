@@ -397,6 +397,10 @@ async function seedRun(page, n, answers){
     eq(await page.evaluate(() => DF.store.state.user), 'cuenta_b', 'la sesión activa es la B');
     const ranking = await page.evaluate(() => DF.store.accounts().map(a => a.user).sort().join(','));
     eq(ranking, 'cuenta_a,cuenta_b', 'el ranking ve las dos cuentas');
+    eq(await page.evaluate(() => DF.store.accounts().find(a => a.user === 'cuenta_a').best.n), 1,
+       'la cuenta A reporta el nivel 1 como su mejor nivel');
+    eq(await page.evaluate(() => DF.store.accounts().find(a => a.user === 'cuenta_b').best), null,
+       'una cuenta sin niveles jugados no reporta mejor nivel');
   })));
 
   /* 15 · migración de la partida de la versión anterior */
@@ -549,6 +553,46 @@ async function seedRun(page, n, answers){
       eq(info.oculto, false, 'con video el reproductor se muestra');
       assert(info.dur > 0, 'el tutorial tiene duración, dio ' + info.dur);
     }
+  })));
+
+  /* 20 · borrar el progreso solo afecta a la cuenta abierta.
+     Ojo: el helper login() escribe la cuenta de cero, así que la cuenta que se
+     borra tiene que ser la ÚLTIMA en iniciarse. */
+  T.push(ok('20 · borrar mi progreso', () => withPage(async (page) => {
+    await login(page, 'ajena@df.test', 'ajena');
+    await go(page, 'niveles.html');
+    await page.evaluate(() => DF.progress.finishLevel(2, { score:500, stars:1, passed:false, correct:7, wrong:3, timeout:0, unanswered:0, words:2, wordsTotal:3 }));
+    await go(page, 'config.html');
+    await page.evaluate(() => { DF.store.setSetting('music', 11); DF.store.saveSettings(); });
+    const ajustesAntes = await page.evaluate(() => localStorage.getItem(DF.store.KEY.SETTINGS_KEY));
+
+    await login(page, 'veinte@df.test', 'veinte');
+    await go(page, 'niveles.html');
+    await page.evaluate(() => {
+      DF.progress.finishLevel(1, { score:900, stars:3, passed:true, correct:10, wrong:0, timeout:0, unanswered:0, words:3, wordsTotal:3 });
+      DF.store.update(s => { s.avatar.piel = 'oscura'; });   // personaje vestido a medida
+    });
+    eq(await page.evaluate(() => DF.progress.isUnlocked(2)), true, 'con el nivel 1 jugado el 2 está desbloqueado');
+
+    await go(page, 'config.html');
+    await page.waitForTimeout(250);
+    await page.click('#btn-borrar');
+    eq(await page.evaluate(() => document.getElementById('modal-borrar').classList.contains('hidden')), false,
+       'el botón abre la confirmación');
+    await page.click('#confirmar-borrar');
+    await page.waitForTimeout(300);
+
+    const borrada = await page.evaluate(() => JSON.parse(localStorage.getItem(DF.store.KEY.acctKey('veinte@df.test'))));
+    eq(Object.keys(borrada.progress.levels).length, 0, 'la cuenta borrada queda sin niveles');
+    eq(borrada.user, 'veinte', 'la cuenta sigue existiendo con su usuario');
+    eq(borrada.run, null, 'y la partida en curso se descarta');
+    eq(borrada.avatar.piel, 'media', 'el personaje vuelve al aspecto inicial');
+    const ajena = await page.evaluate(() => JSON.parse(localStorage.getItem(DF.store.KEY.acctKey('ajena@df.test'))));
+    assert(ajena.progress.levels['2'], 'otra cuenta conserva su nivel jugado');
+    eq(await page.evaluate(() => localStorage.getItem(DF.store.KEY.SETTINGS_KEY)), ajustesAntes,
+       'los ajustes del dispositivo no se tocan');
+    eq(await page.evaluate(() => DF.store.state.email), 'veinte@df.test', 'la sesión sigue abierta');
+    eq(await page.evaluate(() => DF.progress.isUnlocked(2)), false, 'sin progreso el nivel 2 se vuelve a bloquear');
   })));
 
   for(const t of T) await t();

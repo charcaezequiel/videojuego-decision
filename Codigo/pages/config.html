@@ -27,6 +27,19 @@
 <label class="label abs cfg-gra-l" for="graficos" data-i18n="graficos">Gráficos:</label>
 <select class="cfg-gra" id="graficos"><option value="1920">1920x1080</option><option value="1280">1280x720</option></select>
 <a class="img-btn cfg-soporte" href="soporte.html" data-i18n-aria="soporte"><img src="../assets/icons/soporte.png" alt="Soporte"></a>
+
+<!-- Borrar el progreso solo de esta cuenta (los ajustes son del dispositivo). -->
+<button class="btn cfg-borrar" id="btn-borrar" data-i18n="borrarProgreso">BORRAR MI PROGRESO</button>
+<div class="modal-backdrop hidden" id="modal-borrar" role="dialog" aria-modal="true" aria-labelledby="borrar-titulo">
+  <div class="modal">
+    <h2 id="borrar-titulo" data-i18n="borrarProgreso">BORRAR MI PROGRESO</h2>
+    <p class="text" data-i18n="borrarAdj">Se borran los niveles, los puntos y las prendas de esta cuenta. La cuenta sigue existiendo y la configuración del dispositivo no se toca.</p>
+    <div class="row">
+      <button class="btn dark" id="cancelar-borrar" data-i18n="cerrar">CERRAR</button>
+      <button class="btn" id="confirmar-borrar" data-i18n="borrarYa">SÍ, BORRAR</button>
+    </div>
+  </div>
+</div>
 </main>
 </div>
 <script src="../js/data/niveles.js"></script>

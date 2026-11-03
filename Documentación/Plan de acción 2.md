@@ -24,7 +24,7 @@ npx http-server -p 8099 -c-1 .       # en otra terminal
 
 | Comando | Qué revisa |
 |---|---|
-| `npm test` | 19 pruebas funcionales |
+| `npm test` | 20 pruebas funcionales |
 | `npm run audit` | diseño en 9 tamaños × 17 pantallas |
 | `npm run i18n` | textos de pantalla vs. diccionario ES/EN |
 | `npm run hit` | área de clic sobre el arte real de cada ícono |
@@ -61,23 +61,30 @@ npx http-server -p 8099 -c-1 .       # en otra terminal
 
 ---
 
-## PARTE 2 · Pantallas: lo único que falta codear
+## PARTE 2 · Pantallas: lo único que falta codear ✅
 
-**Objetivo:** las dos funciones que faltan y el ajuste de teclado. Nada de esto está en el código hoy (verificado con búsqueda en `config`, `store`, `progress` y `ranking`).
+**Objetivo:** las dos funciones que faltan y el ajuste de teclado. Cerrada el 03/11 con `npm test` **20 ok / 0 fallan**, `npm run audit` OK (9 tamaños × 17 pantallas), `npm run i18n` 0 diferencias, `npm run hit` ok.
 **Tiempo estimado:** 2-3 h.
 
-- ⬜ **2.1 · "Borrar mi progreso" en Configuración.** Hoy hay que borrar los datos del sitio desde el navegador.
-  - API nueva en `js/core/store.js`: el objeto público (`línea 218-222`) tiene `state, update, persist, login, logout, isLoggedIn, accounts, summary, setSetting, saveSettings, saveRun, getRun, updateRun` — **no hay ningún método de borrado**. Agregar `resetAccount(email)` que limpie `progress` y `run` de ESA cuenta (clave `df_decision_final_v2:cuenta:<correo>`), mantenga `user`/`email` y **no toque** `df_decision_final_v2:ajustes` (es del dispositivo, regla de la sección 4 del Readme).
-  - UI en `pages/config.html`: un `.btn` de texto (la pantalla ya usa `.img-btn` solo para volver y soporte, línea 17 y 29) + **modal de confirmación**, reutilizando el patrón de `js/pages/soporte.js:13` (`setTimeout(() => area.focus(), 60)` y `Escape` en la línea 19).
-  - Claves nuevas en `js/core/i18n.js` (ES y EN) → por eso `npm run i18n` tiene que correr al final.
-  - Test nuevo: **caso 20** en `tests/e2e.js` ("borrar el progreso deja la cuenta abierta y no afecta a las otras cuentas"). Pasar de 19 a 20 casos hay que actualizarlo también en el Readme (Parte 5).
-- ⬜ **2.2 · Ranking con estrellas y mejor puntaje por nivel.** `js/pages/ranking.js:22-31` hoy muestra puntos totales y un promedio de estrellas (`r.stars / r.played * 3`). Los datos **ya existen** (`DF.progress.result(n)` guarda `score`, `stars`, `passed` por nivel): falta solo el render. Recién ahí el ítem del plan viejo ("estrellas y mejor puntaje por nivel") se puede marcar ✅.
-- ⬜ **2.3 · Foco al entrar una pregunta.** Al renderizar, nada mueve el foco: un usuario de teclado tiene que hacer Tab desde el inicio de la pantalla para llegar a las 4 opciones. Agregar en `js/pages/desafio.js` (después del `innerHTML` de la línea 55) un `qOpts.querySelector('.q-opt').focus()`, y lo mismo en `palabra.js` sobre el input. **Verificar que no robe el foco del video tutorial ni haga sonar nada.**
-- ⬜ **2.4 · Recorrido por teclado, completo ( reverificar, no asumir).** Recorrer con solo teclado: `portada → registro → menú → niveles → caso (3 carpetas) → juicio → 10 preguntas → palabras → resultado`, más `config` y `soporte`. Anotar dónde se pierde el orden de Tab. Ya está resuelto y **no** hay que repetir: `Enter` en registro (es `<button type="submit">`), rangos y selects nativos en config, y `Enter`/`Espacio` en `desafio.js:159,170`, `juicio.js:66`, `palabra.js:165`.
-- ⬜ **2.5 · `aria-live` en el aviso de respuesta.** El HUD del timer usa `aria-live="off"` (`pages/desafio.html:20`) a propósito; falta que el feedback "era correcta / la respuesta era X" (`desafio.js:136,142`) se anuncie. Región `aria-live="polite"` sobre el `speech-box`, sin doble anuncio.
+- ✅ **2.1 · "Borrar mi progreso" en Configuración.**
+  - `js/core/store.js`: se agregó `resetProgress()` (no `resetAccount(email)` como proponía el plan: el store **solo** trabaja sobre la cuenta logueada — `state.email` — y exponer un borrado por correo arbitrario invites a borrar la cuenta equivocada). Limpia `progress`, deja el avatar en el default de `blankAccount()`, persiste, cierra la partida (`saveRun(null)`) y **no toca** `df_decision_final_v2:ajustes` (es del dispositivo, regla de la sección 4 del Readme). `summary()` ahora también devuelve `best`.
+  - UI en `pages/config.html`: `.btn.cfg-borrar` + modal que reutiliza `.modal-backdrop/.modal` de `components.css` (el mismo patrón de `soporte.js`). El foco arranca en **CERRAR**, así Enter no borra nada por accidente. Escape y clic en el fondo cierran.
+  - 4 claves nuevas en `js/core/i18n.js` (ES y EN): `borrarProgreso`, `borrarAdj`, `borrarYa`, `borradoOk`.
+  - **Caso 20** en `tests/e2e.js`: verifica que se vacíe `progress`, que la cuenta siga abierta, que el avatar custom vuelva a `media`, que la música (ajuste del dispositivo) no se toque y que **la otra cuenta conserve su progreso**. Ojo con el helper `login()` del archivo: reescribe la cuenta de cero, así que la cuenta que se borra tiene que ser la **última** en loguearse (por eso el caso usa `veinte`, la última del listado).
+- ✅ **2.2 · Ranking con estrellas y mejor puntaje por nivel.** `summary()` calcula `best = {n, score, stars}` (el mayor puntaje entre los niveles jugados) y `ranking.js` lo muestra como `NIVEL 3 · 2.450` bajo las estrellas, con el detalle completo en `title`. Ajustes de caja: `.rank-pts` 120→150 px (los "3.250 pts" se partían en dos renglones en horizontal), `.rank-stars` con `line-height:1` + `small` en la fuente de texto, y la grilla vertical pasó a `64px 58px`. Verificado con capturas en horizontal y vertical (`tools/out/ranking-*.png`).
+- ✅ **2.3 · Foco en el cuestionario.** **El plan estaba mal en los dos puntos:**
+  - `desafio.js` **no necesita autofocus inicial**: la selección es virtual (flechas + Enter); si la opción 1 queda enfocada sin estar seleccionada, Tab/flechas y Enter apuntarían a cosas distintas. Se hizo **sincronización bidireccional**: `pick(k, fromFocus)` mueve el foco a la opción seleccionada, y el `focusin` en `.q-opts` selecciona la opción enfocada (así Tab no "salta" selección). Con el `focus()` programático el anillo `:focus-visible` **no** aparece en el camino de mouse (verificado con clic real, no con `.click()` sintético, que no mueve el foco).
+  - En `palabra.js` **no hay `<input>`**: el desafío de palabras usa teclado de pantalla + un handler global de `keydown`, así que no hay nada que enfocar al entrar. Lo que sí estaba roto: cada `refresh()` reconstruye `#kb` con `innerHTML` y el foco de la tecla usada caía al `BODY`. Ahora `drawKeys()` devuelve el foco a la misma tecla (`data-key`), con `preventScroll` para no mover el escenario.
+  - Dato para el que lee el código después: al responder, `answer()` pone `disabled` en las 4 opciones y **el navegador mueve el foco al `BODY`** (comportamiento estándar al deshabilitar el elemento enfocado). No rompe nada: el `Enter` que salta la devolución está escuchado en `document`, y `#q-text` tiene `aria-live="polite"`.
+- ✅ **2.4 · Recorrido por teclado completo.** Recorrido real con Playwright usando solo Tab/Enter/flechas (`tools/out/walk-keyboard.js`): `portada → registro → menú → niveles → nivel-titulo → nivel-desc → caso (3 carpetas) → juicio → 10 preguntas → 3 palabras → resultado`, más `config` y `soporte`. Resultado: **el flujo completo se hace sin mouse**. Orden medido (Tabs hasta la acción principal): portada 1 · registro 1 (entra con el foco puesto en el correo) · menú 4 (Jugar) · niveles 2 (primer nivel desbloqueado) · título/descripción 2 (flecha →) · caso 2 (carpeta) · resultado 1.
+  - Tres focos que se perdían y se arreglaron devolviéndolos al disparador: **`caso.js`** (al cerrar una carpeta con Escape el foco caía al `BODY`; ahora vuelve a la carpeta leída, y de ahí la flecha → queda a 1 Tab), **`config.js`** y **`soporte.js`** (al cerrar el modal con Escape o con Enter, el foco vuelve a `#btn-borrar` / `#btn-contacto`).
+  - Dos cosas que **son a propósito** y no hay que "arreglar": en `juicio.html` la flecha → está `nav-off` (`tabindex="-1"`, `aria-hidden="true"`) hasta la última línea del diálogo, por eso el Tab solo encuentra la ← — el avance por teclado es `Enter`/`Espacio` global (10 pulsos para las 5 líneas tipeadas). En `niveles.html` los niveles bloqueados siguen en el orden de Tab con `aria-disabled="true"`: al activarlos no navegan y aparece un `toast` (que vive en un `role="status"`) explicando qué nivel falta.
+- ✅ **2.5 · `aria-live` en la devolución.** **Ya estaba**: `pages/desafio.html:22` tiene `<div class="q-text" id="q-text" aria-live="polite">` y toda la devolución (`showFeedback()`) se escribe ahí, así que se anuncia sola y sin doble anuncio (el HUD del timer es `aria-live="off"` a propósito). Verificado en runtime: las 10 preguntas reportan `q-text feedback` con `ariaLive=polite`. **No hubo que codear nada.**
 
-**Criterio para cerrar:** `npm test` = 20 ok (con el caso 20 nuevo), `npm run audit` sin problemas en las pantallas tocadas, `npm run i18n` con 0 diferencias.
+**Criterio para cerrar:** ✅ cumplido — `npm test` = 20 ok (con el caso 20 nuevo), `npm run audit` sin problemas en las pantallas tocadas, `npm run i18n` con 0 diferencias.
 **Commit:** `P2 · pantallas: borrar progreso, ranking por nivel y foco de teclado`.
+
+> **Pasos a la Parte 3 (contraste):** el recorrido visual del ranking y del desafío de palabras dejó dos problemas de legibilidad **preexistentes**, para el ítem 3.4: (1) el `.name` color marrón sobre la parte vacía (oscura) de `.rank-bar` deja "juez_pixel" y "sin_jugar" casi ilegibles; (2) los textos chicos de plaquetas/`small` del ranking no llegan al contraste recomendado sobre `fondo.png`.
 
 ---
 
@@ -92,7 +99,7 @@ npx http-server -p 8099 -c-1 .       # en otra terminal
   - **Trampa a evitar:** `niveles.js` dice "GENERADO · no editar a mano" (`js/data/niveles.js:2`). Si se edita ahí, el cambio se pisa en la próxima build.
 - ⬜ **3.2 · Validar el contenido regenerado.** `node tools/content/validar.mjs` + la build ya falla si la clave no es `A-D` o `oficial` no es booleano (el bug que hacía injugable el juego). Confirmar después de editar: 100 llamadas a `Q(`, 10 `, true)` y 90 `, false)`.
 - ⬜ **3.3 · Manual en inglés.** `js/data/manual.js` es 100 % español y no tiene bloque de idioma; hoy, con idioma EN, la interfaz se traduce y el manual queda en español (sección 8 del Readme). Definir el mecanismo **antes** de escribir (el manual arma sus números desde `DF.rules`, así que cualquier estructura tiene que conservar eso): array paralelo `[es, en]` por párrafo o `DF.manual_en`. Es la tarea más grande de esta parte.
-- ⬜ **3.4 · Contraste de los textos chicos.** El único ítem de accesibilidad que el plan viejo pedía y que no aparece resuelto (el foco y el `aria-label` ya están, sección "No hace falta revisar"). Revisar `--cream`/texto sobre `fondo.png` en `.label`, plaquetas A/B/C/D y tarjetas de nivel con `npm run shots`.
+- ⬜ **3.4 · Contraste de los textos chicos.** El único ítem de accesibilidad que el plan viejo pedía y que no aparece resuelto (el foco y el `aria-label` ya están, sección "No hace falta revisar"). Revisar `--cream`/texto sobre `fondo.png` en `.label`, plaquetas A/B/C/D y tarjetas de nivel con `npm run shots`. **Arranca con dos casos ya detectados en la Parte 2** (ver la nota al final de la Parte 2): el `.name` sobre la parte vacía de `.rank-bar` y los `small` del ranking.
 
 **Criterio para cerrar:** `npm run content` sin errores, `npm run i18n` con 0 diferencias, los 10 casos leídos a mano y las 30 palabras sin errores de tipeo.
 **Commit:** `P3 · contenido: lectura humana de los 10 casos y manual en inglés`.
@@ -142,7 +149,7 @@ npx http-server -p 8099 -c-1 .       # en otra terminal
 | # | Parte | Cuándo sabés que terminó |
 |---|---|---|
 | 1 | Bug cero y línea base | 404 = 0 con el filtro nuevo; 4 suites verde |
-| 2 | Lo que falta codear | `npm test` = 20 ok, `i18n` 0 diferencias |
+| 2 | Lo que falta codear | ✅ cerrada el 03/11: `npm test` = 20 ok, `i18n` 0 diferencias |
 | 3 | Contenido y traducción | casos leídos a mano + manual EN |
 | 4 | Recursos | tutorial nuevo y formato validado en el aula |
 | 5 | Prueba real y empaque | Readme honesto + ZIP probado en otro equipo |

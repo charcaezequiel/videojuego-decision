@@ -46,8 +46,11 @@ DF.i18n = (function(){
       manualTit:'MANUAL DE JUEGO', manualTeclas:'Usá el mouse para tocar los botones y las teclas para responder las preguntas.',
       seguir:'Tocá para continuar',
       cambiarCuenta:'CAMBIAR DE CUENTA', musica:'Música:',
+      borrarProgreso:'BORRAR MI PROGRESO', borrarAdj:'Se borran los niveles, los puntos y las prendas de esta cuenta. La cuenta sigue existiendo y la configuración del dispositivo no se toca.',
+      borrarYa:'SÍ, BORRAR', borradoOk:'¡Progreso borrado! Volvés a empezar en el nivel 1.',
       tutorial:'TUTORIAL', tutoVer:'Ver tutorial', tutoAmpliar:'Ampliar video', tutoAchicar:'Achicar video', tutoCerrar:'Cerrar tutorial',
       sinCuentas:'Todavía no hay cuentas en esta computadora. Registrá la primera.',
+      rankBest:'NIVEL {n} · {p}', rankBestTit:'Mejor nivel: {n} · {p} pts · {s} estrellas',
       tutoNoVideo:'El video tutorial no está cargado. El manual alcanza para jugar.',
       leerTodo:'Leé las tres carpetas para empezar.', audioDoc:'Escuchá el audio', palabraEra:'Era: {w}'
     },
@@ -91,8 +94,11 @@ DF.i18n = (function(){
       manualTit:'GAME MANUAL', manualTeclas:'Use the mouse to press buttons and the keys to answer questions.',
       seguir:'Tap to continue',
       cambiarCuenta:'SWITCH ACCOUNT', musica:'Music:',
+      borrarProgreso:'CLEAR MY PROGRESS', borrarAdj:'This account loses its levels, points and items. The account itself stays and the device settings are untouched.',
+      borrarYa:'YES, CLEAR IT', borradoOk:'Progress cleared! You are back at level 1.',
       tutorial:'TUTORIAL', tutoVer:'Watch tutorial', tutoAmpliar:'Enlarge video', tutoAchicar:'Shrink video', tutoCerrar:'Close tutorial',
       sinCuentas:'No accounts on this computer yet. Create the first one.',
+      rankBest:'LEVEL {n} · {p}', rankBestTit:'Best level: {n} · {p} pts · {s} stars',
       tutoNoVideo:'The tutorial video isn’t loaded. The manual covers everything.',
       leerTodo:'Read all three folders to start.', audioDoc:'Play the audio', palabraEra:'It was: {w}'
     }

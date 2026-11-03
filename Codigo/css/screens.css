@@ -47,6 +47,8 @@ input.cfg-bri{ position:absolute; left:204px; top:490px; width:447px; }
 .cfg-mus-l{ left:186px; top:572px; }
 input.cfg-mus{ position:absolute; left:204px; top:650px; width:447px; }
 .cfg-soporte{ right:20px; bottom:20px; width:106px; }
+/* más chico que un .btn normal: es una acción secundaria y va bajo los selectores */
+.cfg-borrar{ left:823px; top:580px; font-size:32px; letter-spacing:1px; padding:10px 26px 8px; }
 .val{ position:absolute; font-size:26px; opacity:.8; }
 
 /* ---------- Soporte ---------- */
@@ -104,10 +106,14 @@ input.cfg-mus{ position:absolute; left:204px; top:650px; width:447px; }
 .rank-bar{ flex:1; height:64px; background:rgba(20,5,12,.45); border-radius:32px; position:relative; overflow:hidden; }
 .rank-bar .fill{ position:absolute; left:0; top:0; bottom:0; background:var(--cream-field); border-radius:32px; transition:width .8s ease; }
 .rank-bar .name{ position:absolute; left:26px; top:50%; transform:translateY(-46%); font-family:var(--font-title); font-size:36px; letter-spacing:1px; color:var(--brown); z-index:1; }
-.rank-pts{ width:120px; font-size:32px; text-align:right; color:var(--cream); }
+.rank-pts{ width:150px; font-size:32px; text-align:right; color:var(--cream); }
 .rank-row.me .rank-bar .fill{ background:var(--gold); }
-.rank-stars{ width:110px; font-size:40px; color:var(--cream); letter-spacing:2px; text-align:left; }
+.rank-stars{ width:158px; font-size:40px; color:var(--cream); letter-spacing:2px; text-align:left; line-height:1; }
 .rank-stars .off{ opacity:.25; }
+.rank-stars small{
+  display:block; font-family:var(--font-text); font-weight:500;
+  font-size:20px; letter-spacing:0; opacity:.85; margin-top:3px;
+}
 
 /* ---------- Selección de nivel (círculo ▶ + etiqueta crema, como el prototipo) ---------- */
 .lvl-title{ left:-80px; }

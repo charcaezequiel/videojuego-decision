@@ -65,10 +65,23 @@ DF.boot(() => {
     timer.start();
   }
 
-  function pick(k){
+  /* El foco sigue a la selección: así Tab, las flechas y Enter no apuntan a
+     opciones distintas. preventScroll evita que el escenario se mueva. */
+  function pick(k, fromFocus){
     picked = k;
-    qOpts.querySelectorAll('.q-opt').forEach(b => b.classList.toggle('sel', +b.dataset.k === k));
+    qOpts.querySelectorAll('.q-opt').forEach(b => {
+      const on = +b.dataset.k === k;
+      b.classList.toggle('sel', on);
+      if(on && !fromFocus && document.activeElement !== b) b.focus({ preventScroll:true });
+    });
   }
+
+  qOpts.addEventListener('focusin', e => {
+    const b = e.target.closest('.q-opt');
+    if(!b) return;
+    const k = +b.dataset.k;
+    if(k !== picked) pick(k, true);
+  });
 
   function setBar(ratio){
     barFill.style.width = (ratio * 100).toFixed(1) + '%';

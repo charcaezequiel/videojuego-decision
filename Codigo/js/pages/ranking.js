@@ -1,5 +1,7 @@
 /* =========================================================
    ranking.js · Cuenta por cuenta, ordenadas por puntaje
+   Cada fila muestra el total, y a la derecha las estrellas y el puntaje
+   del MEJOR nivel jugado por esa cuenta.
    Se muestra el usuario, no el correo. La cuenta abierta resalta.
    ========================================================= */
 DF.boot(() => {
@@ -20,14 +22,17 @@ DF.boot(() => {
 
   list.innerHTML = rows.map((r, i) => {
     const me = r.email === DF.store.state.email;
-    const avg = r.played ? Math.round(r.stars / r.played * 3) : 0;
+    const best = r.best;
+    const label = best ? DF.i18n.t('rankBest', { n:best.n, p:best.score }) : '';
+    const tit = best ? DF.i18n.t('rankBestTit', { n:best.n, p:best.score, s:best.stars }) : '';
     return '<div class="rank-row' + (me ? ' me' : '') + '">' +
       '<div class="rank-pos">' + (i + 1) + '</div>' +
       '<div class="rank-avatar">' + DF.sprites.avatar(r.avatar, 2.6, { crop:'face' }) + '</div>' +
       '<div class="rank-bar"><i class="fill" data-w="' + Math.round(r.score / max * 100) + '"></i>' +
         '<span class="name">' + DF.esc(r.user) + '</span></div>' +
       '<div class="rank-pts">' + r.score + ' ' + DF.i18n.t('pts') + '</div>' +
-      '<div class="rank-stars" title="' + r.stars + '">' + starRow(avg) + '</div>' +
+      '<div class="rank-stars" title="' + DF.esc(tit) + '">' + starRow(best ? best.stars : 0) +
+        (label ? '<small>' + DF.esc(label) + '</small>' : '') + '</div>' +
       '</div>';
   }).join('');
 

@@ -7,13 +7,15 @@ DF.boot(() => {
   const KEY = 'df_decision_final_v2:mensajes';
   const modal = document.getElementById('modal-contacto');
   const area = document.getElementById('mensaje');
+  const disparador = document.getElementById('btn-contacto');
 
   function open(on){
     modal.classList.toggle('hidden', !on);
     if(on) setTimeout(() => area.focus(), 60);
+    else disparador.focus();      // el foco vuelve a donde estaba el usuario
   }
 
-  document.getElementById('btn-contacto').addEventListener('click', () => open(true));
+  disparador.addEventListener('click', () => open(true));
   document.getElementById('cerrar-contacto').addEventListener('click', () => open(false));
   modal.addEventListener('click', e => { if(e.target === modal) open(false); });
   document.addEventListener('keydown', e => { if(e.key === 'Escape' && !modal.classList.contains('hidden')) open(false); });

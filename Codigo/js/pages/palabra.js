@@ -75,12 +75,20 @@ DF.boot(() => {
       const ch = a.guess[i];
       if(!used[ch] || rank[s] > rank[used[ch]]) used[ch] = s;
     }));
+    /* el teclado se reconstruye entero: si el foco estaba en una tecla,
+       se devuelve a la misma para no perder el orden de Tab */
+    const enfocada = document.activeElement.closest('.key');
+    const tecla = enfocada && enfocada.dataset.key;
     kb.innerHTML = ROWS.map(row => '<div class="krow">' + row.map(k => {
       if(k === 'enter') return '<button type="button" class="key wide" data-key="enter">' + DF.i18n.t('enter') + '</button>';
       if(k === 'borrar') return '<button type="button" class="key wide" data-key="back">' + DF.i18n.t('borrar') + '</button>';
       return '<button type="button" class="key' + (used[k] ? ' ' + used[k] : '') + '" data-key="' + k + '">' + k + '</button>';
     }).join('') + '</div>').join('');
     kb.querySelectorAll('[data-key]').forEach(b => b.addEventListener('click', () => press(b.dataset.key)));
+    if(tecla){
+      const misma = kb.querySelector('[data-key="' + tecla + '"]');
+      if(misma) misma.focus({ preventScroll:true });
+    }
   }
 
   function drawMeta(){
