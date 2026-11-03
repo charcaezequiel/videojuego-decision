@@ -171,7 +171,10 @@
 .res-stats{ position:absolute; left:200px; right:200px; top:360px; display:flex; flex-wrap:wrap; justify-content:center; gap:10px 14px; }
 .res-stats span{ background:var(--brown); border-radius:12px; padding:8px 18px; font-family:var(--font-body); font-weight:700; font-size:23px; }
 .res-stats .ok{ color:#bfe8bf; } .res-stats .bad{ color:#ffc0b0; } .res-stats .na{ color:#f0dca8; }
-.res-note{ position:absolute; left:160px; right:160px; top:470px; text-align:center; font-family:var(--font-body); font-weight:700; font-size:24px; line-height:1.35; color:var(--gold); }
+/* La nota vive entre .res-stats (baja a 464) y .res-btns (sube a 588): 122px.
+   Con 24px/1.35 entraban 3 líneas y el resumen del caso 1 usaba 4. A 22px/1.3
+   entran 4 y el resumen se limita a 150 caracteres (resultado.js). */
+.res-note{ position:absolute; left:160px; right:160px; top:470px; text-align:center; font-family:var(--font-body); font-weight:700; font-size:22px; line-height:1.3; color:var(--gold); }
 .res-btns{ position:absolute; left:0; right:0; bottom:74px; display:flex; justify-content:center; flex-wrap:wrap; gap:20px; }
 .res-btns .btn{ position:static; font-size:36px; padding:12px 30px 10px; }
 .res-countdown{ position:absolute; left:0; right:0; bottom:24px; text-align:center; font-family:var(--font-body); font-weight:500; font-size:22px; opacity:.85; }

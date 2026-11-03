@@ -143,9 +143,10 @@ input.cfg-mus{ position:absolute; left:204px; top:650px; width:447px; }
 .lvl-row:hover .dot{ transform:scale(1.07); }
 .lvl-row.locked{ cursor:not-allowed; }
 /* la plaqueta NIVEL n se mantiene legible: bajarle la opacidad dejaba el marrón
-   sobre el arte y el contraste caía a 1.7. El candado se lee en el círculo. */
+   sobre el arte y el contraste caía a 1.7. El candado se lee en el círculo y en
+   el crema apagado de la plaqueta (8,7:1 con el marrón del texto). */
 .lvl-row.locked .dot{ opacity:.5; filter:grayscale(.5); }
-.lvl-row.locked .tag{ filter:grayscale(.4) brightness(.94); }
+.lvl-row.locked .tag{ background:#c3b096; }
 .lvl-row.locked:hover .dot{ transform:none; }
 .lvl-row.lost .state{ color:#ffc9b8; }
 .lvl-row.won .state{ color:#c8f0c8; }

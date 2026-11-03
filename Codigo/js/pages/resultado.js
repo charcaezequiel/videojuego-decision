@@ -46,6 +46,19 @@ DF.boot(() => {
     chip('aciertos', { a:g.correct, b:R.questionCount }, g.correct >= R.minCorrect ? 'ok' : 'bad') +
     chip('desafioFinal', { a:g.words, b:g.wordsTotal }, g.words >= R.minWords ? 'ok' : 'bad');
 
+  /* La nota tiene banda fija entre las estadísticas y los botones: cuatro líneas.
+     El resumen toma la primera frase y se corta en MAX_RESUMEN; la devolución
+     completa ya se leyó en el desafío (desafio.js). El corte pide mayúscula
+     después del punto para no romperse en "art." ni "inc.". */
+  const MAX_RESUMEN = 150;
+  function resumen(texto){
+    const corte = texto.search(/[.!?] (?=[A-ZÁÉÍÓÚÑ¿¡])/);
+    const frase = corte < 0 ? texto : texto.slice(0, corte + 1);
+    if(frase.length <= MAX_RESUMEN) return frase;
+    const zona = frase.slice(0, MAX_RESUMEN);
+    return zona.slice(0, zona.lastIndexOf(' ')).replace(/[,;:]$/, '') + '…';
+  }
+
   el('res-note').innerHTML = notas(g);
   botones(g);
 
@@ -54,7 +67,7 @@ DF.boot(() => {
     const out = [];
     if(g.unlock && g.unlock.unlockedLevel) out.push(DF.i18n.t('desbloqueoNivel', { n:g.unlock.unlockedLevel }));
     if(g.unlock && g.unlock.firstTime) out.push(DF.i18n.t('desbloqueoPrendas'));
-    if(g.passed) out.push(DF.esc(DF.levels[n - 1].caso.devolucion.split('.')[0] + '.'));
+    if(g.passed) out.push(DF.esc(resumen(DF.levels[n - 1].caso.devolucion)));
     else out.push(DF.esc(DF.i18n.t('nivelPerdido')) + ' · ' + DF.esc(DF.i18n.t('reintentarNivel')));
     return out.join(' ');
   }

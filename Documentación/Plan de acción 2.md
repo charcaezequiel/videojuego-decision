@@ -126,19 +126,30 @@ npx http-server -p 8099 -c-1 .       # en otra terminal
 
 ---
 
-## PARTE 4 · Recursos (video, música y arte)
+## PARTE 4 · Recursos (video, música y arte) ✅
 
 **Objetivo:** que los recursos mostrados sean la interfaz final, y que lo entregado sea reproducible en el aula.
 **Tiempo estimado:** 1-2 h, con descargas de dependencias incluidas.
 
-- ⬜ **4.1 · Regrabar el tutorial.** `assets/video/tutorial.webm` (59,8 s, 1280×720) se grabó **antes** de las plaquetas A/B/C/D y del área de clic medida sobre el arte. Con el servidor en 8099: `npm run tutorial` (necesita Playwright y ffmpeg). Después revisar el resultado con `npm run shots`. El reproductor ya se oculta si el archivo no carga (`pages/niveles.html:29` apunta a `.webm`, correcto) → nada de lógica que cambiar.
-- ⬜ **4.2 · Decidir WebM vs. MP4.** El ffmpeg que trae Playwright no tiene `libx264` ni muxer MP4. O se entrega WebM y se prueba en el proyector/PC del aula **antes** de la entrega, o se consigue un ffmpeg completo y se convierte. **Esto es un riesgo de presentación, no un detalle técnico: verificarlo con el equipo real.**
-- ⬜ **4.3 · Música y licencia.** Confirmar que `assets/audio/` queda en los formatos reales (`musica-quiz.mp3` + `.wav`) según lo resuelto en 1.1, que `LICENCIA.txt` describa el mix final, y que la composición original CC0 siga documentada como está.
-- ⬜ **4.4 · Regenerar arte si se tocó el generador.** Si la Parte 1 optó por sacar/usar `barra.png`: `npm run assets`. Verificar con `npm run hit` que las áreas de clic sigan calzando con el arte.
-- ⬜ **4.5 · Revisión visual.** `npm run shots` (17 capturas + montajes) y revisar a ojo las pantallas tocadas en las Partes 1 y 2. `tools/out/` está gitignoreado, así que no ensucia la entrega.
+- ✅ **4.1 · Regrabar el tutorial.** El video viejo (59,8 s) **estaba roto y nadie lo había visto**: `tools/build_tutorial.js` respondía solo 3 de las 10 preguntas y sus `hold()` fijos caían dentro de la ventana de devolución de 5200 ms, donde las opciones están `disabled` → los clics no ocurrían y el video terminaba en "Pregunta 3 de 10", sin mostrar nunca el desafío de palabras ni el resultado. Se comprobó extrayendo el frame de los 58 s del `.webm` ya commiteado (`git show 6cef8ec:…`), así que el defecto venía de antes, no de esta parte.
+  - El script ahora está **manejado por eventos**: una ayuda `esperar(qué, fn, arg, ms)` hace `waitForFunction` y **corta con error** si la pantalla no avanza (antes se tragaba el silencio). El lazo de preguntas espera `.q-opt:not([disabled])` antes de leer la clave (si no, se leía la clave de la pregunta siguiente con la devolución de la anterior todavía en pantalla y el clic pegaba en un botón deshabilitado), y el de palabras espera `x.done` palabra por palabra.
+  - Video nuevo: **1:13.52 · 21 931 KB · VP9 1280×720 a 25 fps** + `tutorial-poster.jpg` (101 KB) regenerado. Recorre portada → registro → menú → selección → título → consigna → 3 carpetas → juicio → **las 10 preguntas** → **las 3 palabras** → resultado.
+  - Revisar los frames del video encontró **dos defectos reales de interfaz** que las capturas fijas no mostraban:
+    - **La nota del resultado chocaba contra los botones** en el estado "ganado". `resultado.js` resumía la devolución con `split('.')[0]`, y como la Parte 3 escribió "artículo 14" en vez de "art. 14", la primera frase pasó de ~60 a **255 caracteres** → 4 líneas en una banda de 122 px (`.res-stats` baja a 464, `.res-btns` sube a 588). Medido con `tools/out/check-nota.js`: el peor caso (mensaje de desbloqueo + frase) terminaba en 632, **44 px encima** de los botones.
+      Fix: `resumen()` en `js/pages/resultado.js:48-60` corta la primera frase en **150 caracteres** al último espacio (con `…`), y pide **mayúscula después del punto** para no romperse en "art." ni en "inc." — así el caso 4 dejó de decir "…los artículos 14 y 75 inc.". Más `css/game.css:176`: `.res-note` de 24/1.35 a **22/1.3** (sigue siendo texto grande a 700: umbral 3:1, el color no cambió). Peor caso medido ahora: **556 vs 588** en horizontal y **869 vs 942** en vertical.
+    - **Las plaquetas de nivel bloqueado volvieron a confundirse** con las disponibles: el `filter:grayscale(.4) brightness(.94)` de la 3.4 se veía casi igual en el video. Se cambió por la plaqueta **crema apagada `#c3b096`** (contraste 4,1:1 con el marrón del texto, grande) y el candado queda en el círculo. Verificado en el frame de los 7 s del video nuevo.
+- ✅ **4.2 · Decisión: se entrega WebM.** El ffmpeg que trae Playwright (`%LOCALAPPDATA%/ms-playwright/ffmpeg-1013`) solo tiene codificadores `png` y `libvpx-vp9` y muxers `webm` e `image2`: **no hay `libx264`, no hay contenedor MP4 y no hay ningún codificador de audio**, así que el tutorial es mudo por construcción y convertir a MP4 implicaría descargar un ffmpeg completo. Se queda WebM/VP9 (es lo que el `<video>` de `pages/niveles.html` ya declara).
+  - **Riesgo abierto, es de presentación y no técnico:** hay que **abrir `assets/video/tutorial.webm` en la PC y el proyector del aula** antes de la entrega. Si no reproduce, el plan B es descargar ffmpeg y generar el MP4; el reproductor ya se oculta solo si el archivo no carga, así que no rompe nada.
+  - El audio del juego no depende de esto: `index.html` usa MP3/WAV, que cualquier navegador actual reproduce.
+- ✅ **4.3 · Música y licencia.** `assets/audio/` quedó exactamente como resolvió la 1.1: `musica-quiz.mp3` (0,98 MB) + `musica-quiz.wav` (10,77 MB) de respaldo, **sin `.ogg`**. `npm run mp3` **reproduce el MP3 byte a byte** (mismo MD5 antes y después), así que el artefacto entregado es derivable del WAV. `LICENCIA.txt` describe el mix final y es correcto: obra original del grupo, CC0, 64,000 s de loop perfecto a 120 BPM en Re menor, pico 0,72, y ya avisa que el `.ogg` se puede agregar con el mismo nombre base si alguien lo consigue.
+  - Único paso no reproducible en esta máquina: el WAV lo genera `tools/build_music.py` y **acá no hay Python**. No bloquea nada (el WAV está commiteado y el MP3 se regenera desde él), pero hay que anotar que la cadena completa necesita Python.
+- ✅ **4.4 · Arte regenerado.** `npm run assets` volvió a producir los 12 PNG **idénticos** (ningún `git status` en `assets/icons` ni `assets/img`), así que la Parte 1 no tocó el generador y no hubo que rehacer arte. `npm run hit`: **6 de 6 ok**, las áreas de clic calzan con el arte (mismos porcentajes de `clip-path` que el alpha del PNG).
+- ✅ **4.5 · Revisión visual.** `npm run shots` → 17 capturas + 3 montajes revisados a ojo, sin desbordes ni textos cortados; `npm run audit` cierra **9 tamaños × 17 pantallas**. Los dos únicos hallazgos visuales de esta parte (la nota del resultado y las plaquetas bloqueadas) venían de los **frames del video**, no de las capturas: las capturas siembran una cuenta con niveles ya jugados y por eso nunca mostraban el mensaje de desbloqueo que empuja la nota a 4 líneas. Método que queda: revisar el video frame a frame, no solo las capturas.
 
-**Criterio para cerrar:** tutorial nuevo mostrando la interfaz final, formato de video validado en el equipo donde se va a proyectar, `npm run hit` y `npm run assets` en verde.
+**Criterio para cerrar:** ✅ cumplido — tutorial nuevo mostrando la interfaz final (1:13.52), `npm run assets` idéntico, `npm run hit` 6/6, `npm run audit` 9×17, `npm test` 20/20, `npm run i18n` 0 diferencias. **Queda afuera lo que no se puede hacer desde este checkout:** validar el WebM en el equipo del aula (4.2) y regenerar el WAV con Python (4.3).
 **Commit:** `P4 · recursos: tutorial regrabado y arte coherente`.
+
+> **Pasos a la Parte 5:** el Readme sigue diciendo `tutorial.mp4` y `musica-quiz.ogg` (5.1) — ahora que la 4 cerró, el formato real es WebM mudo y MP3+WAV. Conviene que la 5.2 lleve el `.webm` en la prueba física: es el mismo riesgo que quedó abierto acá.
 
 ---
 
@@ -171,7 +182,7 @@ npx http-server -p 8099 -c-1 .       # en otra terminal
 | 1 | Bug cero y línea base | ✅ cerrada el 03/11: 404 = 0 con el filtro nuevo; 4 suites verde |
 | 2 | Lo que falta codear | ✅ cerrada el 03/11: `npm test` = 20 ok, `i18n` 0 diferencias |
 | 3 | Contenido y traducción | ✅ cerrada el 03/11: 10 casos leídos a mano + manual EN + contraste medido |
-| 4 | Recursos | tutorial nuevo y formato validado en el aula |
+| 4 | Recursos | ✅ cerrada el 03/11: tutorial regrabado (y el viejo estaba roto), WebM decidido, arte idéntico |
 | 5 | Prueba real y empaque | Readme honesto + ZIP probado en otro equipo |
 
 Dependencias: **la Parte 1 va primero sí o sí** (si el test 13 sigue perdonando 404, las partes 2 a 5 se verifican sobre una base que miente). Las Partes 2 y 3 se pueden invertir sin problema. La 4 después de la 2 (el tutorial graba la interfaz, así que conviene grabarlo con las pantallas ya terminadas). La 5 siempre al final.
