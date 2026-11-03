@@ -42,7 +42,7 @@ npx http-server -p 8099 -c-1 .       # en otra terminal
 
 ---
 
-## PARTE 1 · Bug cero: que las pruebas vuelvan a decir la verdad
+## PARTE 1 · Bug cero: que las pruebas vuelvan a decir la verdad ✅
 
 **Objetivo:** antes de codear nada nuevo, que `npm test` no pueda esconder un recurso roto. Es la parte más corta y la que sostiene a las otras cuatro.
 **Tiempo estimado:** 1 h.
@@ -88,21 +88,41 @@ npx http-server -p 8099 -c-1 .       # en otra terminal
 
 ---
 
-## PARTE 3 · Contenido y traducción
+## PARTE 3 · Contenido y traducción ✅
 
 **Objetivo:** que el texto sea presentable y que el inglés no quede a medias. Es la parte más larga en tiempo de lectura y la más chica en código.
 **Tiempo estimado:** 2 h (más la lectura humana, que es la que no se puede automatizar).
+**Cerrada el 03/11** con `node tools/content/validar.mjs` = `VALIDACION COMPLETA OK`, `node tools/out/check-casos.mjs` = `LOS 10 CASOS OK`, `npm run content` (10 casos · 100 preguntas · 97,9 KB), `npm test` 20 ok, `npm run audit` OK, `npm run i18n` 0 diferencias + manual alineado, `npm run hit` ok y contraste **0 de 97 mediciones bajo el umbral WCAG**.
 
-- ⬜ **3.1 · Lectura humana de los 10 casos y las 100 preguntas.** El plan viejo la dejó 🔶: pasó por corrector automático (tildes, concordancia) pero nadie lo leyó de punta a punta. Se edita **en el JSON, nunca en el generado**:
-  - `tools/content/casos-1-5.json` y `tools/content/casos-6-10.json` → `node tools/build_content.js` (`npm run content`).
-  - Aprovechar para revisar coherencia legal de las devoluciones (art. 43 CN, derecho de petición, audiencia pública, Defensoría del Pueblo, amparo) y que ninguna de las 90 no oficiales agregue datos que no estén en el propio caso.
-  - **Trampa a evitar:** `niveles.js` dice "GENERADO · no editar a mano" (`js/data/niveles.js:2`). Si se edita ahí, el cambio se pisa en la próxima build.
-- ⬜ **3.2 · Validar el contenido regenerado.** `node tools/content/validar.mjs` + la build ya falla si la clave no es `A-D` o `oficial` no es booleano (el bug que hacía injugable el juego). Confirmar después de editar: 100 llamadas a `Q(`, 10 `, true)` y 90 `, false)`.
-- ⬜ **3.3 · Manual en inglés.** `js/data/manual.js` es 100 % español y no tiene bloque de idioma; hoy, con idioma EN, la interfaz se traduce y el manual queda en español (sección 8 del Readme). Definir el mecanismo **antes** de escribir (el manual arma sus números desde `DF.rules`, así que cualquier estructura tiene que conservar eso): array paralelo `[es, en]` por párrafo o `DF.manual_en`. Es la tarea más grande de esta parte.
-- ⬜ **3.4 · Contraste de los textos chicos.** El único ítem de accesibilidad que el plan viejo pedía y que no aparece resuelto (el foco y el `aria-label` ya están, sección "No hace falta revisar"). Revisar `--cream`/texto sobre `fondo.png` en `.label`, plaquetas A/B/C/D y tarjetas de nivel con `npm run shots`. **Arranca con dos casos ya detectados en la Parte 2** (ver la nota al final de la Parte 2): el `.name` sobre la parte vacía de `.rank-bar` y los `small` del ranking.
+- ✅ **3.1 · Lectura humana de los 10 casos y las 100 preguntas.** Se leyó completo `tools/content/casos-1-5.json` y `tools/content/casos-6-10.json` y se corrigieron **40 cosas** (29 en 1-5, 11 en 6-10 más el pase de coherencia numérica). Las que cambian el contenido que se enseña:
+  - **Caso 1 — error legal en la pregunta oficial.** Decía "el derecho de petición del artículo 43". El derecho de peticionar está en el **art. 14**; el art. 43 es el **amparo** (y no contiene ningún plazo razonable). Se corrigió la denuncia, la devolución y la pregunta oficial, verificado contra el texto oficial. **⚠️ Si el PDF del caso 1 cita el art. 43, hay que alinearlo**: el juego ahora dice art. 14 y el art. 43 queda citado como amparo.
+  - **Caso 4 — PIDES art. 13.4 → art. 13.2.b** (el inciso de la denuncia ante la CIDH).
+  - **Caso 5 — "ART" → "obra social"** en denuncia, resumen, autor del testimonio y dos preguntas: ART es el seguro de accidentes de trabajo, y acá lo que negaba la cobertura era la obra social. Además "Debió" → "Debía" (3 veces) y el distractor de P1 reescrito para que la clave siga siendo la única correcta.
+  - **Caso 10 — la aritmética no cerraba.** El recargo es 3 % y la factura decía $4.500 de más sobre un plan de $22.400 (3 % = $672). Como el 3 % no se puede tocar, se subió la **base**: la casa gasta $150.000 por mes en compras y servicios por internet (entre ellos el plan de $22.400) → 3 % = **$4.500 exactos**, total $154.500. Ajustadas denuncia, testimonio de Zapata, la prueba de las facturas y el distractor de P3.
+  - **Caso 10 y 9 — los días de la semana contra el calendario 2026.** El 6/5/2026 es **miércoles** (el decreto decía "publicado un viernes a la noche y el miércoles siguiente ya estaban los recargos", y encima el cobro arrancaba el 1.° de junio): ahora "publicado un miércoles a las 21:40 y recargo ya cobrado en la primera factura de junio". El 14/5/2026 es **jueves** (el mensaje de Balbi decía "viernes"): resumen, prueba y cronología ahora dicen jueves, y el cartel de "se vende" del 20/5 pasó de "tres días después" a **seis días después**.
+  - **Caso 6 — "ocho semanas" → "siete semanas"**: del 3/3 al 19/4 hay 47 días, y la prueba habla de 7 semanas de difusión diaria. Y "más de dos semanas" → "casi dos semanas" (22/4 → 5/5 = 13 días).
+  - **Caso 7 — "por una denuncia de puntería" → "por una demanda puntual"**: era la única ocurrencia de la palabra **DEMANDA** del desafío de palabras, y estaba escrita mal, así que el juego nunca la podía formar.
+  - **Caso 2 — contradicción interna**: la denuncia decía que Sergio compró "con su tarjeta de débito del trabajo" y el testimonio de Sergio decía otra cosa; se alineó con el resumen. El cartel de garantía ahora aclara "obligatorio para los comercios de mayor facturación" y la devolución habla del "plazo de garantía de 6 meses que el propio local entregó" (la garantía legal es de 3).
+  - **Caso 3** — "Juzgado Nacional del Trabajo" → juzgado del trabajo **del fuero provincial** (donde queda el supermercado), "firma al puño y letra" y "plus por daño" → "daño moral".
+  - **Caso 8** — P3: "A quien se atribuye" (agrega el pronombre que faltaba para que la clave siga siendo correcta) y la prueba del acta ahora dice "le negaron **a Morena** el libro de reclamaciones", coherente con la denuncia.
+  - **Caso 9** — la devolución citaba el art. 14 bis con "la distribución razonable de la **vivienda**"; el texto real es distribución razonable de las **oportunidades y los beneficios** y **acceso a una vivienda digna**.
+  - **Distractores que NO se corrigieron a propósito:** los casos 2, 3 y 4 tienen opciones incorrectas que dicen "art. 43 = derecho de petición". Son falsas justamente por el error que se arregló en el caso 1; "corregirlas" las volvería verdaderas y crearía **doble respuesta correcta**.
+- ✅ **3.2 · Validar el contenido regenerado.** `node tools/content/validar.mjs` sigue siendo el que congela `EXPECTED_KEYS` de los casos 1-5, así que **no se puede reordenar opciones ni cambiar una `key`**: cuando la clave congelada quedaba sobre el distractor (caso 2 P10 y caso 5 P8) se **swapearon los textos** dejando la letra donde estaba. Como 6-10 no estaba cubierto, se agregó `tools/out/check-casos.mjs`, que aplica las mismas cotas a los **10 casos** (título ≤34, subtítulo ≤60, pista ≤110, enunciado ≤190, denuncia 120-190 palabras, testimonios 70-120, pruebas 50-90, devolución 80-140; palabras sin tilde que aparecen textualmente y son formables con su pool; 10 preguntas, solo la 1.ª oficial; 4 letras usadas; nunca 3 claves seguidas). Detectó y arregló el `DEMANDA` del caso 7. Después del build: **100 `Q(`** (101 si se cuenta la definición de la función), **10 `true`**, **90 `false`**.
+  - Ojo: con `core.autocrlf=true` y sin `.gitattributes`, cada `npm run content` puede dejar un **diff fantasma de fines de línea** en `niveles.js`; conviene revisar `git diff --stat` y `git checkout --` si el diff es solo CRLF.
+- ✅ **3.3 · Manual en inglés.** Mecanismo elegido: **pares `[español, inglés]`** por título y por párrafo dentro de la misma estructura, con `DF.manualPara(lang)` que resuelve el idioma y devuelve `{ secciones, creditos }`. `DF.rules` se sigue usando en el armado, así que los números (20 s, 100 pts, bonus 40, 3 palabras, 3 intentos, 8 s de cuenta regresiva) siguen saliendo del contenido y no de la prosa. `DF.manual` y `DF.creditos` se conservan (resueltos al idioma activo) porque el test 10 del e2e lee `DF.manual.length`. `js/pages/manual.js` ahora pide `DF.manualPara(DF.i18n.lang())`.
+  - 8 bloques · 32 párrafos · 5 créditos, los dos idiomas. Verificado con `tools/out/check-manual.js` (estructura y sin huecos) y con capturas reales (`tools/out/shot-manual.js` → `manual-es.png` / `manual-en.png`): **0 desbordes horizontales** y altura de scroll casi igual (3559 px ES / 3468 px EN).
+  - `tools/check_i18n.js` ahora **también revisa el manual**: evalúa `niveles.js` + `manual.js` en un contexto sin navegador y compara ES vs EN bloque por bloque (párrafos vacíos, paragrafos desalineados y el marcador `—` que aparece si a `DF.rules` le falta una clave). Imprime `manual: 8 bloques y 32 parrafos en ES y EN`.
+- ✅ **3.4 · Contraste de los textos chicos.** El método del plan (tomar el cluster de color dominante de la captura) **medía mal**: el "fondo" que elegía era el halo de antialiasing del propio texto (`rgb(183,171,154)` = mezcla 66 % crema/púrpura), y daba 32 falsos fallos de 46. El método nuevo (`tools/out/check-contrast.js`) captura el recorte del elemento **dos veces**: una normal y otra con el texto invisible (`.df-medir{color:transparent}` en todo el subárbol), así el segundo PNG es el fondo real píxel a píxel — cuenta `fondo.png`, capas, `rgba` y opacidades acumuladas. El ratio se calcula con el color declarado compuesto sobre ese fondo, en el **peor núcleo de glifo** (cobertura ≥ 0,85 del máximo), y el umbral es el de WCAG: 3:1 si ≥24 px o ≥18,66 px en negrita, 4,5:1 si no. Animaciones y transiciones se congelan con `addInitScript`, si no la opacidad se mide a mitad del fade.
+  - Los dos casos heredados de la Parte 2 quedaron resueltos en `css/screens.css`:
+    - **`.rank-bar .name`**: el nombre (marrón) sobre la parte vacía (oscura) de la barra no llegaba ni a 1,1:1. Ahora el nombre lleva **su propia placa crema** (`background:var(--cream-field)`, `border-radius:0 28px 28px 0`, `z-index:1`) → ratio 8,5:1.
+    - **`.lvl-row.locked .tag` / `.dot`**: bajarle la opacidad a la fila completa dejaba el marrón sobre el arte en 1,7:1. Se sacó la opacidad de la fila y se aplica **`filter:grayscale()` + `brightness()`** solo a la plaqueta y al ícono: el candado se sigue viendo bloqueado y el texto queda en 4,6:1.
+  - Detalles que hacían fallar la medición (y no la pantalla): los rectángulos recortados por un ancestro con `overflow` no pintan glifos (hay que intersectar el rect con esos ancestros), `page.evaluate` **acepta un solo argumento** (pasar dos silenciaba el segundo y daba "SIN GLIFOS" en toda la pantalla), y en `vestir.html` hay que medir `.ditem .lock` porque el SVG del ícono usa `currentColor`.
+  - Resultado final: **0 de 97 mediciones bajo el umbral**, con 12 pantallas y 33 selectores cubiertos, y verificación visual en `tools/out/contraste-niveles.png` y `contraste-ranking.png`.
 
-**Criterio para cerrar:** `npm run content` sin errores, `npm run i18n` con 0 diferencias, los 10 casos leídos a mano y las 30 palabras sin errores de tipeo.
+**Criterio para cerrar:** ✅ cumplido — `npm run content` sin errores, `npm run i18n` con 0 diferencias, los 10 casos leídos a mano y las 30 palabras del desafío validadas por script.
 **Commit:** `P3 · contenido: lectura humana de los 10 casos y manual en inglés`.
+
+> **Pasos a la Parte 4:** el tutorial (`assets/video/tutorial.webm`) se grabó con las plaquetas viejas y hay que regrabarlo (`npm run tutorial`), pero **primero conviene revisar a ojo las capturas nuevas** (`npm run shots`), porque el cambio de la placa del ranking y de las plaquetas bloqueadas modifica la interfaz que el video tiene que mostrar. El contraste ya no es deuda: quedó medido con un método reutilizable.
 
 ---
 
@@ -148,9 +168,9 @@ npx http-server -p 8099 -c-1 .       # en otra terminal
 
 | # | Parte | Cuándo sabés que terminó |
 |---|---|---|
-| 1 | Bug cero y línea base | 404 = 0 con el filtro nuevo; 4 suites verde |
+| 1 | Bug cero y línea base | ✅ cerrada el 03/11: 404 = 0 con el filtro nuevo; 4 suites verde |
 | 2 | Lo que falta codear | ✅ cerrada el 03/11: `npm test` = 20 ok, `i18n` 0 diferencias |
-| 3 | Contenido y traducción | casos leídos a mano + manual EN |
+| 3 | Contenido y traducción | ✅ cerrada el 03/11: 10 casos leídos a mano + manual EN + contraste medido |
 | 4 | Recursos | tutorial nuevo y formato validado en el aula |
 | 5 | Prueba real y empaque | Readme honesto + ZIP probado en otro equipo |
 

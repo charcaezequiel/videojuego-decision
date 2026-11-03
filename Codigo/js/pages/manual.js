@@ -20,10 +20,12 @@ DF.boot(() => {
     '<div class="ms-grid">' + preview + '</div>' +
     '<div class="ms-cap">' + DF.esc(DF.i18n.t('vestirHint')) + '</div>';
 
-  scroll.innerHTML = DF.manual.map(b =>
+  const idioma = DF.i18n.lang();
+  const texto = DF.manualPara(idioma);
+  scroll.innerHTML = texto.secciones.map(b =>
     '<h2>' + DF.esc(b.h2) + '</h2>' + b.p.map(x => '<p>' + DF.esc(x) + '</p>').join('')
   ).join('') + '<p class="body-text" style="margin-top:22px;opacity:.7">' +
-     DF.creditos.map(DF.esc).join('<br>') + '</p>';
+     texto.creditos.map(DF.esc).join('<br>') + '</p>';
 
   const bar = DF.scrollbar(scroll, track);
   scroll.addEventListener('scroll', bar.update);

@@ -105,7 +105,13 @@ input.cfg-mus{ position:absolute; left:204px; top:650px; width:447px; }
 .rank-avatar svg{ width:70px; height:auto; margin-top:6px; }
 .rank-bar{ flex:1; height:64px; background:rgba(20,5,12,.45); border-radius:32px; position:relative; overflow:hidden; }
 .rank-bar .fill{ position:absolute; left:0; top:0; bottom:0; background:var(--cream-field); border-radius:32px; transition:width .8s ease; }
-.rank-bar .name{ position:absolute; left:26px; top:50%; transform:translateY(-46%); font-family:var(--font-title); font-size:36px; letter-spacing:1px; color:var(--brown); z-index:1; }
+/* el nombre lleva su propia placa crema: sobre la parte vacía de la barra (oscura)
+   el marrón del texto no llegaba ni a 1.1 de contraste */
+.rank-bar .name{
+  position:absolute; left:0; top:50%; transform:translateY(-50%); padding:5px 26px 3px;
+  background:var(--cream-field); border-radius:0 28px 28px 0;
+  font-family:var(--font-title); font-size:36px; letter-spacing:1px; color:var(--brown); z-index:1;
+}
 .rank-pts{ width:150px; font-size:32px; text-align:right; color:var(--cream); }
 .rank-row.me .rank-bar .fill{ background:var(--gold); }
 .rank-stars{ width:158px; font-size:40px; color:var(--cream); letter-spacing:2px; text-align:left; line-height:1; }
@@ -136,7 +142,10 @@ input.cfg-mus{ position:absolute; left:204px; top:650px; width:447px; }
 .lvl-row .state{ font-family:var(--font-body); font-weight:700; font-size:20px; opacity:.9; }
 .lvl-row:hover .dot{ transform:scale(1.07); }
 .lvl-row.locked{ cursor:not-allowed; }
-.lvl-row.locked .dot, .lvl-row.locked .tag{ opacity:.5; filter:grayscale(.5); }
+/* la plaqueta NIVEL n se mantiene legible: bajarle la opacidad dejaba el marrón
+   sobre el arte y el contraste caía a 1.7. El candado se lee en el círculo. */
+.lvl-row.locked .dot{ opacity:.5; filter:grayscale(.5); }
+.lvl-row.locked .tag{ filter:grayscale(.4) brightness(.94); }
 .lvl-row.locked:hover .dot{ transform:none; }
 .lvl-row.lost .state{ color:#ffc9b8; }
 .lvl-row.won .state{ color:#c8f0c8; }
