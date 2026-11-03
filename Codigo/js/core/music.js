@@ -1,6 +1,6 @@
 /* =========================================================
    music.js · Música de fondo del juego
-   Archivo: assets/audio/musica-quiz.ogg / .mp3 (composición
+   Archivo: assets/audio/musica-quiz.mp3 / .wav (composición
    original del proyecto, CC0 · ver assets/audio/LICENCIA.txt).
 
    - Volumen moderado: Configuración → Música (0 = apagada) y
@@ -89,9 +89,7 @@ DF.music = (function(){
     local.loop = true;
     local.preload = 'auto';
     const ok = t => local.canPlayType(t) ? t : null;
-    local.src = base + (ok('audio/mpeg') ? 'musica-quiz.mp3'
-                      : ok('audio/ogg; codecs="vorbis"') ? 'musica-quiz.ogg'
-                      : 'musica-quiz.wav');
+    local.src = base + (ok('audio/mpeg') ? 'musica-quiz.mp3' : 'musica-quiz.wav');
     setLocalVolume = DF.volumeControl(local);
     let pos = null;
     try { pos = JSON.parse(sessionStorage.getItem(POS_KEY)); } catch(e){}

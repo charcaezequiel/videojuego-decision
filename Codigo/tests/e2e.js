@@ -103,8 +103,14 @@ async function seedRun(page, n, answers){
     });
     const page = await ctx.newPage();
     const errors = [];
+    /* en Chromium el texto del error de red NO trae la URL: va en location(),
+       y sin ella cualquier filtro de "404" perdona todos los recursos rotos. */
     page.on('pageerror', e => errors.push('pageerror: ' + e.message));
-    page.on('console', m => { if(m.type() === 'error') errors.push('console: ' + m.text()); });
+    page.on('console', m => {
+      if(m.type() !== 'error') return;
+      const where = (m.location() && m.location().url()) ? ' @' + m.location().url() : '';
+      errors.push('console: ' + m.text() + where);
+    });
     try { await fn(page, errors); } finally { await ctx.close(); }
     return errors;
   }
@@ -208,7 +214,17 @@ async function seedRun(page, n, answers){
       assert(word, 'la palabra ' + (w + 1) + ' debería estar disponible');
       await page.keyboard.type(word);
       await page.keyboard.press('Enter');
-      await page.waitForTimeout(1700);
+      /* el juego cambia de palabra 1300 ms después de acertar: se espera la
+         condición real (el contador del enunciado) y no un timeout adivinado. */
+      if(w + 1 < 3){
+        await page.waitForFunction(idx => {
+          const el = document.getElementById('clue-meta');
+          return !!el && el.textContent.indexOf(
+            DF.i18n.t('palabra', { a: idx + 2, b: DF.rules.wordsPerLevel })) >= 0;
+        }, w, { timeout: 8000 });
+      } else {
+        await page.waitForFunction(() => location.pathname.indexOf('resultado') > 0, null, { timeout: 8000 });
+      }
     }
     assert(url(page).indexOf('resultado') === 0, 'resueltas las 3 palabras va al resultado, está en ' + url(page));
     const guardado = await page.evaluate(() => DF.progress.result(1).last);
@@ -329,6 +345,19 @@ async function seedRun(page, n, answers){
       'nivel-desc.html?n=1', 'caso.html?n=1', 'juicio.html?n=1', 'desafio.html?n=1',
       'palabra.html?n=1', 'resultado.html?n=1', 'fin.html'];
     await login(page, 'trece@df.test', 'trece');
+
+    /* toda fuente declarada en el reproductor de index.html tiene que existir:
+       un <source> de un archivo que no está es un 404 silencioso en cada carga. */
+    const fuentes = await page.evaluate(() =>
+      [...document.querySelectorAll('#df-music source')].map(s => s.src));
+    assert(fuentes.length > 0, 'index.html no declara ninguna fuente de audio');
+    const faltantes = [];
+    for(const f of fuentes){
+      const r = await page.request.get(f);
+      if(!r.ok()) faltantes.push(f.replace(BASE + '/', '') + ' -> ' + r.status());
+    }
+    eq(faltantes.length, 0, 'fuentes de audio declaradas que no existen: ' + faltantes.join(', '));
+
     const rotas = [];
     for(const p of pantallas){
       await go(page, p);
@@ -348,8 +377,9 @@ async function seedRun(page, n, answers){
       if(malas.length) rotas.push(p + ' -> ' + malas.join(', '));
     }
     eq(rotas.length, 0, 'recursos rotos: ' + rotas.join(' | '));
-    /* el 404 del tutorial es esperado cuando todavía no se grabó el video */
-    const reales = errors.filter(e => !/tutorial|404/.test(e));
+    /* el único 404 perdonado es el del video tutorial: puede faltar en un checkout
+       nuevo y el reproductor se oculta solo. Cualquier otro recurso roto rompe la prueba. */
+    const reales = errors.filter(e => !/tutorial(\.webm|\.mp4|-poster)/.test(e));
     eq(reales.length, 0, 'errores de consola: ' + reales.slice(0, 3).join(' | '));
   })));
 

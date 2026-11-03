@@ -31,13 +31,13 @@ Texto completo de CC0: https://creativecommons.org/publicdomain/zero/1.0/legalco
 
 NOTA PARA EL EQUIPO
 -------------------
-* js/core/music.js e index.html buscan assets/audio/musica-quiz.ogg y
-  assets/audio/musica-quiz.mp3. En esta máquina NO hay ffmpeg, así que la conversión
-  desde el WAV no se puede hacer acá. El navegador reproduce el WAV directamente:
-  agregá <source src="assets/audio/musica-quiz.wav" type="audio/wav"> como tercer
-  source (después de .ogg y .mp3) para que el <audio> lo use de inmediato.
-* Si alguien consigue .ogg o .mp3, que usen el MISMO nombre base (musica-quiz) en esta
-  carpeta: el reproductor los va a preferir por tamaño. Cualquier conversión debe
+* js/core/music.js e index.html usan assets/audio/musica-quiz.mp3 y, como respaldo,
+  assets/audio/musica-quiz.wav. En esta máquina NO hay ffmpeg para generar .ogg, así
+  que ese formato ya no se declara: el navegador reproduce el MP3 (todos los actuales)
+  o el WAV directamente.
+* Si alguien consigue .ogg, puede agregarlo con el MISMO nombre base (musica-quiz) en
+  esta carpeta y declararlo como <source> en index.html: el reproductor lo va a
+  preferir por tamaño. Cualquier conversión debe
   conservar los 64,000 s exactos — la pista está compuesta como loop de 32 compases a
   120 BPM y recortar o editar en el medio rompe la costura.
 * La pista viene normalizada a un pico de 0,72 y sin clipping; el juego la atenúa a

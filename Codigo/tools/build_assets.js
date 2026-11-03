@@ -411,16 +411,7 @@ async function imgMarcos(){
   w.rect(13, 8, 2, 10, PAL.cream);
   w.rect(10, 18, 8, 1, PAL.cream);
   await w.save(path.join(IMG, 'sello.png'), 3);
-
-  /* barra de progreso con marco de madera */
-  const b = new Canvas(160, 14);
-  b.rect(0, 0, 160, 14, PAL.brown);
-  b.frame(0, 0, 160, 14, PAL.ink);
-  b.rect(3, 3, 154, 8, PAL.deepWine);
-  b.rect(3, 3, 60, 8, PAL.gold);
-  b.rect(3, 3, 60, 1, PAL.goldLite);
-  await b.save(path.join(IMG, 'barra.png'), 6);
-  return [m, s, w, b];
+  return [m, s, w];
 }
 
 /* ------------------------------------------------------------------ */
@@ -480,7 +471,7 @@ async function imgCarpetas(){
     ['icons/soporte.png', iconSoporte],
     ['img/logo.png', imgLogo],
     ['img/fondo.png', imgFondo],
-    ['img/marco-doc · speech-box · sello · barra', imgMarcos],
+    ['img/marco-doc · speech-box · sello', imgMarcos],
     ['img/folder-*.png', imgCarpetas]
   ];
   for(const [label, fn] of jobs){

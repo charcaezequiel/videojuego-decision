@@ -15,7 +15,7 @@ const PAGES = ['portada', 'registro', 'menu', 'config', 'soporte', 'ranking', 'm
   page.on('pageerror', e => bad.push('[pageerror] ' + e.message));
   page.on('requestfailed', r => {
     const u = r.url();
-    if(/tutorial|\.ogg$/.test(u)) return;                 // opcionales a propósito
+    if(/tutorial(\.webm|\.mp4|-poster)/.test(u)) return;   // opcional a propósito
     bad.push('[404/failed] ' + u + ' · ' + (r.failure() || {}).errorText);
   });
   page.on('response', r => { if(r.status() >= 400) bad.push('[' + r.status() + '] ' + r.url()); });
