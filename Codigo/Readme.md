@@ -19,7 +19,7 @@ y abrí <http://localhost:8080>.
 Entrá siempre por `index.html`: es el contenedor del juego y mantiene la música sonando sin cortes entre pantallas. Si se recarga la página, el juego vuelve a la misma pantalla.
 
 El progreso, el personaje y la configuración se guardan en el navegador (`localStorage`), **separados por cuenta** (ver sección 4).
-Para empezar de cero: borrá los datos del sitio en el navegador.
+Para empezar de cero sin tocar nada del navegador: *Configuración → BORRAR MI PROGRESO* borra los niveles, los puntos y las prendas **solo de la cuenta abierta** (la cuenta sigue existiendo y la configuración del dispositivo no se toca). Borrar los datos del sitio desde el navegador también limpia todo, en todas las cuentas.
 
 ## 2. Cómo probarlo
 
@@ -29,13 +29,13 @@ Pruebas automáticas (Chromium, ~4 min). Levantá primero el servidor en el puer
 npm install
 npx playwright install chromium     # solo la primera vez
 npx http-server -p 8099 -c-1 .      # en otra terminal (o: npm run serve)
-npm test                            # 19 pruebas funcionales
+npm test                            # 20 pruebas funcionales
 npm run audit                       # diseño revisado en 9 tamaños de pantalla
 ```
 
 Podés correr pruebas sueltas: `node tests/e2e.js 3 7 12` o `node tests/layout-audit.js caso.html`.
 
-**`npm test` — 19 casos:** 1) las 10 preguntas se completan · 2) tiempo agotado cuenta como «sin responder» · 3) después del tiempo no se puede responder ni se duplica la respuesta · 4) las flechas eligen opciones y ← lleva al menú · 5) fuera del cuestionario las flechas navegan · 6) las 3 palabras + redirección automática · 7) perder desbloquea el siguiente nivel · 8) botón *Siguiente nivel* · 9) el vestuario se mantiene al recargar · 10) el manual se arma desde `DF.manual` y cita las reglas reales · 11) nivel 10 y pantalla final · 12) sin doble acción y URLs inválidas protegidas · 13) imágenes, estilos y consola sin errores en las 17 pantallas · 14) cuentas con datos separados · 15) migración de la versión anterior · 16) mapa de flechas completo y sin flechas sin acción · 17) el área de clic es el dibujo, no el cuadro · 18) la música vive en el contenedor y no se reinicia · 19) el video tutorial se muestra solo si existe.
+**`npm test` — 20 casos:** 1) las 10 preguntas se completan · 2) tiempo agotado cuenta como «sin responder» · 3) después del tiempo no se puede responder ni se duplica la respuesta · 4) las flechas eligen opciones y ← lleva al menú · 5) fuera del cuestionario las flechas navegan · 6) las 3 palabras + redirección automática · 7) perder desbloquea el siguiente nivel · 8) botón *Siguiente nivel* · 9) el vestuario se mantiene al recargar · 10) el manual se arma desde `DF.manual` y cita las reglas reales · 11) nivel 10 y pantalla final · 12) sin doble acción y URLs inválidas protegidas · 13) imágenes, estilos y consola sin errores en las 17 pantallas · 14) cuentas con datos separados · 15) migración de la versión anterior · 16) mapa de flechas completo y sin flechas sin acción · 17) el área de clic es el dibujo, no el cuadro · 18) la música vive en el contenedor y no se reinicia · 19) el video tutorial se muestra solo si existe · 20) *Borrar mi progreso* limpia solo la cuenta abierta y deja intactas las demás.
 
 **`npm run audit` — 9 tamaños × 17 pantallas:** nada fuera del escenario, sin scroll de la página, sin texto cortado (incluido el enunciado más largo del juego) y todos los botones tocables.
 
@@ -61,6 +61,8 @@ Todas las reglas se configuran en un solo lugar: `DF.rules` en `js/data/niveles.
 
 * Cada **correo electrónico es una cuenta**. Cada cuenta guarda **sus** puntos, estadísticas, niveles jugados/ganados, mejores resultados, intentos y su personaje. Si se registra un correo nuevo, empieza de cero; si se vuelve a usar un correo (sin importar mayúsculas), se recupera lo de esa cuenta.
 * **Cambiar de cuenta:** botón *CAMBIAR DE CUENTA* en el menú (cierra la sesión; los datos quedan guardados).
+* **Borrar mi progreso:** *Configuración → BORRAR MI PROGRESO* (pide confirmación) deja la cuenta abierta de nuevo en el nivel 1, sin prendas y sin puntos. No borra la cuenta, no toca otras cuentas y no toca la configuración del dispositivo.
+* **Mejor puntaje por nivel:** de cada nivel se guardan el **mejor** puntaje y las **mejores** estrellas conseguidos; reintentar y sacar menos no baja lo ya conseguido, y perder un nivel no borra un nivel ganado antes. El ranking suma esos mejores parciales y muestra a la derecha el mejor nivel de cada cuenta.
 * Las partidas en curso (cuestionario, resultado, carpetas leídas) se guardan por cuenta y se borran al cambiar de cuenta: una cuenta nunca puede terminar o ver la partida de otra.
 * *Configuración* (volumen, música, brillo, idioma, gráficos) es del dispositivo y vale para todas las cuentas.
 * La sesión dura mientras la pestaña está abierta: al cerrarla (o con *CAMBIAR DE CUENTA*) hay que volver a registrarse con el correo. Así, quien abra el juego después en la misma computadora nunca entra a la cuenta anterior ni ve su correo.
@@ -90,6 +92,7 @@ css/
 js/core/                   Módulos reutilizables
   store.js                 Guardado por cuenta (una clave por cuenta) + sesión por pestaña + migración
   progress.js              Progresión: estados, desbloqueo, mejor puntaje, prendas
+  run.js                   La partida en curso: respuestas, tiempos, palabras y nota final
   boot.js                  Arranque, protección de pantallas y NAVEGACIÓN: mapa único de flechas (DF.nav.ROUTES)
   music.js                 Música de fondo (DF.music) y comunicación con el contenedor (DF.shell)
   shell.js                 Lógica del contenedor index.html
@@ -99,38 +102,50 @@ js/core/                   Módulos reutilizables
   i18n.js, audio.js, stage.js   Idioma, efectos de sonido, escalado responsive/brillo
 js/data/                   Solo datos (sin lógica)
   niveles.js               10 casos, 100 preguntas, palabras, devoluciones y DF.rules
+                           **GENERADO**: no se edita a mano, se arma desde tools/content/
   vestuario.js             Pixel-art (GENERADO por tools/build_sprites.py)
-  manual.js                Texto del manual
-  niveles-previos.js       Casos de la versión anterior (no se carga)
+  manual.js                Texto del manual, en español e inglés
 js/pages/                  Un script por pantalla
 assets/
-  icons/, img/, fonts/     Imágenes y fuentes del diseño
-  audio/                   musica-quiz.ogg / .mp3 (+ LICENCIA.txt)
-  video/                   tutorial.mp4 + tutorial-poster.jpg
+  icons/, img/, fonts/     Imágenes y fuentes del diseño (3 familias, SIL Open Font License)
+  audio/                   musica-quiz.mp3 + musica-quiz.wav de respaldo (+ LICENCIA.txt)
+  video/                   tutorial.webm (VP9, mudo) + tutorial-poster.jpg
 tools/
-  build_sprites.py         Generador del pixel-art (npm run sprites)
-  build_music.py           Generador de la música (npm run music)
+  content/                 casos-1-5.json y casos-6-10.json (el contenido real) + validar.mjs
+  build_content.js         JSON de casos → js/data/niveles.js (npm run content)
+  build_sprites.py         Generador del pixel-art (npm run sprites) · necesita Python
+  build_music.py           Generador de la música, WAV (npm run music) · necesita Python
+  build_audio.mjs          WAV → MP3 (npm run mp3)
+  build_assets.js          Genera los PNG de íconos y fondos (npm run assets)
+  pixel.js                 Primitiva de dibujo pixel-art que usan los generadores
   build_tutorial.js        Graba el video tutorial jugando el juego (npm run tutorial)
+  shots.js + montage.js    17 capturas y montajes para revisar a ojo (npm run shots)
+  check_i18n.js            Diccionario español/inglés y paridad del manual (npm run i18n)
+  check_hit_areas.js       Áreas de clic medidas sobre el arte real (npm run hit)
+  preview_avatars.py/.js   Hoja de contacto de los personajes (vista previa)
+  out/                     Salidas de las herramientas; está en .gitignore, no forma parte de la entrega
 tests/
   e2e.js                   Pruebas funcionales (npm test)
-  layout-audit.js          Revisión automática del diseño responsive
+  layout-audit.js          Revisión automática del diseño responsive (npm run audit)
+  smoke.js                 Recorrido rápido: abre las 17 pantallas y reporta errores de consola
 ```
 
 ## 7. Agregar o editar contenido
 
-* **Preguntas:** `js/data/niveles.js` → `Q(enunciado, A, B, C, D, 'letraCorrecta', oficial)`.
-* **Palabras del desafío final:** `DF.palabras` (mismo archivo).
-* **Prendas:** editar `tools/build_sprites.py` y ejecutarlo (regenera `js/data/vestuario.js`).
-* **Manual:** `js/data/manual.js` (los números se leen de `DF.rules`).
+* **Casos y preguntas:** se editan `tools/content/casos-1-5.json` y `tools/content/casos-6-10.json`, y después se corre `npm run content`, que valida las cotas y **genera** `js/data/niveles.js`. Ese archivo no se edita a mano (lo pisa el siguiente build). Adentro, cada pregunta sale de `Q(enunciado, A, B, C, D, 'letraCorrecta', oficial)`.
+* **Palabras del desafío final:** mismo JSON (`palabras` y `pista` de cada caso); en el juego se leen con `DF.palabras`.
+* **Reglas del juego:** `DF.rules` al principio de `js/data/niveles.js` — pero esa cabecera también la escribe `build_content.js`, así que el cambio permanente va en `tools/build_content.js`.
+* **Prendas:** editar `tools/build_sprites.py` y ejecutarlo (regenera `js/data/vestuario.js`; necesita Python).
+* **Manual:** `js/data/manual.js`, en pares `[español, inglés]` por título y por párrafo (los números se leen de `DF.rules`).
 * **Flechas:** el destino de cada flecha está en un solo lugar, `DF.nav.ROUTES` (`js/core/boot.js`). En el HTML solo se marca `data-nav="back"` o `data-nav="next"`.
-* **Música:** reemplazar `assets/audio/musica-quiz.ogg` y `.mp3` (mismo nombre) o regenerarla con `npm run music`.
-* **Video tutorial:** reemplazar `assets/video/tutorial.mp4` y `tutorial-poster.jpg` (mismo nombre; MP4 H.264 para que funcione en todos los navegadores) o regenerarlo con `npm run tutorial` después de cambiar pantallas (requiere Playwright y ffmpeg). Si el archivo falta o no carga, el reproductor no se muestra.
+* **Música:** reemplazar `assets/audio/musica-quiz.mp3` (y el `.wav` de respaldo) con el mismo nombre, o regenerar el MP3 desde el WAV con `npm run mp3`. La pista original se sintetiza con `npm run music` (Python) y cualquier conversión tiene que conservar los 64,000 s exactos del loop.
+* **Video tutorial:** reemplazar `assets/video/tutorial.webm` y `tutorial-poster.jpg` (mismo nombre) o regenerarlo con `npm run tutorial` después de cambiar pantallas (requiere el servidor en 8099, Playwright y el ffmpeg de Playwright). El ffmpeg de Playwright solo escribe **WebM/VP9** y sin audio; para MP4 hay que conseguir un ffmpeg completo. Si el archivo falta o no carga, el reproductor no se muestra.
 
 ## 8. Notas sobre el contenido
 
 * El PDF «Casos definitivos» trae **una pregunta por caso** (10 en total). Para llegar a 10 por nivel, las otras 9 de cada nivel se redactaron **solo con los hechos del propio caso** (descripción, testimonios, pruebas, denuncia y devolución del PDF), sin agregar información externa. La pregunta oficial está marcada con `oficial:true` y mantiene su orden A-D; en las demás se mezclan las opciones en cada partida.
 * El personaje, las prendas, el juez, el fiscal y el tribunal se recrearon en pixel-art a partir de las capturas del prototipo, porque el ZIP no traía esos archivos de imagen. Si se consiguen los PNG originales, se pueden reemplazar en `js/core/sprites.js` sin tocar la lógica.
-* El texto largo del manual está en español; con el idioma en inglés, la interfaz se traduce y el manual se muestra en español.
+* El manual está escrito en los **dos idiomas**: con el idioma en inglés, la interfaz y el manual se muestran en inglés (8 bloques y 32 párrafos en cada uno, verificados con `npm run i18n`). Los **casos del juego** (denuncia, testimonios, pruebas, preguntas y devoluciones) siguen solo en español: son el contenido legal argentino, traducirlos cambiaría las citas.
 * **Música:** composición original del proyecto (chiptune de quiz en Re menor, 120 BPM, loop de 64 s), licencia CC0 / dominio público. Ver `assets/audio/LICENCIA.txt`.
-* **Video tutorial:** grabación real del juego con carteles explicativos (70 s, sin sonido), generada con `tools/build_tutorial.js`. El proyecto no traía ningún video ni recurso tutorial además del manual.
+* **Video tutorial:** grabación real del juego, jugado de punta a punta por `tools/build_tutorial.js` (1:13, sin sonido: el ffmpeg de Playwright no codifica audio). WebM/VP9 a 1280×720. El proyecto no traía ningún video ni recurso tutorial además del manual.
 

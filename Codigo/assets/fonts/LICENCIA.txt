@@ -1,0 +1,44 @@
+DF · Decisión Final — fuentes tipográficas
+========================================================
+
+Las tres familias del juego se usan en formato web (woff2, subconjunto
+latín) y están autALOJADAS en esta carpeta: el juego no pide nada a
+internet para verse.
+
+  bebas-neue-latin-400-normal.woff2          Bebas Neue 400
+  instrument-serif-latin-400-normal.woff2     Instrument Serif 400
+  instrument-serif-latin-400-italic.woff2     Instrument Serif 400 itálica
+  quicksand-latin-500-normal.woff2            Quicksand 500
+  quicksand-latin-700-normal.woff2            Quicksand 700
+
+Dónde se usan (css/base.css, variables --font-title / --font-serif / --font-body):
+  · Bebas Neue      títulos y botones grandes
+  · Instrument Serif el expediente (denuncia, testimonios, pruebas)
+  · Quicksand       texto corrido, preguntas y etiquetas
+
+LICENCIA
+--------
+Las tres están bajo la SIL Open Font License 1.1 (OFL):
+https://scripts.sil.org/OFL
+
+La OFL permite usar las fuentes en cualquier producto (incluido comercial),
+embutirlas y redistribuirlas junto al programa, y modificarlas. La única
+condición es que si se redistribuyen los archivos de fuente —o se venden
+sueltos— tienen que seguir acompañados por el aviso de licencia OFL, y las
+versiones modificadas no pueden usar los nombres originales reservados.
+El juego no modifica las fuentes: son los archivos tal como se publicaron.
+
+Descarga: los woff2 vienen del catálogo de Google Fonts (https://fonts.google.com),
+que redistribuye estas familias bajo OFL.
+
+NOTA PARA EL EQUIPO
+-------------------
+* Si se agrega una fuente nueva, hay que subir el archivo a esta carpeta y
+  declararla con @font-face en css/base.css (con font-display:swap, como las
+  actuales). No se enlaza a CDNs: el juego tiene que funcionar sin red, en el
+  aula y desde el ZIP.
+* El crédito a las fuentes también está visible dentro del juego, en el manual
+  (js/data/manual.js, sección de créditos), en español y en inglés.
+* Si la entrega pide el texto legal completo de cada fuente, hay que guardar
+  también el archivo OFL.txt que publica el autor de cada familia junto al
+  woff2 correspondiente. Acá se documenta la licencia y su enlace oficial.
