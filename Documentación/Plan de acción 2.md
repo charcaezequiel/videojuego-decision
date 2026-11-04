@@ -153,25 +153,38 @@ npx http-server -p 8099 -c-1 .       # en otra terminal
 
 ---
 
-## PARTE 5 · Prueba real, documentación y empaque
+## PARTE 5 · Prueba real, documentación y licencias
 
-**Objetivo:** que el Readme no prometa nada que el juego no haga y que la entrega sea un ZIP limpio.
+**Objetivo:** que el Readme no prometa nada que el juego no haga y que la entrega esté documentada y licenciada.
+**Cambio de alcance pedido:** **no se arma ningún ZIP.** La entrega es el repositorio; `Codigo/` ya es portable.
 **Tiempo estimado:** 1-2 h + la prueba en dispositivos.
 
-- ⬜ **5.1 · Readme: corregir lo que el plan viejo dejó 🔶** (`Codigo/Readme.md`):
-  - `línea 104`: menciona `js/data/niveles-previos.js`, que **no existe** en `js/data/` (solo `manual.js`, `niveles.js`, `vestuario.js`).
-  - `línea 108` y `126`: dicen `musica-quiz.ogg` → formatos reales `.mp3`/`.wav`.
-  - `línea 109` y `127`: dicen `tutorial.mp4` (MP4 H.264) → el archivo real es `tutorial.webm`.
-  - Sección 6 (estructura): faltan `js/core/run.js` y las herramientas `build_content.js`, `build_audio.mjs`, `pixel.js`, `build_assets.js`, `shots.js`, `montage.js`, `check_i18n.js`, `check_hit_areas.js`.
-  - Sección 2: la lista de casos de prueba queda en **20** si se agregó el caso 20 (Parte 2) y hay que describirlo.
-  - Sección 3/4: documentar "Borrar mi progreso" (antes decía "borrá los datos del sitio en el navegador" como única vía) y el mejor puntaje por nivel en el ranking.
-- ⬜ **5.2 · Probar con tacto real** en un celular y una tablet (el `audit` simula viewport, no dedos) en horizontal y vertical, y verificar el bloqueo de autoplay en Safari/iOS (la música arranca con el primer gesto). **Nada de esto está probado: este checkout no tiene `node_modules` instalado y ningún "19 ok" está verificado acá.**
-- ⬜ **5.3 · Playthrough completo con cuenta nueva** (jugando, no con las pruebas): `portada → registro → menú → nivel 1 → 3 carpetas → juicio → 10 preguntas → 3 palabras → resultado → 8 s → selección`. Después perder un nivel, comprobar que desbloquea el siguiente, vestir al personaje, recargar y verificar que el vestuario sigue.
-- ⬜ **5.4 · Empaquetar la entrega.** ZIP de `Codigo/` **sin** `node_modules/` ni `tools/out/`, más la carpeta `Documentación/`. Confirmar licencias de las 3 fuentes (Bebas Neue, Instrument Serif, Quicksand — ya citadas en `js/data/manual.js:109`) y de la música (`assets/audio/LICENCIA.txt`).
-- ⬜ **5.5 · Cierre de documentación.** Este plan pasa a `Plan de acción.md` (o se deja este como "2" con el estado final) y el Readme de la raíz dice qué versión del juego se entrega.
+- ✅ **5.1 · Readme verificado** (`Codigo/Readme.md`). Cada afirmación se chequeó contra el repo, no contra la memoria:
+  - Sacado `js/data/niveles-previos.js` (no existe); agregado `js/core/run.js` y la marca de **GENERADO** en `niveles.js`.
+  - Formatos reales: música **MP3 + WAV** (sin `.ogg`) y tutorial **WebM/VP9 mudo** (no MP4).
+  - Sección 2: la lista llegó a **20 casos** con el de *Borrar mi progreso*, que se describe.
+  - Sección 4: documentados *Borrar mi progreso* (limpia solo la cuenta abierta) y el **mejor puntaje por nivel** del ranking.
+  - Sección 6: lista completa de `tools/` (content, `build_content.js`, `build_audio.mjs`, `build_assets.js`, `build_tutorial.js`, `pixel.js`, `shots.js`, `montage.js`, `check_i18n.js`, `check_hit_areas.js`, `preview_avatars`, `out/` gitignoreado) y `tests/smoke.js`.
+  - Sección 7: el contenido se edita en `tools/content/casos-*.json` + `npm run content`; `DF.rules` (reglas y puntaje máximo) vive en `tools/build_content.js`.
+  - Verificación: un script recorrió todas las rutas y nombres entre backticks del Readme y confirmó que **existen** (el único falso negativo fue `index.html`, por cómo el script armaba las carpetas).
+- 🔶 **5.2 · Probar con tacto real — NO SE PUDO HACER DESDE ACÁ.** Requiere el celular, la tablet y el proyector del aula: tacto, autoplay de Safari/iOS, el WebM en el equipo de la clase y la legibilidad proyectada. Queda escrito como riesgo en `Documentación/Pendiente.md` (sección 2). Todo lo que se corrió acá fue **Chromium de escritorio**.
+- ✅ **5.3 · Playthrough completo con cuenta nueva** (`Codigo/tools/out/playthrough.js`, gitignoreado). Juega **por el contenedor** —el juego vive en el iframe `df-shell`—, escribe el registro a mano y usa el teclado del desafío de palabras. Cuenta nueva `charca.5.3@df.test`, sin sembrar `localStorage`.
+  - **Recorrido horizontal (1280×720), 26 capturas:** portada → registro → menú → selección (2-4 bloqueadas) → nivel 1 → consigna → 3 carpetas leídas (0→3) → juicio → **10 preguntas** (con la oficial fotografiada) → **3 palabras resueltas escribiéndolas** → `¡CASO GANADO!` 1548 pts, 3 estrellas → a los 8 s vuelve solo a Selección de nivel.
+  - **Perder también desbloquea:** el nivel 2 jugado a propósito en falso da `CASO PERDIDO` 0 pts y deja las plaquetas `1:won · 2:lost · 3:next · 4:locked`. Tocar un nivel con candado **no navega** (se queda en `niveles.html` y muestra "Terminá el nivel 3 para desbloquear.").
+  - **Vestuario persistente:** se cambian prendas, se recarga la página del juego y sigue en `vestir.html` con las prendas puestas (la sesión vive en `sessionStorage`, las cuentas en `localStorage`).
+  - **Ranking:** una sola fila, `1548 pts ★★★ NIVEL 1 · 1548` (suma el mejor por nivel).
+  - **`errores: []`** — ni `pageerror` ni errores de consola en las 26 pantallas del recorrido.
+  - **Segunda pasada en vertical (720×1280), 24 capturas:** mismo recorrido completo y también sin errores de consola.
+  - **Dos defectos reales encontró la pasada vertical** (las pruebas automáticas no los veían porque el `audit` chequea desbordes y scroll, **no superposición entre hermanos**):
+    1. El desafío de palabras **montaba la grilla sobre la pista** en vertical (`tablet vertical` +14 px, `720×1280` +18 px) y en `celular apaisado` (+9 px). La caja de la pista mide lo que ocupa su texto más las dos líneas del meta, y el CSS le daba a la grilla un `top` fijo. Se arregló en `js/pages/palabra.js` apoyando la grilla **debajo de la caja cuando el `top` del CSS no alcanza** (donde alcanza, manda el CSS). Verificado con `tools/out/check-palabra-v.js`: **30 combinaciones** (10 tamaños × 3 pistas largas) dan `caja/grilla` negativo, la grilla no toca el teclado y nada se sale del escenario. Costado: en horizontal la grilla baja de 188 a 208 px, así que **el tutorial se regrabó**.
+    2. La nota del resultado perdido repetía el botón: `… Perdido · podés reintentar · REINTENTAR NIVEL`. En `js/pages/resultado.js` la nota usa `nivelPerdido`, que ya dice "Perdido · podés reintentar"; se sacó el `reintentarNivel` concatenado. Medido tras el cambio: la nota termina 61 px antes del botón en horizontal y 174 px en vertical.
+  - **Después de los dos cambios se volvió a verificar todo:** `npm test` **20/20**, `npm run audit` **9 tamaños × 17 pantallas OK**, `npm run i18n` **0 diferencias** (manual 8 bloques / 32 párrafos ES y EN), `npm run hit` **6/6**, la pasada vertical del playthrough **recorrída de nuevo** (24 capturas, `errores: []`) y el tutorial **regrabado** (1:13.48, VP9 1280×720 mudo, 22.455 KB) con el frame del desafío de palabras revisado a ojo.
+  - **Trampa que hay que recordar** (rompía el script): las opciones del cuestionario están `disabled` durante los 5,2 s de la devolución oficial, y `js/pages/palabra.js` **rechaza un intento que no tenga el largo exacto** sin consumir intento. Un playthrough ingenuo se corta o se queda trabado para siempre.
+- ✅ **5.4 · Licencias (sin ZIP).** Los tres avisos están escritos y verificados contra el código: `assets/audio/LICENCIA.txt` (obra del grupo, CC0), `assets/fonts/LICENCIA.txt` (SIL OFL 1.1, 5 `.woff2` autoalojados, sin CDN; las variables reales son `--font-title`/`--font-text`/`--font-body` — **no existe `--font-serif`**) y `assets/video/LICENCIA.txt` (grabación propia, mudo por construcción). El juego también muestra los créditos en *Manual → Créditos*, en los dos idiomas. **El ZIP queda explícitamente afuera.**
+- ✅ **5.5 · Cierre de documentación.** El `README.md` de la raíz pasó de 3 líneas a decir qué es el juego, dónde está cada carpeta (`Recursos graficos/` es material de referencia y **no** lo lee el juego), cómo ejecutarlo, cómo probarlo, las licencias y qué falta. La Parte 5 de este plan queda con el estado real y `Documentación/Pendiente.md` lista lo que sigue.
 
-**Criterio para cerrar:** Readme sin una sola referencia a archivo inexistente, `npm test` / `npm run audit` / `npm run i18n` / `npm run hit` en verde desde un `npm install` limpio, playthrough manual completo y ZIP probado en otro equipo.
-**Commit:** `P5 · entrega: Readme verificado, prueba en dispositivo y ZIP limpio`.
+**Criterio para cerrar:** ✅ cumplido **salvo 5.2**, que necesita equipo físico. Readme sin referencias a archivos inexistentes, `npm test` 20/20, playthrough horizontal **y vertical** con cuenta nueva y `errores: []`, licencias documentadas y tutorial regrabado con la interfaz final.
+**Commit:** `P5 · entrega: Readme verificado, playthrough horizontal y vertical y licencias (sin ZIP)`.
 
 ---
 
@@ -183,6 +196,6 @@ npx http-server -p 8099 -c-1 .       # en otra terminal
 | 2 | Lo que falta codear | ✅ cerrada el 03/11: `npm test` = 20 ok, `i18n` 0 diferencias |
 | 3 | Contenido y traducción | ✅ cerrada el 03/11: 10 casos leídos a mano + manual EN + contraste medido |
 | 4 | Recursos | ✅ cerrada el 03/11: tutorial regrabado (y el viejo estaba roto), WebM decidido, arte idéntico |
-| 5 | Prueba real y empaque | Readme honesto + ZIP probado en otro equipo |
+| 5 | Prueba real y licencias | ✅ cerrada el 04/11 (menos 5.2): Readme honesto + playthrough horizontal y vertical sin errores de consola + licencias. **Sin ZIP, por decisión del equipo** |
 
 Dependencias: **la Parte 1 va primero sí o sí** (si el test 13 sigue perdonando 404, las partes 2 a 5 se verifican sobre una base que miente). Las Partes 2 y 3 se pueden invertir sin problema. La 4 después de la 2 (el tutorial graba la interfaz, así que conviene grabarlo con las pantallas ya terminadas). La 5 siempre al final.

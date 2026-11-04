@@ -2,7 +2,7 @@ DF · Decisión Final — fuentes tipográficas
 ========================================================
 
 Las tres familias del juego se usan en formato web (woff2, subconjunto
-latín) y están autALOJADAS en esta carpeta: el juego no pide nada a
+latín) y están autoalojadas en esta carpeta: el juego no pide nada a
 internet para verse.
 
   bebas-neue-latin-400-normal.woff2          Bebas Neue 400
@@ -11,10 +11,15 @@ internet para verse.
   quicksand-latin-500-normal.woff2            Quicksand 500
   quicksand-latin-700-normal.woff2            Quicksand 700
 
-Dónde se usan (css/base.css, variables --font-title / --font-serif / --font-body):
-  · Bebas Neue      títulos y botones grandes
-  · Instrument Serif el expediente (denuncia, testimonios, pruebas)
-  · Quicksand       texto corrido, preguntas y etiquetas
+Dónde se usan (css/base.css define las variables --font-title, --font-text
+y --font-body; --font-serif no existe):
+  · Bebas Neue       títulos, botones, cronómetro y etiquetas en mayúscula
+  · Instrument Serif la base de todo el texto (--font-text en body), el
+                       expediente (denuncia, testimonios, pruebas), las
+                       clases .label y .text, los campos de formulario y
+                       los subtítulos del ranking
+  · Quicksand        texto corrido con peso (.body-text, preguntas, párrafos
+                     del manual, estadísticas y botones de resultado)
 
 LICENCIA
 --------
@@ -36,7 +41,7 @@ NOTA PARA EL EQUIPO
 * Si se agrega una fuente nueva, hay que subir el archivo a esta carpeta y
   declararla con @font-face en css/base.css (con font-display:swap, como las
   actuales). No se enlaza a CDNs: el juego tiene que funcionar sin red, en el
-  aula y desde el ZIP.
+  aula y desde la carpeta local.
 * El crédito a las fuentes también está visible dentro del juego, en el manual
   (js/data/manual.js, sección de créditos), en español y en inglés.
 * Si la entrega pide el texto legal completo de cada fuente, hay que guardar

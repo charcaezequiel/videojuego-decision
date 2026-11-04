@@ -1,0 +1,35 @@
+DF · Decisión Final — video tutorial
+========================================================
+
+Archivo           : tutorial.webm  (VP9, 1280x720, 25 fps, 1:13, mudo)
+Cartel            : tutorial-poster.jpg (el primer cuadro, para el <video poster>)
+Contenido         : grabación real del propio juego. No hay material de terceros:
+                    las pantallas, el arte pixel, los textos de los casos y las
+                    fuentes que se ven son los que están en este repositorio.
+Generación        : node tools/build_tutorial.js — Playwright Chromium + el
+                    ffmpeg que trae Playwright. El guión juega el nivel 1 con
+                    una cuenta desechable y graba pantalla.
+
+LICENCIA
+--------
+La grabación es del Grupo LPC · DF Decisión Final y se entrega junto al juego
+bajo las mismas condiciones que el resto del proyecto.
+
+Lo único que no es propio son las tres tipografías que aparecen dibujadas en
+los cuadros (Bebas Neue, Instrument Serif y Quicksand). Están bajo la SIL Open
+Font License 1.1 (https://scripts.sil.org/OFL), que permite mostrarlas y
+distribuirlas dentro de un video. El detalle está en assets/fonts/LICENCIA.txt.
+
+El audio es intencionalmente silencio: el ffmpeg de Playwright no codifica
+pistas de sonido, así que el tutorial no lleva música ni narración. Por eso la
+música del juego (assets/audio/LICENCIA.txt) no aplica a este archivo.
+
+NOTA PARA EL EQUIPO
+-------------------
+* Si el aula necesita subtítulos, se agregan como .vtt al lado y se enlazan con
+  <track> en la pantalla de selección; el video sigue siendo el mismo.
+* Si no se ve el video en el proyector del aula, probar primero con otro
+  navegador: WebM/VP9 lo abren Chrome, Edge y Firefox. Safari es el único
+  conflictivo, y ahí hace falta un MP4 (ver Readme, sección de contenido).
+* Al cambiar pantallas o textos hay que regrabar: el tutorial muestra la
+  interfaz real, así que un cambio de UI lo deja desactualizado.

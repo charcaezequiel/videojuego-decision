@@ -107,9 +107,9 @@ js/data/                   Solo datos (sin lógica)
   manual.js                Texto del manual, en español e inglés
 js/pages/                  Un script por pantalla
 assets/
-  icons/, img/, fonts/     Imágenes y fuentes del diseño (3 familias, SIL Open Font License)
+  icons/, img/, fonts/     Imágenes y fuentes del diseño (3 familias, SIL Open Font License, + LICENCIA.txt)
   audio/                   musica-quiz.mp3 + musica-quiz.wav de respaldo (+ LICENCIA.txt)
-  video/                   tutorial.webm (VP9, mudo) + tutorial-poster.jpg
+  video/                   tutorial.webm (VP9, mudo) + tutorial-poster.jpg (+ LICENCIA.txt)
 tools/
   content/                 casos-1-5.json y casos-6-10.json (el contenido real) + validar.mjs
   build_content.js         JSON de casos → js/data/niveles.js (npm run content)

@@ -68,7 +68,7 @@ DF.boot(() => {
     if(g.unlock && g.unlock.unlockedLevel) out.push(DF.i18n.t('desbloqueoNivel', { n:g.unlock.unlockedLevel }));
     if(g.unlock && g.unlock.firstTime) out.push(DF.i18n.t('desbloqueoPrendas'));
     if(g.passed) out.push(DF.esc(resumen(DF.levels[n - 1].caso.devolucion)));
-    else out.push(DF.esc(DF.i18n.t('nivelPerdido')) + ' · ' + DF.esc(DF.i18n.t('reintentarNivel')));
+    else out.push(DF.esc(DF.i18n.t('nivelPerdido')));
     return out.join(' ');
   }
 

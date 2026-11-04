@@ -14,6 +14,7 @@ DF.boot(() => {
   const judgeBox = document.getElementById('clue-judge');
   const clueTxt = document.getElementById('clue-txt');
   const clueMeta = document.getElementById('clue-meta');
+  const clueBox = document.querySelector('.ch-clue');
   const grid = document.getElementById('grid');
   const kb = document.getElementById('kb');
 
@@ -95,7 +96,19 @@ DF.boot(() => {
     clueMeta.innerHTML = DF.esc(DF.i18n.t('palabra', { a:wi + 1, b:R.wordsPerLevel })) +
       ' · ' + DF.esc(DF.i18n.t('letras', { n:len() })) +
       '<br>' + DF.esc(DF.i18n.t('intento', { a:Math.min(tries() + 1, R.attemptsPerWord), b:R.attemptsPerWord }));
+    apoyarGrilla();
   }
+
+  /* La caja de la pista mide lo que ocupan su texto y sus dos líneas de meta,
+     así que en vertical y en celular acostado baja más que el `top` fijo del
+     CSS y tapa la primera fila de casilleros. La grilla se apoya debajo de la
+     caja apenas hace falta; donde el CSS ya alcanza, manda el CSS. */
+  function apoyarGrilla(){
+    grid.style.top = '';
+    const abajo = clueBox.offsetTop + clueBox.offsetHeight + 14;
+    if((parseFloat(getComputedStyle(grid).top) || 0) < abajo) grid.style.top = abajo + 'px';
+  }
+  window.addEventListener('resize', apoyarGrilla);
 
   function refresh(){ drawGrid(); drawKeys(); drawMeta(); }
 

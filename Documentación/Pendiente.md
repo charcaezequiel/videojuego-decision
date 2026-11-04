@@ -1,6 +1,6 @@
 # DF · Decisión Final — qué falta hacer
 
-Estado al **03/11/2026**. Las Partes 1 a 4 del `Plan de acción 2.md` están cerradas y commiteadas:
+Estado al **04/11/2026**. Las Partes 1 a 5 del `Plan de acción 2.md` están cerradas y commiteadas:
 
 | Commit | Parte |
 |---|---|
@@ -8,36 +8,47 @@ Estado al **03/11/2026**. Las Partes 1 a 4 del `Plan de acción 2.md` están cer
 | `c65d8bf` | P2 · pantallas: borrar progreso, ranking por nivel y foco de teclado |
 | `a503dfd` | P3 · contenido: lectura humana de los 10 casos y manual en inglés |
 | `8b7641e` | P4 · recursos: tutorial regrabado y arte coherente |
+| `HEAD` | P5 · entrega: Readme verificado, playthrough horizontal y vertical y licencias (sin ZIP) |
 
-La **Parte 5 está empezada**: 5.1 terminada, 5.3 a medias, 5.2 / 5.4 / 5.5 sin empezar.
+**La única parte que no se pudo cerrar es la 5.2** (probar en dispositivos físicos), y no es un
+tema de código: hace falta el celular, la tablet y el proyector del aula.
 
 ---
 
-## 1 · Playthrough manual: qué falta cerrar (5.3)
+## 1 · Playthrough con cuenta nueva (5.3) — cerrado, y encontraron dos defectos
 
-Ya está **verificado jugando de verdad** (cuenta nueva `charca.5.3@df.test`, entrando por `index.html`,
-sin sembrar `localStorage`, con el script `Codigo/tools/out/playthrough.js`):
+Corrido **dos veces** con el script `Codigo/tools/out/playthrough.js` (cuenta nueva
+`charca.5.3@df.test`, entrando por `index.html`, sin sembrar `localStorage`):
 
-`portada → registro → menú → selección → nivel 1 → consigna → 3 carpetas leídas → juicio →
-10 preguntas → 3 palabras → resultado "CASO GANADO" → a los 8 s vuelve solo a Selección de nivel`
-con las plaquetas 2-4 todavía bloqueadas y NIVEL 1 pasado.
+- **Horizontal 1280×720 · 26 capturas:** `portada → registro → menú → selección → nivel 1 → consigna →
+  3 carpetas (0→3 leídas) → juicio → 10 preguntas → 3 palabras escritas → ¡CASO GANADO! 1548 pts · 3 estrellas →
+  a los 8 s vuelve solo`. Después: perder el nivel 2 a propósito deja `1:won · 2:lost · 3:next · 4:locked`,
+  tocar un nivel con candado **no navega**, el vestuario **sobrevive a la recarga**, el ranking muestra
+  `1548 pts ★★★ NIVEL 1 · 1548` y **`errores: []`**.
+- **Vertical 720×1280 · 24 capturas:** el mismo recorrido completo, también sin errores de consola.
 
-Falta verificar del mismo script (los pasos están escritos, no ejecutados hasta el final):
+Los dos defectos que aparecieron en la pasada vertical ya están corregidos (detalle en la Parte 5 del plan):
+la grilla del desafío de palabras se montaba sobre la pista (`js/pages/palabra.js`) y la nota del nivel
+perdido repetía el texto del botón (`js/pages/resultado.js`). Como el desafío de palabras se movió 20 px
+en horizontal, **el tutorial se regrabó**.
 
-- [ ] **Perder el nivel 2 desbloquea el 3** (y el 2 queda marcado "Perdido · podés reintentar").
-      *Por qué se cortó:* el desafío de palabras **rechaza un intento que no tenga el largo exacto de la
-      palabra** (`js/pages/palabra.js:118`) sin consumir intento. El script escribía `QWZX` y quedaba
-      trabado para siempre. Ya está corregido para escribir `Q` repetido `largo` veces; hay que correrlo.
-- [ ] **Tocar un nivel bloqueado no navega** a ninguna pantalla.
-- [ ] **El vestuario se mantiene al recargar** (cambiar dos prendas, recargar `index.html`, seguir en la
-      misma pantalla con las prendas puestas).
-- [ ] **Sin errores de consola** en todo el recorrido (el script los acumula y los imprime al final).
-- [ ] Correrlo también **en vertical** (720×1280), que es donde el layout se reacomoda.
+**Lo que queda de la 5.3, si alguien quiere seguir apretando botones:**
+
+- [ ] Recorrer los **10 niveles** jugando (el script juega 1 completo y 2 perdido; el resto lo cubren las pruebas).
+- [ ] Abrir el juego en **modo avión** y verificar que no pida nada a internet (fuentes, música y video son locales).
+- [ ] Probar el **recorrido por teclado** con un teclado físico de celular/tablet (las flechas ya están cubiertas por `npm test`).
 
 ```bash
 cd Codigo && npm run serve        # otra terminal, puerto 8099
-node tools/out/playthrough.js
+node tools/out/playthrough.js     # horizontal
+V=1 node tools/out/playthrough.js # vertical (juega el nivel 1 y saltea el nivel 2 perdido)
+node tools/out/check-palabra-v.js # 10 tamaños × 3 pistas largas: caja de la pista vs grilla vs teclado
 ```
+
+> **Trampas conocidas del playthrough** (por si se reescribe): el juego vive en el iframe
+> `df-shell` del contenedor, las opciones están `disabled` durante los 5,2 s de la devolución
+> oficial, y `js/pages/palabra.js` rechaza un intento que no tenga el largo exacto de la palabra
+> sin consumir intento.
 
 ## 2 · Prueba física en dispositivos (5.2) — nada de esto está hecho
 
@@ -56,26 +67,37 @@ El `npm run audit` simula el viewport, **no simula dedos**. Hay que probar con e
 - [ ] **Proyección real:** el ajuste de brillo atenúa todo el escenario; verificar la legibilidad de los
       textos chicos (preguntas y nota del resultado) sobre el proyector, no solo sobre el monitor.
 
-## 3 · Empaquetar la entrega (5.4)
+## 3 · Licencias de la entrega (5.4) — **sin ZIP**
 
-- [ ] Generar el ZIP con **`Codigo/` sin `node_modules/` ni `tools/out/`** (los dos ya están en
-      `.gitignore`) **más `Documentación/`**.
-- [ ] Abrir el ZIP **en otra máquina** y verificar que `index.html` funcione con doble clic y que el
-      juego termine un nivel sin red (todas las fuentes y el video son locales).
-- [ ] Licencias: la música está documentada en `Codigo/assets/audio/LICENCIA.txt` (CC0, obra del grupo)
-      y las **3 fuentes** en `Codigo/assets/fonts/LICENCIA.txt` (SIL OFL 1.1, autalojadas, sin CDN).
-      Los créditos de las fuentes también se ven dentro del juego (manual → créditos, en los dos idiomas).
-      [ ] Si la cátedra pide el texto legal **completo** de cada fuente, hay que descargar el `OFL.txt`
-      de cada familia y ponerlo junto al `.woff2`.
+Se decidió **no comprimir nada**: la entrega es el repositorio, y `Codigo/` ya es
+portable por sí sola (no pide nada a internet). Lo que sí queda es el papel de
+licencias, que está escrito y verificado contra el código:
+
+- [x] `Codigo/assets/audio/LICENCIA.txt` — música del grupo, **CC0 1.0**; el MP3 se
+      regenera byte a byte desde el WAV con `npm run mp3`.
+- [x] `Codigo/assets/fonts/LICENCIA.txt` — Bebas Neue, Instrument Serif y Quicksand,
+      **SIL OFL 1.1**, autoalojadas (5 `.woff2`, sin CDN). Las variables reales son
+      `--font-title` / `--font-text` / `--font-body` (`css/base.css:46-48`); no existe
+      `--font-serif`.
+- [x] `Codigo/assets/video/LICENCIA.txt` — el tutorial es una grabación propia, mudo
+      por construcción (el ffmpeg de Playwright no codifica audio).
+- [x] Los créditos de las fuentes también se ven dentro del juego (`js/data/manual.js:159`,
+      en los dos idiomas).
+- [ ] Si la cátedra pide el texto legal **completo** de cada fuente, hay que descargar el
+      `OFL.txt` de cada familia y ponerlo junto al `.woff2`.
+- [ ] Si algún día se pide un archivo único, armar el ZIP con `Codigo/` **sin**
+      `node_modules/` ni `tools/out/` (los dos ya están en `.gitignore`) más `Documentación/`,
+      y abrirlo en otra máquina para verificar que el nivel 1 se termina sin red.
 
 ## 4 · Cierre de documentación (5.5)
 
-- [ ] El `README.md` de la raíz son 3 líneas ("VIDEOJUEGO-DECISI-N-FINAL- / Grupo LPC: 5°2"). Debe decir
-      qué versión del juego se entrega, cómo ejecutarla y dónde está cada cosa.
-- [ ] Decidir si `Plan de acción 2.md` pasa a llamarse `Plan de acción.md` o se deja el "2" con el estado
-      final, y que el Readme lo aclare.
-- [ ] `Recursos graficos/` (9,1 MB de PNG del prototipo original) está versionada pero **no forma parte
-      del juego**: aclarar en el Readme de la raíz que es material de referencia, o sacarla del ZIP.
+- [x] El `README.md` de la raíz ya no son 3 líneas: dice qué es el juego, dónde está
+      cada carpeta (`Codigo/` es el juego, `Recursos graficos/` **no** se usa), cómo
+      ejecutarlo, cómo probarlo, las licencias y qué queda pendiente.
+- [ ] Decidir si `Plan de acción 2.md` pasa a llamarse `Plan de acción.md` o se deja el "2"
+      con el estado final, y que el Readme de la raíz lo aclare.
+- [ ] `Documentación/Readme.md` y `Recursos graficos/Readme.md` están **vacíos** (2 bytes):
+      o se llenan con una línea de índice o se borran.
 
 ## 5 · Deuda conocida que no bloquea la entrega
 
