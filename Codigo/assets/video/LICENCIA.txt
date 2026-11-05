@@ -28,8 +28,26 @@ NOTA PARA EL EQUIPO
 -------------------
 * Si el aula necesita subtítulos, se agregan como .vtt al lado y se enlazan con
   <track> en la pantalla de selección; el video sigue siendo el mismo.
-* Si no se ve el video en el proyector del aula, probar primero con otro
-  navegador: WebM/VP9 lo abren Chrome, Edge y Firefox. Safari es el único
-  conflictivo, y ahí hace falta un MP4 (ver Readme, sección de contenido).
+* Probado con el archivo real, en 4 motores (node tools/out/check-video.js):
+    Chrome/Chromium, Edge y Firefox 157 lo reproducen en tiempo real, por http
+    y abriendo el juego con doble clic (file://). Busca en la barra de progreso
+    en 35-280 ms y no descarta cuadros.
+    WebKit (el motor de Safari) NO lo carga: canPlayType dice "probably" pero no
+    trae ni los metadatos. Safari y los iPad son el único caso real que queda.
+* Para ese caso, la pantalla ya acepta un segundo archivo: si existe
+  assets/video/tutorial.mp4, el navegador que no entiende WebM lo usa solo, sin
+  tocar código. Convertirlo pide un ffmpeg completo (el de Playwright no puede:
+  no tiene libx264 ni muxer MP4):
+      ffmpeg -i tutorial.webm -an -c:v libx264 -pix_fmt yuv420p -crf 24 \
+             -preset slow -movflags +faststart tutorial.mp4
+  (-pix_fmt yuv420p y -movflags +faststart son los dos datos que Safari exige.)
+* Si el archivo no está o el códec no se soporta, el reproductor se oculta y en
+  su lugar aparece un aviso ("el video tutorial no está cargado. El manual
+  alcanza para jugar") en los dos idiomas. El juego sigue 100% usable: el video
+  es un apoyo, no un requisito. Medido con node tools/out/check-video-falla.js y
+  check-tuto-nota.js.
+* Cuidado con copiar la carpeta a un pendrive a medias: un .webm truncado NO se
+  detecta, el navegador lo acepta y muestra el tutorial cortado. El archivo
+  completo pesa 22.993.851 bytes; ese número es lo que hay que verificar.
 * Al cambiar pantallas o textos hay que regrabar: el tutorial muestra la
   interfaz real, así que un cambio de UI lo deja desactualizado.

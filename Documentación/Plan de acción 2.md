@@ -96,6 +96,8 @@ npx http-server -p 8099 -c-1 .       # en otra terminal
 
 - ✅ **3.1 · Lectura humana de los 10 casos y las 100 preguntas.** Se leyó completo `tools/content/casos-1-5.json` y `tools/content/casos-6-10.json` y se corrigieron **40 cosas** (29 en 1-5, 11 en 6-10 más el pase de coherencia numérica). Las que cambian el contenido que se enseña:
   - **Caso 1 — error legal en la pregunta oficial.** Decía "el derecho de petición del artículo 43". El derecho de peticionar está en el **art. 14**; el art. 43 es el **amparo** (y no contiene ningún plazo razonable). Se corrigió la denuncia, la devolución y la pregunta oficial, verificado contra el texto oficial. **⚠️ Si el PDF del caso 1 cita el art. 43, hay que alinearlo**: el juego ahora dice art. 14 y el art. 43 queda citado como amparo.
+  - **05/11 · se buscó el PDF y no está en este repositorio.** El único PDF del repo es `LPC-Sprint 7_ Definición del sistema de diseño del producto.pdf`; extraído el texto (`pdftotext`), es documentación de UX/UI y **no trae ni los casos ni los artículos** (buscado en los 8 `.docx` también: 0 coincidencias). El papel vive afuera del repo, así que lo que se hizo fue meter adentro la **fuente autoritativa**: `Documentación/Casos para imprimir.md`, generada por `tools/build_fichas.js` (`npm run fichas`) leyendo `js/data/niveles.js`, o sea el texto que el juego efectivamente muestra — no se puede desalinear solo. Trae los 10 expedientes completos (denuncia, testimonios, pruebas y devolución) y la **pregunta oficial con su orden A-D**, que es la que el juego muestra primero y conserva el orden del papel (`js/core/run.js:54-63`: solo la oficial no se mezcla). Encabezado con el aviso legal: art. 14 = petición, art. 43 = amparo por omisión/silencio, y la advertencia de **no "corregir"** los distractores de art. 43 de los casos 2, 3 y 4 (si se arreglan, esas preguntas quedan con dos respuestas válidas).
+  - La cita se volvió a verificar contra el texto oficial de la reforma de 1994 antes de escribir la ficha: el art. 14 reconoce "peticionar a las autoridades" y el art. 43 da la acción de amparo "contra todo acto u omisión" de las autoridades — que es justo el silencio del municipio del caso 1.
   - **Caso 4 — PIDES art. 13.4 → art. 13.2.b** (el inciso de la denuncia ante la CIDH).
   - **Caso 5 — "ART" → "obra social"** en denuncia, resumen, autor del testimonio y dos preguntas: ART es el seguro de accidentes de trabajo, y acá lo que negaba la cobertura era la obra social. Además "Debió" → "Debía" (3 veces) y el distractor de P1 reescrito para que la clave siga siendo la única correcta.
   - **Caso 10 — la aritmética no cerraba.** El recargo es 3 % y la factura decía $4.500 de más sobre un plan de $22.400 (3 % = $672). Como el 3 % no se puede tocar, se subió la **base**: la casa gasta $150.000 por mes en compras y servicios por internet (entre ellos el plan de $22.400) → 3 % = **$4.500 exactos**, total $154.500. Ajustadas denuncia, testimonio de Zapata, la prueba de las facturas y el distractor de P3.
@@ -141,6 +143,35 @@ npx http-server -p 8099 -c-1 .       # en otra terminal
 - ✅ **4.2 · Decisión: se entrega WebM.** El ffmpeg que trae Playwright (`%LOCALAPPDATA%/ms-playwright/ffmpeg-1013`) solo tiene codificadores `png` y `libvpx-vp9` y muxers `webm` e `image2`: **no hay `libx264`, no hay contenedor MP4 y no hay ningún codificador de audio**, así que el tutorial es mudo por construcción y convertir a MP4 implicaría descargar un ffmpeg completo. Se queda WebM/VP9 (es lo que el `<video>` de `pages/niveles.html` ya declara).
   - **Riesgo abierto, es de presentación y no técnico:** hay que **abrir `assets/video/tutorial.webm` en la PC y el proyector del aula** antes de la entrega. Si no reproduce, el plan B es descargar ffmpeg y generar el MP4; el reproductor ya se oculta solo si el archivo no carga, así que no rompe nada.
   - El audio del juego no depende de esto: `index.html` usa MP3/WAV, que cualquier navegador actual reproduce.
+  - **05/11 · el riesgo se midió en vez de suponerse** (`Codigo/tools/out/check-video.js`, 4 motores × 3 cargas,
+    más `check-video-falla.js` y `check-tuto-nota.js`):
+    * El archivo está sano: **VP9 Profile 0, yuv420p, 1280×720, 25 fps, un solo stream, sin audio**; la
+      decodificación completa dio **1837 frames** (73,48 s exactos) sin un solo error.
+    * **Chromium, Edge y Firefox 157 lo reproducen en tiempo real** (3,01 s de video en 3,01 s de reloj),
+      por http **y por `file://`** (abrir el juego con doble clic), con descartes de 0 a 3 cuadros sobre
+      ~80 y saltos de la barra de 21 a 292 ms. Hasta con el `Content-Type` puesto como
+      `application/octet-stream` suena bien: lo que importa es que el servidor mande `Accept-Ranges`
+      (`http-server` manda `206 Partial Content`, está cubierto).
+    * **WebKit —el motor de Safari y los iPad— no lo carga**: `canPlayType()` dice "probably" pero no trae
+      metadatos, y no dispara `error` ni `loadedmetadata`. Es el único agujero real, y no se puede cerrar
+      desde esta máquina (no hay `libx264` ni muxer MP4).
+    * **Fix 1 — la pantalla acepta el MP4 sin tocar código:** `pages/niveles.html` ahora declara dos
+      `<source>` (WebM primero, `tutorial.mp4` después). Si alguien con un ffmpeg completo genera ese
+      archivo y lo deja en `assets/video/`, Safari lo toma solo; si no existe, no se pide (medido: a
+      Chromium no le llega ni un pedido de `tutorial.mp4`).
+    * **Fix 2 — el aviso reemplaza al reproductor:** antes, si el video no cargaba, la caja desaparecía a
+      secas (y en WebKit desaparecía igual sin disparar ningún evento). Ahora `js/pages/niveles.js` pone
+      un watchdog de 6 s y muestra `DF.i18n.t('tutoNoVideo')` — un texto que ya estaba traducido en los
+      dos idiomas y **nunca se había usado** — en el mismo rincón. Verificado en los 5 escenarios: video
+      bueno (aviso oculto), 404, 404 vertical, WebKit español y WebKit inglés; la caja queda dentro del
+      stage y no pisa la lista de niveles.
+    * **Lo que NO detecta el juego:** un `.webm` **truncado o dañado**. Chromium lo acepta igual
+      (`readyState=4`, sin error) y muestra el tutorial cortado; solo se oculta si el archivo falta o si
+      el códec no soporta. Si se copia la carpeta a un pendrive, hay que revisar que
+      `tutorial.webm` pese **22.993.851 bytes**.
+    * Después de los dos cambios: `npm test` **20/20**, `npm run audit` **9 tamaños × 17 pantallas OK**,
+      `npm run i18n` **0 diferencias**. El tutorial no se regrabó: el aviso solo aparece cuando el video
+      falla, y en el entorno de grabación el video carga.
 - ✅ **4.3 · Música y licencia.** `assets/audio/` quedó exactamente como resolvió la 1.1: `musica-quiz.mp3` (0,98 MB) + `musica-quiz.wav` (10,77 MB) de respaldo, **sin `.ogg`**. `npm run mp3` **reproduce el MP3 byte a byte** (mismo MD5 antes y después), así que el artefacto entregado es derivable del WAV. `LICENCIA.txt` describe el mix final y es correcto: obra original del grupo, CC0, 64,000 s de loop perfecto a 120 BPM en Re menor, pico 0,72, y ya avisa que el `.ogg` se puede agregar con el mismo nombre base si alguien lo consigue.
   - Único paso no reproducible en esta máquina: el WAV lo genera `tools/build_music.py` y **acá no hay Python**. No bloquea nada (el WAV está commiteado y el MP3 se regenera desde él), pero hay que anotar que la cadena completa necesita Python.
 - ✅ **4.4 · Arte regenerado.** `npm run assets` volvió a producir los 12 PNG **idénticos** (ningún `git status` en `assets/icons` ni `assets/img`), así que la Parte 1 no tocó el generador y no hubo que rehacer arte. `npm run hit`: **6 de 6 ok**, las áreas de clic calzan con el arte (mismos porcentajes de `clip-path` que el alpha del PNG).

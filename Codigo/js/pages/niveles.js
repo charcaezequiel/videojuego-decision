@@ -52,6 +52,7 @@ DF.boot(() => {
     if(goTo){ next.href = goTo.href; next.textContent = goTo.label; }
     /* el tutorial baja hasta el borde solo cuando no hay botón debajo */
     document.getElementById('tuto').classList.toggle('solo', !goTo);
+    document.getElementById('tuto-nota').classList.toggle('solo', !goTo);
   }
 
   rows();
@@ -88,6 +89,9 @@ DF.boot(() => {
   }
   function show(on){
     tuto.classList.toggle('hidden', !on);
+    /* el aviso aparece justo donde estaba el reproductor, y desaparece si
+       al final el video llega (una red lenta manda los metadatos más tarde) */
+    document.getElementById('tuto-nota').classList.toggle('hidden', on);
     if(!on) video.pause();
   }
 
@@ -105,6 +109,11 @@ DF.boot(() => {
   else if(video.readyState > 0 && video.duration > 0){
     show(true); time.textContent = fmt(video.duration);
   }
+
+  /* Hay motores que no soportan el códec y no disparan ni `error` ni
+     `loadedmetadata`: simplemente no cargan (así se comporta WebKit con este
+     WebM/VP9). Sin esta espera el tutorial finge que nunca existió. */
+  setTimeout(() => { if(video.readyState < 1 && !video.error) show(false); }, 6000);
 
   play.addEventListener('click', () => { video.paused ? video.play() : video.pause(); });
   video.addEventListener('click', () => { video.paused ? video.play() : video.pause(); });

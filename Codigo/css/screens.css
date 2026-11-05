@@ -161,6 +161,16 @@ input.cfg-mus{ position:absolute; left:204px; top:650px; width:447px; }
   box-shadow:0 6px 0 rgba(0,0,0,.28); color:var(--cream);
 }
 .tuto.solo{ bottom:34px; }                       /* sin botón "Siguiente nivel" debajo */
+
+/* El aviso que toma el lugar del reproductor cuando el video no carga: mismo
+   rincón y mismo fondo, así el alumno sabe por qué no está en vez de no ver nada. */
+.tuto-nota{
+  position:absolute; right:36px; bottom:112px; width:250px; z-index:20;
+  background:var(--brown); border-radius:16px; padding:12px 14px;
+  box-shadow:0 6px 0 rgba(0,0,0,.28); color:var(--cream);
+  font-family:var(--font-body); font-size:18px; line-height:1.3;
+}
+.tuto-nota.solo{ bottom:34px; }
 .tuto-head{ display:flex; align-items:center; justify-content:space-between; padding:2px 2px 6px 6px; }
 .tuto-title{ font-family:var(--font-title); font-size:24px; letter-spacing:1px; line-height:1; padding-top:3px; }
 .tuto-video{ display:block; width:100%; aspect-ratio:16/9; height:auto; border-radius:10px; background:var(--wine-dark); object-fit:contain; cursor:pointer; }

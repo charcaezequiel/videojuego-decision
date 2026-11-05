@@ -7,6 +7,7 @@
     "start": "http-server -p 8080 -c-1 .",
     "serve": "http-server -p 8099 -c-1 .",
     "content": "node tools/build_content.js",
+    "fichas": "node tools/build_fichas.js",
     "sprites": "python tools/build_sprites.py",
     "music": "python tools/build_music.py",
     "mp3": "node tools/build_audio.mjs",

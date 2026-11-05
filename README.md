@@ -20,7 +20,7 @@ build y no pide nada a internet para funcionar. Las fuentes están autoalojadas.
 | Carpeta | Qué es |
 |---|---|
 | **`Codigo/`** | **El juego.** Se abre `Codigo/index.html`; es el contenedor que mantiene la música entre pantallas. Toda la documentación técnica está en [`Codigo/Readme.md`](Codigo/Readme.md). |
-| `Documentación/` | Los entregables del curso (sprints, actividades, diagramas), el plan de acción en curso y [`Pendiente.md`](Documentación/Pendiente.md) con lo que falta antes de entregar. |
+| `Documentación/` | Los entregables del curso (sprints, actividades, diagramas), el plan de acción en curso, [`Pendiente.md`](Documentación/Pendiente.md) con lo que falta antes de entregar y [`Casos para imprimir.md`](Documentación/Casos%20para%20imprimir.md) — los 10 expedientes en su versión autoritativa, generada desde el propio juego con `npm run fichas`. |
 | `Recursos graficos/` | 36 PNG del prototipo original: bocetos de botones, fondos, personajes y capturas de la pista de audio. **El juego no lee esta carpeta**: el arte definitivo está generado en `Codigo/assets/` y `Codigo/js/data/`. |
 
 ## Arrancarlo
@@ -70,8 +70,17 @@ detallado en [`Documentación/Pendiente.md`](Documentación/Pendiente.md):
 * **Probarlo en dispositivos físicos** (celular, tablet, proyector y audio del aula).
   Nunca se hizo: todo —pruebas, auditorías y el playthrough con cuenta nueva— corrió
   en Chromium de escritorio. Es el riesgo real de la entrega.
-* **Verificar el WebM del tutorial en el equipo del aula.** Es VP9 y mudo; si no
-  reproduce, hace falta un ffmpeg completo para pasarlo a MP4.
+* **Verificar el tutorial en la PC y el proyector del aula.** Ya está medido en cuatro
+  motores: Chromium, Edge y Firefox lo reproducen en tiempo real (por red y con doble
+  clic); **WebKit —el motor de Safari y los iPad— no carga el VP9**. Para ese caso la
+  pantalla de selección acepta un `Codigo/assets/video/tutorial.mp4` generado por
+  alguien con un ffmpeg completo (el comando está en el `LICENCIA.txt` del video; en
+  esta máquina no se puede convertir). Si nada carga, aparece una nota en el lugar del
+  reproductor y el juego se usa igual.
+* **Alinear el papel de los casos.** El PDF "Casos definitivos" no está en este
+  repositorio y el del caso 1 puede seguir citando el art. 43 como derecho de petición;
+  el juego enseña art. 14 (verificado contra el texto de la Constitución). La ficha de
+  papel correcta es `Documentación/Casos para imprimir.md`.
 * **Los casos legales siguen en español.** El manual se tradujo, el expediente no.
 * **No se entrega ningún `.zip`** por decisión del equipo: la entrega es este
   repositorio y `Codigo/` ya es portable por sí sola.

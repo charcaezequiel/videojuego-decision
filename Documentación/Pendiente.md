@@ -1,6 +1,6 @@
 # DF · Decisión Final — qué falta hacer
 
-Estado al **04/11/2026**. Las Partes 1 a 5 del `Plan de acción 2.md` están cerradas y commiteadas:
+Estado al **05/11/2026**. Las Partes 1 a 5 del `Plan de acción 2.md` están cerradas y commiteadas:
 
 | Commit | Parte |
 |---|---|
@@ -8,10 +8,14 @@ Estado al **04/11/2026**. Las Partes 1 a 5 del `Plan de acción 2.md` están cer
 | `c65d8bf` | P2 · pantallas: borrar progreso, ranking por nivel y foco de teclado |
 | `a503dfd` | P3 · contenido: lectura humana de los 10 casos y manual en inglés |
 | `8b7641e` | P4 · recursos: tutorial regrabado y arte coherente |
-| `HEAD` | P5 · entrega: Readme verificado, playthrough horizontal y vertical y licencias (sin ZIP) |
+| `ef42cc3` | P5 · entrega: Readme verificado, playthrough horizontal y vertical y licencias (sin ZIP) |
 
 **La única parte que no se pudo cerrar es la 5.2** (probar en dispositivos físicos), y no es un
 tema de código: hace falta el celular, la tablet y el proyector del aula.
+
+Después de la entrega se cerraron los dos puntos que no dependían del equipo del aula: **el video
+tutorial medido en 4 motores** (§2) y **la versión de papel de los casos dentro del repositorio**
+(§5, `Casos para imprimir.md`).
 
 ---
 
@@ -59,11 +63,22 @@ El `npm run audit` simula el viewport, **no simula dedos**. Hay que probar con e
 - [ ] **Safari / iOS:** la música arranca con el primer gesto (el navegador bloquea el autoplay).
       El volumen en iPhone/iPad se aplica con Web Audio (`js/core/music.js:21-35`) porque Safari ignora
       `video.volume`; verificar que se escuche y que el slider funcione.
-- [ ] **El video tutorial en el aula:** abrir `assets/video/tutorial.webm` en la PC y el proyector donde
-      se va a mostrar. Es **WebM/VP9 y mudo**; si el equipo del aula no lo reproduce, la alternativa es
-      descargar un ffmpeg completo y convertir a MP4 (el ffmpeg de Playwright no puede: no tiene
-      `libx264`, ni muxer MP4, ni codificador de audio). Si el archivo no carga, el reproductor se oculta
-      solo y el juego sigue funcionando.
+- [~] **El video tutorial en el aula — medido, queda la verificación física.** Se probó el
+      `tutorial.webm` real en 4 motores (4 motores × 3 formas de cargarlo):
+      *Chromium, Edge y Firefox 157 lo reproducen en tiempo real* — por http, por `file://` (doble
+      clic) y hasta con el MIME mal puesto—, sin descartar cuadros y buscando en la barra en
+      35–280 ms. *WebKit (el motor de Safari) no lo carga* (dice que puede, pero no trae metadatos),
+      así que en iPad/Mac el tutorial no va a verse. Para eso la pantalla de selección ahora pide
+      el WebM y, si falla, prueba `assets/video/tutorial.mp4`: **ese archivo no está en el repo** y
+      hay que generarlo con un ffmpeg completo en otra máquina (el comando y los dos flags que
+      Safari exige están en `Codigo/assets/video/LICENCIA.txt`). Lo que sigue necesitando el aula:
+      abrirlo en la PC y el proyector reales.
+- [x] **Si el video no se puede reproducir, el juego avisa** (estaba oculto a secas). Ahora, en
+      lugar del reproductor, aparece una nota en el mismo rincón y en los dos idiomas: *"El video
+      tutorial no está cargado. El manual alcanza para jugar."* Se agregó además una espera de 6 s
+      porque WebKit no dispara ni `error` ni `loadedmetadata`: sin esa espera el tutorial fingía que
+      nunca existió. Medido con `tools/out/check-tuto-nota.js` (5 casos: video bueno, 404, vertical,
+      WebKit español, WebKit inglés).
 - [ ] **Proyección real:** el ajuste de brillo atenúa todo el escenario; verificar la legibilidad de los
       textos chicos (preguntas y nota del resultado) sobre el proyector, no solo sobre el monitor.
 
@@ -107,12 +122,26 @@ licencias, que está escrito y verificado contra el código:
 - **`core.autocrlf=true` sin `.gitattributes`:** cada `npm run content` puede dejar un diff fantasma de
   fines de línea sobre `js/data/niveles.js`. Conviene agregar un `.gitattributes` (`* text=auto`,
   `*.js text eol=lf`) antes de la entrega o asumir que hay que revisar `git diff --stat`.
-- **El PDF "Casos definitivos" del caso 1** puede estar desalineado con el contenido corregido en la
-  Parte 3 (la pregunta oficial se reescribió y el juego cita "artículo 14" completo). **Revisar a ojo el
-  PDF contra el juego** antes de entregar: es lo único que la cátedra puede comparar.
+- **El PDF "Casos definitivos" del caso 1** (papel, afuera de este repositorio) puede seguir citando
+  el **art. 43** como el derecho de petición. El juego enseña **art. 14** y deja el 43 solo como el
+  amparo por silencio — verificado contra el texto oficial de la Constitución (art. 14: "peticionar a
+  las autoridades"; art. 43: amparo contra todo acto **u omisión**). Como el PDF no está en el repo,
+  lo que sí está ahora es la fuente autoritativa para copiar y pegar:
+  **`Documentación/Casos para imprimir.md`**, generada de `js/data/niveles.js` con `npm run fichas`.
+  Trae los 10 expedientes completos y la **pregunta oficial** de cada caso con su orden A-D (es la
+  que el juego muestra primero y la que el papel tiene que coincidir). **Falta:** que quien es el
+  PDF lo actualice con esa ficha.
+- **Un `.webm` copiado a medias no se detecta:** si el archivo está truncado o dañado, el navegador
+  lo acepta y muestra el tutorial cortado en vez de ocultarlo (medido con
+  `tools/out/check-video-falla.js`). El archivo completo pesa **22.993.851 bytes**: es lo que hay que
+  mirar si se copia la carpeta a un pendrive.
 - Las herramientas de verificación propias viven en `Codigo/tools/out/` (gitignoreado, no se entrega):
   `check-casos.mjs` (cotas de los 10 casos), `check-contrast.js` (contraste WCAG medido),
   `check-manual.js`, `check-nota.js` (banda de la nota del resultado) y `playthrough.js`.
+  Para el video se agregaron `check-video.js` (los 4 motores × 3 cargas, con `MOTOR=webkit` para
+  correr uno solo), `check-video-falla.js` (404 / truncado / dañado) y `check-tuto-nota.js`
+  (cuándo aparece el aviso, en los dos idiomas). Usan Playwright Chromium, Edge (instalado),
+  Firefox y WebKit (`npx playwright install firefox webkit`).
 
 ## 6 · Antes de entregar, correr todo esto desde `Codigo/`
 
@@ -121,6 +150,7 @@ npm install
 npx playwright install chromium
 npm run serve &            # puerto 8099
 npm run content && npm run i18n   # 0 diferencias, manual 8 bloques / 32 párrafos ES y EN
+npm run fichas                    # regenera Documentación/Casos para imprimir.md (el papel)
 npm test                   # 20 pruebas
 npm run audit              # 9 tamaños × 17 pantallas
 npm run hit                # 6 áreas de clic

@@ -109,10 +109,13 @@ js/pages/                  Un script por pantalla
 assets/
   icons/, img/, fonts/     Imágenes y fuentes del diseño (3 familias, SIL Open Font License, + LICENCIA.txt)
   audio/                   musica-quiz.mp3 + musica-quiz.wav de respaldo (+ LICENCIA.txt)
-  video/                   tutorial.webm (VP9, mudo) + tutorial-poster.jpg (+ LICENCIA.txt)
+  video/                   tutorial.webm (VP9, mudo) + tutorial-poster.jpg (+ LICENCIA.txt).
+                           tutorial.mp4 es opcional: si existe, lo usan los navegadores
+                           que no entienden WebM (Safari/iPad). Ver LICENCIA.txt.
 tools/
   content/                 casos-1-5.json y casos-6-10.json (el contenido real) + validar.mjs
   build_content.js         JSON de casos → js/data/niveles.js (npm run content)
+  build_fichas.js         js/data/niveles.js → ../Documentación/Casos para imprimir.md (npm run fichas)
   build_sprites.py         Generador del pixel-art (npm run sprites) · necesita Python
   build_music.py           Generador de la música, WAV (npm run music) · necesita Python
   build_audio.mjs          WAV → MP3 (npm run mp3)
@@ -132,14 +135,14 @@ tests/
 
 ## 7. Agregar o editar contenido
 
-* **Casos y preguntas:** se editan `tools/content/casos-1-5.json` y `tools/content/casos-6-10.json`, y después se corre `npm run content`, que valida las cotas y **genera** `js/data/niveles.js`. Ese archivo no se edita a mano (lo pisa el siguiente build). Adentro, cada pregunta sale de `Q(enunciado, A, B, C, D, 'letraCorrecta', oficial)`.
+* **Casos y preguntas:** se editan `tools/content/casos-1-5.json` y `tools/content/casos-6-10.json`, y después se corre `npm run content`, que valida las cotas y **genera** `js/data/niveles.js`. Ese archivo no se edita a mano (lo pisa el siguiente build). Adentro, cada pregunta sale de `Q(enunciado, A, B, C, D, 'letraCorrecta', oficial)`. Después de `content`, correr `npm run fichas`: regenera `../Documentación/Casos para imprimir.md`, que es la versión de papel del expediente (lea `js/data/niveles.js`, así que no puede desalinearse del juego).
 * **Palabras del desafío final:** mismo JSON (`palabras` y `pista` de cada caso); en el juego se leen con `DF.palabras`.
 * **Reglas del juego:** `DF.rules` al principio de `js/data/niveles.js` — pero esa cabecera también la escribe `build_content.js`, así que el cambio permanente va en `tools/build_content.js`.
 * **Prendas:** editar `tools/build_sprites.py` y ejecutarlo (regenera `js/data/vestuario.js`; necesita Python).
 * **Manual:** `js/data/manual.js`, en pares `[español, inglés]` por título y por párrafo (los números se leen de `DF.rules`).
 * **Flechas:** el destino de cada flecha está en un solo lugar, `DF.nav.ROUTES` (`js/core/boot.js`). En el HTML solo se marca `data-nav="back"` o `data-nav="next"`.
 * **Música:** reemplazar `assets/audio/musica-quiz.mp3` (y el `.wav` de respaldo) con el mismo nombre, o regenerar el MP3 desde el WAV con `npm run mp3`. La pista original se sintetiza con `npm run music` (Python) y cualquier conversión tiene que conservar los 64,000 s exactos del loop.
-* **Video tutorial:** reemplazar `assets/video/tutorial.webm` y `tutorial-poster.jpg` (mismo nombre) o regenerarlo con `npm run tutorial` después de cambiar pantallas (requiere el servidor en 8099, Playwright y el ffmpeg de Playwright). El ffmpeg de Playwright solo escribe **WebM/VP9** y sin audio; para MP4 hay que conseguir un ffmpeg completo. Si el archivo falta o no carga, el reproductor no se muestra.
+* **Video tutorial:** reemplazar `assets/video/tutorial.webm` y `tutorial-poster.jpg` (mismo nombre) o regenerarlo con `npm run tutorial` después de cambiar pantallas (requiere el servidor en 8099, Playwright y el ffmpeg de Playwright). El ffmpeg de Playwright solo escribe **WebM/VP9** y sin audio; para MP4 hay que conseguir un ffmpeg completo. La pantalla de selección pide primero el WebM y, si el navegador no lo entiende, prueba `assets/video/tutorial.mp4` — ese archivo **no está en el repo** y solo hace falta para Safari/iPad (los dos pasos y el comando están en `assets/video/LICENCIA.txt`). Si ninguno de los dos carga, el reproductor se oculta y aparece un aviso en su lugar; el juego se puede usar igual.
 
 ## 8. Notas sobre el contenido
 

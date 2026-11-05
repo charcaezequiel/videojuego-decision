@@ -99,6 +99,7 @@
 .portrait .lvl-next{ right:auto; left:30px; bottom:40px; font-size:32px; padding:12px 24px 10px; }
 .portrait .tuto{ right:30px; bottom:40px; width:340px; }
 .portrait .tuto.big{ right:auto; bottom:auto; width:680px; }
+.portrait .tuto-nota{ right:30px; bottom:40px; width:340px; }
 
 /* ---------- Título y descripción del nivel ---------- */
 .portrait .banner{ left:40px; width:640px; top:calc(50% - 220px); height:440px; padding:0 34px; }
